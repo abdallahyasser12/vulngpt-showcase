@@ -1,10 +1,12 @@
-# VulnGPT — Public Showcase Source
+# VulnGPT — Public Showcase
+
+![VulnGPT — evidence-first AI-assisted web application security testing](assets/social-preview.png)
 
 > Evidence-first AI-assisted web application security testing by **NovaSecLabs**.
 
 VulnGPT is being built to go beyond surface-level payload scanning by reasoning across authenticated state, users and roles, authorization boundaries, object ownership, multi-step workflows, business logic, interference, and reproducible validation.
 
-This directory is the **public-safe source package** for a future standalone public GitHub showcase repository. It intentionally excludes proprietary engine code, secrets, deployment internals, private customer data, and benchmark implementation details that would compromise measurement integrity.
+This is the public-safe showcase for VulnGPT. It intentionally excludes proprietary engine code, secrets, deployment internals, private customer data, and benchmark implementation details that would compromise measurement integrity — the engine itself stays in a private repository.
 
 ## What makes VulnGPT different
 
@@ -23,9 +25,9 @@ WAF behavior, throttling, session expiry, changing application state, and other 
 ### Reproducible findings and retesting
 The product direction is discovery → hypothesis → controlled validation → evidence → finding → retest, with the goal of reducing the amount of manual false-positive triage imposed on security teams.
 
-## Gauntlet G1 — certified freeze
+## Gauntlet G1 — our internal benchmark result
 
-**Freeze date:** 2026-09-20
+**Frozen:** 2026-09-20. This is a benchmark we built, ran, and scored ourselves — not third-party audited, and not reproduced independently yet. We're publishing the methodology precisely so that can change.
 
 | Measure | Result |
 | --- | ---: |
@@ -34,11 +36,15 @@ The product direction is discovery → hypothesis → controlled validation → 
 | Adjudicated valid-in-scope score | **41 / 42** |
 | Valid-in-scope misses remaining | **0** |
 
-The adjudicated denominator is documented as 51 minus 2 explicitly out-of-scope rows, 3 invalid-ground-truth rows, and 4 structurally unobservable rows.
+The adjudicated denominator is documented as 51 minus 2 explicitly out-of-scope rows, 3 invalid-ground-truth rows, and 4 structurally unobservable rows — 12 non-pass rows total, each named individually in BENCHMARK_G1.md, none of them a detection miss.
 
-These are **controlled internal benchmark results**, obtained in the repository's defined Gauntlet G1 conditions. They are not a claim that VulnGPT detects 97.6% of vulnerabilities in arbitrary real-world applications, nor a claim that false positives are impossible outside the benchmark.
+These are **controlled internal benchmark results**. They are not a claim that VulnGPT detects 97.6% of vulnerabilities in arbitrary real-world applications, nor a claim that false positives are impossible outside the benchmark.
 
-See [BENCHMARK_G1.md](BENCHMARK_G1.md) for the exact interpretation and limitations.
+See [BENCHMARK_G1.md](BENCHMARK_G1.md) for the full methodology, per-environment scores, and limitations.
+
+## Assets
+
+`assets/` holds the real files behind this README's header image and the brand mascot: `social-preview.png` (the banner above), `mascot-confident.png` (transparent cutout, background-removed and AI-upscaled from the reference sheet — not redrawn), `mascot-reference-sheet.jpg` (the full source sheet), and real captures of the live site (`site-home.png`, `site-waitlist.png`).
 
 ## Links
 
