@@ -25,22 +25,13 @@ WAF behavior, throttling, session expiry, changing application state, and other 
 ### Reproducible findings and retesting
 The product direction is discovery → hypothesis → controlled validation → evidence → finding → retest, with the goal of reducing the amount of manual false-positive triage imposed on security teams.
 
-## Gauntlet G1 — our internal benchmark result
+## Benchmark publication status
 
-**Frozen:** 2026-09-20. This is a benchmark we built, ran, and scored ourselves — not third-party audited, and not reproduced independently yet. We're publishing the methodology precisely so that can change.
+The internal G1 v1.5 freeze certificate records a raw matrix of **39 / 51** and a false-positive sum of **0** under its documented controlled conditions. The same certificate records an adjudicated **41 / 42** score and **0 valid-in-scope misses**, but the public explanation currently contains an arithmetic inconsistency: it describes 39 exact-category passes plus 3 wrong-taxonomy credits (42 total) while reporting 41 / 42.
 
-| Measure | Result |
-| --- | ---: |
-| Raw historical matrix | **39 / 51** |
-| False-positive sum across the 13-environment matrix | **0** |
-| Adjudicated valid-in-scope score | **41 / 42** |
-| Valid-in-scope misses remaining | **0** |
+We are preserving the historical record and reconciling the public score explanation against the frozen row-level scoring evidence. Until that reconciliation is complete, **do not use the 41 / 42 or zero-miss figures as public performance claims**. These are internal, self-run benchmark materials, not third-party audited results.
 
-The adjudicated denominator is documented as 51 minus 2 explicitly out-of-scope rows, 3 invalid-ground-truth rows, and 4 structurally unobservable rows — 12 non-pass rows total, each named individually in BENCHMARK_G1.md, none of them a detection miss.
-
-These are **controlled internal benchmark results**. They are not a claim that VulnGPT detects 97.6% of vulnerabilities in arbitrary real-world applications, nor a claim that false positives are impossible outside the benchmark.
-
-See [BENCHMARK_G1.md](BENCHMARK_G1.md) for the full methodology, per-environment scores, and limitations.
+See [BENCHMARK_G1.md](BENCHMARK_G1.md) for the publication caveat and methodology context.
 
 ## Assets
 
@@ -48,6 +39,7 @@ See [BENCHMARK_G1.md](BENCHMARK_G1.md) for the full methodology, per-environment
 
 ## Links
 
+- Showcase: https://vulngpt-showcase.vercel.app/
 - Website: https://www.novaseclabs.com
 - Private beta: https://www.novaseclabs.com/waitlist
 

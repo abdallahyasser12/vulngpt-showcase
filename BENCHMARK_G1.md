@@ -1,5 +1,8 @@
 # Gauntlet G1 — Benchmark Methodology & Results
 
+> **Publication erratum — 2026-10-22:** The internal freeze certificate records raw 39/51, fp_sum=0, adjudicated 41/42, and 0 valid-in-scope misses. This public document's arithmetic explanation is inconsistent: it describes 39 exact-category passes plus 3 wrong-taxonomy credits (42 total) while reporting 41/42. The frozen certificate is not being rewritten. Until the row-level scoring evidence is reconciled and this explanation corrected, do not reuse the 41/42 or zero-miss figures as public performance claims. The benchmark is internal and has not been independently audited.
+
+
 Gauntlet is VulnGPT's internal detection benchmark: 13 deliberately vulnerable web applications, each shipped with a frozen ground-truth list of what's actually exploitable in it and what isn't. This page is the public, methodology-first account of the **G1 v1.5** result (frozen 2026-09-20) — what was measured, how, under what conditions, and what the result does and doesn't mean.
 
 **This is a benchmark we built, run, and scored ourselves.** It is not third-party audited. "Frozen" means the substrate, ground truth, and scoring code are version-locked and no longer edited for this result — it is not a claim of external certification.
