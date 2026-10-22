@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vulngpt-showcase.vercel.app/sitemap.xml
