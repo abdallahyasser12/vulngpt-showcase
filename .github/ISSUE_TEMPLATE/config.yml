@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/SECURITY.md
+    about: Use the private vulnerability-reporting process. Do not disclose security issues in a public issue.
+  - name: Request VulnGPT private beta access
+    url: https://www.novaseclabs.com/waitlist
+    about: Apply for access to the current private beta.
+  - name: Product and company information
+    url: https://www.novaseclabs.com
+    about: Visit the official NovaSecLabs website for general information.

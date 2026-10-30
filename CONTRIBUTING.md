@@ -37,6 +37,16 @@ This repository contains a static public-facing website and supporting documenta
 - Avoid adding unnecessary tracking, external scripts, or third-party dependencies.
 - Test navigation and links at desktop and mobile widths.
 
+## Local validation
+
+Before submitting documentation or website changes, run:
+
+```bash
+node scripts/validate-public-repo.mjs
+```
+
+The check is dependency-free and is described in [Repository Maintenance](docs/REPOSITORY_MAINTENANCE.md).
+
 ## Pull requests
 
 Include:

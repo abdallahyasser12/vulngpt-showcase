@@ -1,0 +1,30 @@
+name: Documentation improvement
+description: Suggest a correction or improvement to public VulnGPT documentation.
+title: "[Docs] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Documentation suggestions must not disclose private product implementation details or confidential information.
+  - type: input
+    id: document
+    attributes:
+      label: Document or section
+      description: Link the public document or identify its section.
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What needs improvement?
+      description: Explain what is unclear, incorrect, or missing.
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested correction
+      description: Share proposed wording or supporting public references.
+    validations:
+      required: false

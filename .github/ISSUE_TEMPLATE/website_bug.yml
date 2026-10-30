@@ -1,0 +1,46 @@
+name: Public showcase issue
+description: Report a reproducible problem with this public website or repository documentation.
+title: "[Showcase] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form only for public showcase or documentation issues.
+        Do not include credentials, tokens, customer data, or vulnerability details.
+  - type: input
+    id: location
+    attributes:
+      label: Affected page or file
+      description: Provide the public URL or repository path.
+      placeholder: https://vulngpt-showcase.vercel.app/
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the observed issue and expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      description: List the steps needed to reproduce the issue.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and device
+      placeholder: Chrome on Windows 11
+    validations:
+      required: false
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized screenshots or supporting details
+      description: Remove personal data, secrets, and confidential information before attaching evidence.
+    validations:
+      required: false
