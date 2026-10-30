@@ -43,7 +43,7 @@ function collectMarkdownFiles(directory) {
 }
 
 const requiredFiles = [
-  "README.md", "index.html", "styles.css", "product/index.html", "CLAIMS.md", "LICENSE", "CODEOWNERS",
+  "README.md", "index.html", "styles.css", "product/index.html", "404.html", "CLAIMS.md", "LICENSE", "CODEOWNERS",
   "CHANGELOG.md", "SUPPORT.md", "BENCHMARK_G1.md", "SECURITY.md",
   "docs/README.md", "docs/SECURITY_MODEL.md", "docs/REPOSITORY_MAINTENANCE.md",
   ".well-known/security.txt",
@@ -189,12 +189,22 @@ const securityExpiryLine = securityTxt.split("\n").find((line) => line.startsWit
 const securityExpiry = securityExpiryLine ? Date.parse(securityExpiryLine.slice("Expires:".length).trim()) : Number.NaN;
 record(securityTxt.includes("Contact: mailto:hello@novaseclabs.com"), "security.txt has a public security contact");
 record(securityTxt.includes("Policy: https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/SECURITY.md"), "security.txt points to the authoritative policy");
+record(securityTxt.includes("Canonical: https://showcase.novaseclabs.com/.well-known/security.txt"), "security.txt canonical URL uses the branded showcase hostname");
 record(Number.isFinite(securityExpiry) && securityExpiry > Date.now(), "security.txt expiry is in the future");
 
 
 const productHtml = read("product/index.html");
 record(productHtml.includes("<title>Product walkthrough | VulnGPT</title>"), "Product walkthrough title is present");
-record(productHtml.includes('href="https://vulngpt-showcase.vercel.app/product/"'), "Product walkthrough canonical URL is present");
+record(productHtml.includes('href="https://showcase.novaseclabs.com/product/"'), "Product walkthrough canonical URL is present");
+record(productHtml.includes('id="image-viewer"') && productHtml.includes("viewer.showModal()"), "Product screenshot lightbox has a native dialog and wired controls");
+record(productHtml.includes("data-lightbox") && productHtml.includes("disabled by effective export policy"), "Product walkthrough links captures and preserves export-policy caveat");
+record(html.includes('href="https://showcase.novaseclabs.com/"'), "Homepage canonical URL uses branded showcase hostname");
+const docsPortalHtml = read("docs/index.html");
+record(docsPortalHtml.includes('href="https://showcase.novaseclabs.com/docs/"'), "Documentation canonical URL uses branded showcase hostname");
+record(read("robots.txt").includes("https://showcase.novaseclabs.com/sitemap.xml"), "Robots file references the branded sitemap");
+record(read("sitemap.xml").includes("https://showcase.novaseclabs.com/product/"), "Sitemap includes product walkthrough on branded hostname");
+const notFoundHtml = read("404.html");
+record(notFoundHtml.includes('href="/product/"') && notFoundHtml.includes('href="/docs/"'), "Custom 404 page provides useful navigation");
 record(productHtml.includes('href="/assets/dashboard.png"') && productHtml.includes('href="/assets/findings.png"') && productHtml.includes('href="/assets/live%20vision.png"'), "Product walkthrough links to original interface captures");
 record(productHtml.includes("static screenshots, not a live product session") && productHtml.includes("disabled by effective export policy"), "Product walkthrough preserves screenshot-state and export-policy caveats");
 

@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://vulngpt-showcase.vercel.app/schemas/benchmark-report.schema.json",
+  "$id": "https://showcase.novaseclabs.com/schemas/benchmark-report.schema.json",
   "title": "Public Evaluation Benchmark Record",
   "description": "Optional customer-controlled interchange format. Not a VulnGPT benchmark result or internal product schema.",
   "type": "object",

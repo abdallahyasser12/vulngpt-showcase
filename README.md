@@ -13,7 +13,7 @@ A suspicious response is a lead to investigate—not proof of a vulnerability.
   &nbsp;·&nbsp;
   <a href="https://www.novaseclabs.com">NovaSecLabs</a>
   &nbsp;·&nbsp;
-  <a href="https://vulngpt-showcase.vercel.app/docs/">Browse documentation</a>
+  <a href="https://showcase.novaseclabs.com/docs/">Browse documentation</a>
 </p>
 
 ---
@@ -75,6 +75,10 @@ Read the full [Evidence and Validation Standard](docs/EVIDENCE_AND_VALIDATION.md
 
 **Founders and application builders** who need security findings explained in terms of the application behavior they can understand and fix.
 
+## Public showcase
+
+The public product showcase is available at [showcase.novaseclabs.com](https://showcase.novaseclabs.com/). The searchable [documentation library](https://showcase.novaseclabs.com/docs/) and [visual product walkthrough](https://showcase.novaseclabs.com/product/) are part of the same public site. The source and publication standards remain available in this repository.
+
 ## Product interface captures
 
 The showcase includes genuine interface screenshots supplied for the public product walkthrough: the dashboard, findings queue, a BOLA finding detail, Live Vision, and Elite Red Team Reports.
@@ -87,11 +91,11 @@ The showcase includes genuine interface screenshots supplied for the public prod
 | Live Vision | ![Recorded application activity map and investigation timeline](assets/live%20vision.png) |
 | Elite Red Team Reports | ![Elite Red Team Reports library](assets/elte%20red%20team%20report.png) |
 
-See the [visual product walkthrough](https://vulngpt-showcase.vercel.app/product/) for full-size captures and context. These are static captures, not a live product session. Workspace labels, counts, statuses, and controls reflect the moment captured and must not be interpreted as live telemetry, customer outcomes, or guaranteed current availability. The report screenshot explicitly shows generation and download disabled by export policy.
+See the [visual product walkthrough](https://showcase.novaseclabs.com/product/) for full-size captures and context. These are static captures, not a live product session. Workspace labels, counts, statuses, and controls reflect the moment captured and must not be interpreted as live telemetry, customer outcomes, or guaranteed current availability. The report screenshot explicitly shows generation and download disabled by export policy.
 
 ## Documentation
 
-Browse the [searchable VulnGPT documentation library](https://vulngpt-showcase.vercel.app/docs/), organized by product, technical, practitioner, enterprise, and governance topics.
+Browse the [searchable VulnGPT documentation library](https://showcase.novaseclabs.com/docs/), organized by product, technical, practitioner, enterprise, and governance topics.
 
 | Document | What it covers |
 | --- | --- |

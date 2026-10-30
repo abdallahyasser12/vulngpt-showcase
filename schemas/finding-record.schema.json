@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://vulngpt-showcase.vercel.app/schemas/finding-record.schema.json",
+  "$id": "https://showcase.novaseclabs.com/schemas/finding-record.schema.json",
   "title": "Public Evaluation Finding Record",
   "description": "Optional customer-controlled interchange format. Not a VulnGPT API or internal storage contract.",
   "type": "object",

@@ -13,7 +13,7 @@ body:
     attributes:
       label: Affected page or file
       description: Provide the public URL or repository path.
-      placeholder: https://vulngpt-showcase.vercel.app/
+      placeholder: https://showcase.novaseclabs.com/
     validations:
       required: true
   - type: textarea

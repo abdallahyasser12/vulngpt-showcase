@@ -9,6 +9,8 @@ The format follows the principles of Keep a Changelog. Dates and version identif
 ## [Unreleased]
 
 ### Added
+- Prepared the branded showcase hostname and aligned canonical URLs, structured data, sitemap, robots.txt, and security.txt; external Cloudflare DNS publication remains pending.
+- Responsive full-size product screenshot viewer using the native dialog element, with a direct-image fallback.
 - Searchable documentation portal at `/docs/`, with audience filters, keyboard-accessible search, and direct links to maintained Markdown sources.
 - Public conceptual system overview and controlled product-evaluation protocol.
 - Optional JSON Schema interchange formats for externally documented findings and benchmark reports; these are not product API contracts.
