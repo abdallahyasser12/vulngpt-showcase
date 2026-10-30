@@ -1,42 +1,77 @@
-# VulnGPT — Claims & Messaging
+# Claims and Messaging Standard
 
-This page states what we say publicly about VulnGPT, and why, so claims stay aligned with actual repository evidence.
+This document is the source of truth for public product language in this repository. Its purpose is to keep the website, README, partner material, and public documentation aligned with the evidence actually available for publication.
 
-## Core positioning
+## Approved product description
 
-> VulnGPT is designed to reason across authenticated state, users and roles, authorization boundaries, object ownership, multi-step workflows, and business logic — then validate evidence before promoting a finding.
+> VulnGPT is an AI-assisted web application security testing product by NovaSecLabs, currently in private beta and being developed to investigate application behavior across authenticated identities, authorization boundaries, object ownership, state transitions, and business logic, with an emphasis on evidence-oriented validation.
 
-## What we discuss, and how
+Short description:
 
-We use qualified language — "designed to", "engineered around", "current focus includes" — unless a capability has a specific production acceptance artifact behind it:
+> Evidence-oriented AI-assisted web application security testing for complex application behavior.
 
-- authenticated application testing and session continuity
-- multi-user / multi-role authorization analysis
-- BOLA / IDOR and object-ownership reasoning
-- business-logic and multi-step workflow analysis
-- application-state and temporal reasoning
-- WAF / interference-aware validation
-- evidence-backed confirmation
-- retesting and finding lifecycle
+## Safe capability language
 
-## False-positive positioning
+Use qualified language such as:
 
-Preferred: "We optimize for defensible confirmation, not maximum alert count."
+- "is being developed to investigate";
+- "is designed to reason about";
+- "the product focus includes";
+- "the current private-beta evaluation can be used to assess";
+- "availability should be confirmed for the proposed workflow."
 
-Benchmark-supported: "In the certified G1 controlled benchmark matrix, fp_sum was 0 across all 13 environments."
+When describing a capability as currently available, cite a current product artifact or obtain explicit product-owner confirmation.
 
-We never turn that benchmark-specific result into "VulnGPT has zero false positives" as a universal claim.
+## Product status language
 
-## Benchmark positioning
+The approved public status is **private beta**. Do not describe VulnGPT as generally available, production-certified, independently audited, or universally compatible unless that status changes and suitable evidence is approved for publication.
 
-> Raw 39/51, fp_sum=0; adjudicated valid-in-scope 41/42, with 0 valid-in-scope misses remaining under G1's documented conditions.
+## Evidence and performance claims
 
-The raw and adjudicated numbers are shown together on purpose — see [BENCHMARK_G1.md](BENCHMARK_G1.md).
+Do not publish a detection rate, false-positive rate, benchmark score, comparative ranking, or coverage percentage unless the supporting record includes:
 
-## Tone
+- a defined benchmark and version;
+- frozen or otherwise controlled ground truth;
+- explicit inclusion and exclusion rules;
+- run conditions and environment details;
+- scoring and adjudication rules;
+- reproducibility evidence;
+- limitations and conflicts of interest;
+- approval of the exact public wording.
 
-Technical, transparent, specific, measurable. We avoid "revolutionary", "unbeatable", "perfect", "fully replaces", "guaranteed", and "zero false positives" outside a clearly bounded benchmark statement.
+Internal testing is not independent certification. Results from a self-developed benchmark must be described as internal and scoped to its documented conditions.
 
-## Private beta
+### Current G1 publication decision
 
-VulnGPT is in private beta. Current public plan details (credits, seats, targets, retention) are published on [novaseclabs.com/pricing](https://www.novaseclabs.com/pricing); onboarding today runs through the [private beta application](https://www.novaseclabs.com/waitlist) rather than self-serve checkout.
+The previous public G1 explanation contained arithmetic that did not reconcile across the headline, adjudication explanation, and row counts. The figures are not approved for use in marketing or as product-wide performance claims while that issue remains unresolved. See [BENCHMARK_G1.md](BENCHMARK_G1.md).
+
+Do not claim:
+
+- "zero false positives" as a universal product property;
+- a guaranteed real-world detection rate;
+- "certified" or "independently verified" without the relevant independent artifact;
+- that VulnGPT detects every vulnerability;
+- that VulnGPT replaces penetration testers;
+- customer adoption, endorsements, or outcomes that have not been approved and substantiated.
+
+## Security, privacy, and compliance claims
+
+Do not claim SOC 2, ISO 27001, GDPR compliance, data residency, encryption specifications, retention periods, SSO support, or other security controls unless current evidence and applicable contractual scope have been reviewed and approved.
+
+Use [Security and Privacy](docs/SECURITY_AND_PRIVACY.md) and [Enterprise Evaluation](docs/ENTERPRISE_EVALUATION.md) to frame questions that require direct confirmation. A questionnaire is not evidence that a control exists.
+
+## Tone and editorial standard
+
+Prefer:
+
+- specific descriptions of the problem and test context;
+- observable behavior over marketing adjectives;
+- explicit scope, limits, and uncertainty;
+- clear distinctions between current availability and product direction;
+- terminology that a security practitioner and a developer can both understand.
+
+Avoid "revolutionary", "unbeatable", "perfect", "guaranteed", "military-grade", "zero false positives", and similar unbounded claims.
+
+## Review requirement
+
+Any public change that adds product capabilities, performance figures, customer references, certifications, privacy assurances, or security guarantees must be reviewed against supporting evidence before publication.
