@@ -13,7 +13,7 @@ A suspicious response is a lead to investigate—not proof of a vulnerability.
   &nbsp;·&nbsp;
   <a href="https://www.novaseclabs.com">NovaSecLabs</a>
   &nbsp;·&nbsp;
-  <a href="docs/README.md">Documentation</a>
+  <a href="https://vulngpt-showcase.vercel.app/docs/">Browse documentation</a>
 </p>
 
 ---
@@ -87,10 +87,13 @@ The product interface will be documented here when verified, shareable captures 
 
 ## Documentation
 
+Browse the [searchable VulnGPT documentation library](https://vulngpt-showcase.vercel.app/docs/), organized by product, technical, practitioner, enterprise, and governance topics.
+
 | Document | What it covers |
 | --- | --- |
 | [Product Overview](docs/PRODUCT_OVERVIEW.md) | Product purpose, intended users, problem definition, and boundaries |
 | [Technical Approach](docs/TECHNICAL_APPROACH.md) | Contextual testing model and conceptual workflow |
+| [System Overview](docs/SYSTEM_OVERVIEW.md) | Public conceptual investigation flow and trust boundaries—not deployed architecture |
 | [Evidence and Validation](docs/EVIDENCE_AND_VALIDATION.md) | Evidence quality, controlled testing, confirmation, and retesting |
 | [Enterprise Evaluation](docs/ENTERPRISE_EVALUATION.md) | Buyer diligence checklist and security questionnaire |
 | [Security and Privacy](docs/SECURITY_AND_PRIVACY.md) | Public security posture, data-handling questions, and evaluation boundaries |
@@ -98,6 +101,8 @@ The product interface will be documented here when verified, shareable captures 
 | [Use Cases](docs/USE_CASES.md) | Representative application-security scenarios |
 | [Security Testing Playbook](docs/SECURITY_TESTING_PLAYBOOK.md) | Practical, controlled test-design patterns for authorized assessments |
 | [Capability Evaluation Matrix](docs/CAPABILITY_EVALUATION_MATRIX.md) | Scenario selection and evidence criteria; not a support guarantee |
+| [Controlled Evaluation Protocol](docs/EVALUATION_PROTOCOL.md) | Pre-registration, ground truth, outcomes, and scoring discipline |
+| [Public Evaluation Schemas](schemas/README.md) | Optional JSON interchange schemas; not product API contracts |
 | [Assessment Plan Template](docs/ASSESSMENT_PLAN_TEMPLATE.md) | Engagement scope, identities, constraints, and approvals worksheet |
 | [Finding Report Standard](docs/FINDING_REPORT_STANDARD.md) | Evidence-led security finding structure and reporting rules |
 | [Benchmark Governance](docs/BENCHMARK_GOVERNANCE.md) | Reproducibility, scoring integrity, and publication approval gates |

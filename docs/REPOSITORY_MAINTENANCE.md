@@ -4,7 +4,7 @@
 
 This repository contains the static public showcase and public product documentation for VulnGPT. It is not the private product implementation repository.
 
-The maintenance goal is to keep public information accurate, navigable, accessible, and safe to publish.
+The maintenance goal is to keep public information accurate, navigable, accessible, searchable, and safe to publish. The searchable documentation portal is served from [docs/index.html](index.html) and is available at [vulngpt-showcase.vercel.app/docs/](https://vulngpt-showcase.vercel.app/docs/).
 
 ## Local validation
 
@@ -19,7 +19,7 @@ node scripts/validate-public-repo.mjs
 
 The validator checks relative Markdown links and image references, local HTML references and fragment targets, required title and social metadata, structured data, keyboard navigation, reduced-motion styling, and publication guardrails.
 
-The validator does not test external website availability, browser rendering, formal accessibility conformance, SEO ranking, or the private VulnGPT service. It is a repository hygiene check, not a full static-analysis or security-scanning product.
+The validator also parses the public JSON Schema files and checks the documentation portal's local assets and navigation. It does not perform full JSON Schema instance validation. It does not test external website availability, browser rendering, formal accessibility conformance, SEO ranking, or the private VulnGPT service. It is a repository hygiene check, not a full static-analysis or security-scanning product.
 
 ## Content review
 

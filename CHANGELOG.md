@@ -9,6 +9,13 @@ The format follows the principles of Keep a Changelog. Dates and version identif
 ## [Unreleased]
 
 ### Added
+- Searchable documentation portal at `/docs/`, with audience filters, keyboard-accessible search, and direct links to maintained Markdown sources.
+- Public conceptual system overview and controlled product-evaluation protocol.
+- Optional JSON Schema interchange formats for externally documented findings and benchmark reports; these are not product API contracts.
+- `security.txt` contact and disclosure-policy discovery for the public showcase domain.
+
+
+### Added
 - Structured public documentation for product overview, technical approach, evidence validation, enterprise evaluation, security and privacy, use cases, responsible testing, and FAQ.
 - A public conceptual security model with explicit trust boundaries and control-verification questions.
 - A contextual application-security playbook, scenario evaluation matrix, and assessment/finding templates.

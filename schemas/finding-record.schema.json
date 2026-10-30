@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vulngpt-showcase.vercel.app/schemas/finding-record.schema.json",
+  "title": "Public Evaluation Finding Record",
+  "description": "Optional customer-controlled interchange format. Not a VulnGPT API or internal storage contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "record_kind", "finding_id", "title", "status", "security_expectation", "context", "observation", "evidence", "impact", "limitations", "created_at"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "record_kind": { "type": "string", "const": "external_evaluation_finding" },
+    "finding_id": { "type": "string", "minLength": 1, "maxLength": 128 },
+    "title": { "type": "string", "minLength": 8, "maxLength": 240 },
+    "status": { "type": "string", "enum": ["candidate", "needs_validation", "confirmed", "not_reproduced", "out_of_scope"] },
+    "security_expectation": { "type": "string", "minLength": 1, "description": "The authorization rule, invariant, or workflow precondition expected to hold." },
+    "context": {
+      "type": "object",
+      "required": ["environment", "actor_context", "resource_context"],
+      "properties": {
+        "environment": { "type": "string" },
+        "actor_context": {
+          "type": "object",
+          "properties": {
+            "actor_ref": { "type": "string" },
+            "role": { "type": "string" },
+            "tenant_ref": { "type": "string" },
+            "session_state": { "type": "string" }
+          },
+          "additionalProperties": true
+        },
+        "resource_context": {
+          "type": "object",
+          "properties": {
+            "resource_type": { "type": "string" },
+            "owner_ref": { "type": "string" },
+            "tenant_ref": { "type": "string" },
+            "workflow_state": { "type": "string" }
+          },
+          "additionalProperties": true
+        },
+        "preconditions": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": true
+    },
+    "observation": {
+      "type": "object",
+      "required": ["summary", "observed_at"],
+      "properties": {
+        "summary": { "type": "string", "minLength": 1 },
+        "observed_at": { "type": "string", "format": "date-time" },
+        "state_change": { "type": ["string", "null"] },
+        "control_comparison": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["kind", "description"],
+        "properties": {
+          "kind": { "type": "string", "enum": ["request", "response", "state_observation", "audit_record", "screenshot", "other"] },
+          "description": { "type": "string", "minLength": 1 },
+          "artifact_ref": { "type": ["string", "null"] },
+          "sha256": { "type": ["string", "null"], "pattern": "^[a-fA-F0-9]{64}$" },
+          "redacted": { "type": "boolean", "default": true }
+        },
+        "additionalProperties": false
+      }
+    },
+    "impact": {
+      "type": "object",
+      "required": ["demonstrated_impact", "severity_method"],
+      "properties": {
+        "demonstrated_impact": { "type": "string" },
+        "severity": { "type": ["string", "null"], "enum": ["critical", "high", "medium", "low", "informational", null] },
+        "severity_method": { "type": "string", "description": "For example, the customer's agreed severity policy." }
+      },
+      "additionalProperties": true
+    },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "remediation": { "type": ["string", "null"] },
+    "retest": {
+      "type": ["object", "null"],
+      "properties": {
+        "date": { "type": ["string", "null"], "format": "date" },
+        "result": { "type": ["string", "null"] },
+        "conditions_changed": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "created_at": { "type": "string", "format": "date-time" }
+  }
+}
