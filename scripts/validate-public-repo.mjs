@@ -43,7 +43,7 @@ function collectMarkdownFiles(directory) {
 }
 
 const requiredFiles = [
-  "README.md", "index.html", "styles.css", "CLAIMS.md", "LICENSE", "CODEOWNERS",
+  "README.md", "index.html", "styles.css", "product/index.html", "CLAIMS.md", "LICENSE", "CODEOWNERS",
   "CHANGELOG.md", "SUPPORT.md", "BENCHMARK_G1.md", "SECURITY.md",
   "docs/README.md", "docs/SECURITY_MODEL.md", "docs/REPOSITORY_MAINTENANCE.md",
   ".well-known/security.txt",
@@ -58,6 +58,9 @@ const requiredFiles = [
 ];
 for (const relativePath of requiredFiles) {
   record(fs.existsSync(path.join(root, relativePath)), `Required file exists: ${relativePath}`);
+}
+for (const assetPath of ["assets/dashboard.png", "assets/findings.png", "assets/bola finding.png", "assets/live vision.png", "assets/elte red team report.png"]) {
+  record(fs.existsSync(path.join(root, assetPath)), "Product screenshot exists: " + assetPath);
 }
 
 const markdownFiles = collectMarkdownFiles(root);
@@ -195,3 +198,9 @@ if (failedChecks.length) {
   for (const failure of failures) console.error(`- ${failure}`);
   process.exitCode = 1;
 }
+
+const productHtml = read("product/index.html");
+record(productHtml.includes("<title>Product walkthrough | VulnGPT</title>"), "Product walkthrough title is present");
+record(productHtml.includes('href="https://vulngpt-showcase.vercel.app/product/"'), "Product walkthrough canonical URL is present");
+record(productHtml.includes('href="/assets/dashboard.png"') && productHtml.includes('href="/assets/findings.png"') && productHtml.includes('href="/assets/live%20vision.png"'), "Product walkthrough links to original interface captures");
+record(productHtml.includes("static screenshots, not a live product session") && productHtml.includes("disabled by effective export policy"), "Product walkthrough preserves screenshot-state and export-policy caveats");
