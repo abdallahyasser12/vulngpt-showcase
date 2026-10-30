@@ -75,15 +75,19 @@ Read the full [Evidence and Validation Standard](docs/EVIDENCE_AND_VALIDATION.md
 
 **Founders and application builders** who need security findings explained in terms of the application behavior they can understand and fix.
 
-## Public showcase
+## Product interface captures
 
-The images below are captures of the public NovaSecLabs website and private-beta entry point. They are not authenticated VulnGPT scanner-dashboard screenshots.
+The showcase includes genuine interface screenshots supplied for the public product walkthrough: the dashboard, findings queue, a BOLA finding detail, Live Vision, and Elite Red Team Reports.
 
-| NovaSecLabs product site | Private beta entry point |
+| Product area | Capture |
 | --- | --- |
-| ![NovaSecLabs public product website](assets/site-home.png) | ![VulnGPT private beta application page](assets/site-waitlist.png) |
+| Workspace dashboard | ![VulnGPT dashboard overview](assets/dashboard.png) |
+| Findings queue | ![VulnGPT findings list](assets/findings.png) |
+| Finding detail | ![BOLA finding detail](assets/bola%20finding.png) |
+| Live Vision | ![Recorded application activity map and investigation timeline](assets/live%20vision.png) |
+| Elite Red Team Reports | ![Elite Red Team Reports library](assets/elte%20red%20team%20report.png) |
 
-The product interface will be documented here when verified, shareable captures are available.
+See the [visual product walkthrough](https://vulngpt-showcase.vercel.app/product/) for full-size captures and context. These are static captures, not a live product session. Workspace labels, counts, statuses, and controls reflect the moment captured and must not be interpreted as live telemetry, customer outcomes, or guaranteed current availability. The report screenshot explicitly shows generation and download disabled by export policy.
 
 ## Documentation
 
