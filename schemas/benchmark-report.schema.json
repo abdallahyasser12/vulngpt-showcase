@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://vulngpt-showcase.vercel.app/schemas/benchmark-report.schema.json",
+  "title": "Public Evaluation Benchmark Record",
+  "description": "Optional customer-controlled interchange format. Not a VulnGPT benchmark result or internal product schema.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "benchmark_name", "benchmark_version", "ownership", "ground_truth", "run_environment", "scenario_counts", "outcomes", "independence", "limitations", "created_at"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "benchmark_name": { "type": "string", "minLength": 1 },
+    "benchmark_version": { "type": "string", "minLength": 1 },
+    "ownership": {
+      "type": "object",
+      "required": ["benchmark_owner", "system_owner", "execution_owner", "adjudication_owner"],
+      "properties": {
+        "benchmark_owner": { "type": "string" },
+        "system_owner": { "type": "string" },
+        "execution_owner": { "type": "string" },
+        "adjudication_owner": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "ground_truth": {
+      "type": "object",
+      "required": ["source", "version", "frozen_at", "positive_cases", "negative_cases"],
+      "properties": {
+        "source": { "type": "string" },
+        "version": { "type": "string" },
+        "frozen_at": { "type": "string", "format": "date-time" },
+        "positive_cases": { "type": "integer", "minimum": 0 },
+        "negative_cases": { "type": "integer", "minimum": 0 },
+        "adjudication_rules_ref": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "run_environment": {
+      "type": "object",
+      "required": ["environment", "configuration_ref"],
+      "properties": {
+        "environment": { "type": "string" },
+        "configuration_ref": { "type": "string" },
+        "system_version": { "type": ["string", "null"] },
+        "started_at": { "type": ["string", "null"], "format": "date-time" },
+        "completed_at": { "type": ["string", "null"], "format": "date-time" }
+      },
+      "additionalProperties": true
+    },
+    "scenario_counts": {
+      "type": "object",
+      "required": ["total", "executed_observable", "incomplete", "unobservable", "not_executed", "invalid_ground_truth", "excluded"],
+      "properties": {
+        "total": { "type": "integer", "minimum": 0 },
+        "executed_observable": { "type": "integer", "minimum": 0 },
+        "incomplete": { "type": "integer", "minimum": 0 },
+        "unobservable": { "type": "integer", "minimum": 0 },
+        "not_executed": { "type": "integer", "minimum": 0 },
+        "invalid_ground_truth": { "type": "integer", "minimum": 0 },
+        "excluded": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "outcomes": {
+      "type": "object",
+      "required": ["true_positive", "false_positive", "true_negative", "false_negative", "unscored"],
+      "properties": {
+        "true_positive": { "type": "integer", "minimum": 0 },
+        "false_positive": { "type": "integer", "minimum": 0 },
+        "true_negative": { "type": "integer", "minimum": 0 },
+        "false_negative": { "type": "integer", "minimum": 0 },
+        "unscored": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "independence": {
+      "type": "object",
+      "required": ["design_independence", "execution_independence", "adjudication_independence", "conflicts"],
+      "properties": {
+        "design_independence": { "type": "string", "enum": ["independent", "same_organization", "same_team", "not_disclosed"] },
+        "execution_independence": { "type": "string", "enum": ["independent", "same_organization", "same_team", "not_disclosed"] },
+        "adjudication_independence": { "type": "string", "enum": ["independent", "same_organization", "same_team", "not_disclosed"] },
+        "conflicts": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "publication_approval": {
+      "type": ["object", "null"],
+      "properties": {
+        "approved": { "type": "boolean" },
+        "reviewer": { "type": ["string", "null"] },
+        "approved_at": { "type": ["string", "null"], "format": "date-time" },
+        "evidence_bundle_ref": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "created_at": { "type": "string", "format": "date-time" }
+  }
+}

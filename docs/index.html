@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b12">
+  <meta name="description" content="Explore VulnGPT product documentation, contextual application security testing guidance, enterprise evaluation resources, and evidence standards.">
+  <link rel="canonical" href="https://vulngpt-showcase.vercel.app/docs/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="VulnGPT Documentation">
+  <meta property="og:description" content="Product, technical, AppSec practitioner, and enterprise evaluation resources from NovaSecLabs.">
+  <meta property="og:url" content="https://vulngpt-showcase.vercel.app/docs/">
+  <meta property="og:image" content="https://vulngpt-showcase.vercel.app/assets/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VulnGPT Documentation">
+  <meta name="twitter:description" content="Product, technical, AppSec practitioner, and enterprise evaluation resources from NovaSecLabs.">
+  <meta name="twitter:image" content="https://vulngpt-showcase.vercel.app/assets/social-preview.png">
+  <title>Documentation | VulnGPT</title>
+  <link rel="icon" href="/assets/mascot-confident.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/docs/docs.css">
+  <script defer src="/docs/docs.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "VulnGPT Documentation",
+    "url": "https://vulngpt-showcase.vercel.app/docs/",
+    "isPartOf": { "@type": "WebSite", "name": "VulnGPT", "url": "https://vulngpt-showcase.vercel.app/" },
+    "about": { "@type": "SoftwareApplication", "name": "VulnGPT", "applicationCategory": "SecurityApplication" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to documentation</a>
+  <header class="docs-header">
+    <a class="brand" href="/" aria-label="VulnGPT home">
+      <img src="/assets/mascot-confident.png" alt="" width="34" height="34">
+      <span>Vuln<span>GPT</span><small>DOCUMENTATION</small></span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="/">Product</a>
+      <a href="https://github.com/abdallahyasser12/vulngpt-showcase">GitHub repository</a>
+      <a class="header-cta" href="https://www.novaseclabs.com/waitlist">Private beta <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="docs-hero">
+      <div class="docs-shell">
+        <p class="eyebrow"><span></span> NOVASECLABS / KNOWLEDGE BASE</p>
+        <h1>Understand the system.<br><em>Interrogate the evidence.</em></h1>
+        <p class="hero-copy">Product context, technical principles, application-security practice, and enterprise evaluation resources for VulnGPT.</p>
+        <div class="hero-meta">
+          <span><b>01</b> Product & technical context</span>
+          <span><b>02</b> Practitioner resources</span>
+          <span><b>03</b> Enterprise evaluation</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="docs-shell library-section" aria-labelledby="library-title">
+      <div class="library-heading">
+        <div>
+          <p class="eyebrow">DOCUMENT LIBRARY</p>
+          <h2 id="library-title">Find what you need.</h2>
+          <p class="section-copy">Search by topic or narrow the library by audience.</p>
+        </div>
+        <p class="beta-note"><span></span> VulnGPT is in private beta. Documentation describes product direction and evaluation guidance; it does not guarantee current feature availability.</p>
+      </div>
+      <div class="library-controls">
+        <label class="search-box">
+          <span class="sr-only">Search documentation</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+          <input id="doc-search" type="search" placeholder="Search documentation, topics, or terms…" autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <div class="filter-list" role="group" aria-label="Filter documents by category">
+          <button class="filter-chip is-active" type="button" data-filter="all" aria-pressed="true">All documents</button>
+          <button class="filter-chip" type="button" data-filter="product" aria-pressed="false">Product</button>
+          <button class="filter-chip" type="button" data-filter="technical" aria-pressed="false">Technical</button>
+          <button class="filter-chip" type="button" data-filter="practitioner" aria-pressed="false">Practitioner</button>
+          <button class="filter-chip" type="button" data-filter="enterprise" aria-pressed="false">Enterprise</button>
+          <button class="filter-chip" type="button" data-filter="governance" aria-pressed="false">Governance</button>
+        </div>
+      </div>
+      <div class="results-row">
+        <p id="result-count" aria-live="polite">Showing all documents</p>
+        <button id="clear-search" class="clear-button" type="button" hidden>Clear search</button>
+      </div>
+
+      <div id="document-list" class="document-grid">
+        <a class="doc-card featured" data-category="product" data-search="product overview purpose positioning users problem private beta status capabilities" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/PRODUCT_OVERVIEW.md">
+          <span class="doc-kicker">START HERE <b>01</b></span><span class="doc-icon">01</span>
+          <h3>Product overview</h3><p>What VulnGPT is being built to investigate, who it serves, and where its boundaries are.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card featured" data-category="technical" data-search="technical approach context actors sessions roles objects invariants hypotheses validation" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/TECHNICAL_APPROACH.md">
+          <span class="doc-kicker">TECHNICAL FOUNDATION <b>02</b></span><span class="doc-icon">02</span>
+          <h3>Technical approach</h3><p>A conceptual model for investigating behavior across identity, authorization, and application state.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card featured" data-category="technical" data-search="system overview conceptual architecture trust boundary control plane execution evidence review diagram" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/SYSTEM_OVERVIEW.md">
+          <span class="doc-kicker">SYSTEM MODEL <b>03</b></span><span class="doc-icon">03</span>
+          <h3>System overview</h3><p>Public conceptual architecture, trust boundaries, and the separation between test context and evidence review.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="technical" data-search="evidence validation falsification adjudication reproducibility false positives controls" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/EVIDENCE_AND_VALIDATION.md">
+          <span class="doc-kicker">EVIDENCE STANDARD <b>04</b></span><span class="doc-icon">04</span>
+          <h3>Evidence and validation</h3><p>How to distinguish a suspicious signal from a supported, reviewable security conclusion.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="practitioner" data-search="security testing playbook object ownership role authorization workflow business logic session state" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/SECURITY_TESTING_PLAYBOOK.md">
+          <span class="doc-kicker">PRACTITIONER GUIDE <b>05</b></span><span class="doc-icon">05</span>
+          <h3>Security testing playbook</h3><p>Controlled patterns for object ownership, roles, multi-step workflows, sessions, and ambiguous results.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="practitioner" data-search="capability evaluation matrix scenario coverage positive negative evidence criteria ground truth" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/CAPABILITY_EVALUATION_MATRIX.md">
+          <span class="doc-kicker">EVALUATION TOOL <b>06</b></span><span class="doc-icon">06</span>
+          <h3>Capability evaluation matrix</h3><p>Scenario dimensions, required context, evidence expectations, and common false conclusions.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="practitioner" data-search="evaluation protocol pre registration ground truth positive negative ambiguous reproducible metrics" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/EVALUATION_PROTOCOL.md">
+          <span class="doc-kicker">REPRODUCIBLE METHOD <b>07</b></span><span class="doc-icon">07</span>
+          <h3>Evaluation protocol</h3><p>Define ground truth and outcomes before a run; separate execution, observability, correctness, and evidence quality.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="practitioner" data-search="use cases BOLA IDOR tenant isolation roles workflow session state transitions" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/USE_CASES.md">
+          <span class="doc-kicker">REFERENCE <b>08</b></span><span class="doc-icon">08</span>
+          <h3>Application security use cases</h3><p>Representative application behaviors that motivate contextual security testing.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="technical" data-search="glossary definitions BOLA IDOR actor invariant tenant isolation WAF" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/GLOSSARY.md">
+          <span class="doc-kicker">REFERENCE <b>09</b></span><span class="doc-icon">09</span>
+          <h3>Security glossary</h3><p>Shared definitions for application-security, evidence, authorization, and workflow terminology.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="enterprise" data-search="enterprise evaluation procurement security architecture identity data privacy assurance operations" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/ENTERPRISE_EVALUATION.md">
+          <span class="doc-kicker">BUYER GUIDE <b>10</b></span><span class="doc-icon">10</span>
+          <h3>Enterprise evaluation</h3><p>A structured diligence guide for security, architecture, procurement, privacy, and product stakeholders.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="enterprise" data-search="security privacy data processing retention encryption subprocessors assurance questions" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/SECURITY_AND_PRIVACY.md">
+          <span class="doc-kicker">TRUST CENTER <b>11</b></span><span class="doc-icon">11</span>
+          <h3>Security and privacy</h3><p>Public trust boundaries and the specific questions that require current vendor confirmation.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="enterprise" data-search="security model threat assets trust boundaries customer actor scope isolation threats" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/SECURITY_MODEL.md">
+          <span class="doc-kicker">TRUST MODEL <b>12</b></span><span class="doc-icon">12</span>
+          <h3>Security model</h3><p>Conceptual actors, data assets, trust boundaries, and threat scenarios for evaluation.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="enterprise" data-search="assessment plan template authorization scope targets identities data stop conditions" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/ASSESSMENT_PLAN_TEMPLATE.md">
+          <span class="doc-kicker">WORKSHEET <b>13</b></span><span class="doc-icon">13</span>
+          <h3>Assessment plan</h3><p>Define scope, identities, operational constraints, data handling, approvals, and success criteria.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="practitioner" data-search="finding report standard vulnerability evidence impact severity remediation retest" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/FINDING_REPORT_STANDARD.md">
+          <span class="doc-kicker">REPORTING STANDARD <b>14</b></span><span class="doc-icon">14</span>
+          <h3>Finding report standard</h3><p>Structure a finding around the expected boundary, evidence, impact, uncertainty, and retest.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="governance" data-search="benchmark governance score denominator numerator false positives false negatives adjudication" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/BENCHMARK_GOVERNANCE.md">
+          <span class="doc-kicker">PUBLICATION POLICY <b>15</b></span><span class="doc-icon">15</span>
+          <h3>Benchmark governance</h3><p>Reproducibility, denominator integrity, independent review, and benchmark publication gates.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="governance" data-search="claims messaging approved public product capabilities evidence certification compliance" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/CLAIMS.md">
+          <span class="doc-kicker">CLAIM CONTROL <b>16</b></span><span class="doc-icon">16</span>
+          <h3>Claims and messaging</h3><p>Approved product language and guardrails for performance, security, and assurance statements.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="governance" data-search="release process publication changelog pull request review rollback" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/RELEASE_PROCESS.md">
+          <span class="doc-kicker">MAINTAINERS <b>17</b></span><span class="doc-icon">17</span>
+          <h3>Release process</h3><p>Review, verification, publication, and correction procedures for the public showcase.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="governance" data-search="responsible testing authorization scope operational safeguards disclosure" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/RESPONSIBLE_TESTING.md">
+          <span class="doc-kicker">SAFE USE <b>18</b></span><span class="doc-icon">18</span>
+          <h3>Responsible testing</h3><p>Authorization, scope, data minimization, safe execution, and coordinated disclosure guidance.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="governance" data-search="repository maintenance validation scripts link checks content hygiene assets" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/REPOSITORY_MAINTENANCE.md">
+          <span class="doc-kicker">MAINTAINERS <b>19</b></span><span class="doc-icon">19</span>
+          <h3>Repository maintenance</h3><p>Local validation, asset hygiene, public-content review, and repository ownership.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="product" data-search="FAQ product status private beta access open source support coverage" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/FAQ.md">
+          <span class="doc-kicker">QUICK ANSWERS <b>20</b></span><span class="doc-icon">20</span>
+          <h3>Frequently asked questions</h3><p>Product status, access, intended use, supported claims, and common evaluation questions.</p><span class="doc-link">Read document <i>↗</i></span>
+        </a>
+        <a class="doc-card" data-category="governance" data-search="json schema structured finding report benchmark report data format interchange machine readable" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/schemas/README.md">
+          <span class="doc-kicker">MACHINE-READABLE RESOURCES <b>21</b></span><span class="doc-icon">21</span>
+          <h3>Public evaluation schemas</h3><p>Optional JSON formats for externally documenting findings and benchmark reports—not VulnGPT API contracts.</p><span class="doc-link">Read schemas <i>↗</i></span>
+        </a>
+      </div>
+      <div id="empty-state" class="empty-state" hidden>
+        <h3>No matching documents</h3><p>Try another phrase or clear the current filters.</p>
+        <button id="empty-reset" type="button">Show all documents</button>
+      </div>
+    </section>
+
+    <section class="docs-note">
+      <div class="docs-shell note-inner">
+        <div><p class="eyebrow">IMPORTANT CONTEXT</p><h2>Public documentation.<br><em>Bounded claims.</em></h2></div>
+        <p>VulnGPT is in private beta. These documents describe product direction, conceptual methods, and evaluation resources. They do not guarantee feature availability, security certification, benchmark performance, or contractual controls. Confirm the proposed use case and current terms with NovaSecLabs.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="docs-footer docs-shell">
+    <a class="brand" href="/"><img src="/assets/mascot-confident.png" alt="" width="30" height="30"><span>Vuln<span>GPT</span><small>BY NOVASECLABS</small></span></a>
+    <p>Security testing should produce evidence, not noise.</p>
+    <div><a href="/">Product</a><a href="https://github.com/abdallahyasser12/vulngpt-showcase">GitHub</a><a href="https://www.novaseclabs.com">NovaSecLabs</a></div>
+    <small>© <span id="year">2026</span> NovaSecLabs</small>
+  </footer>
+</body>
+</html>

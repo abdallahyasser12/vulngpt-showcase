@@ -46,7 +46,10 @@ const requiredFiles = [
   "README.md", "index.html", "styles.css", "CLAIMS.md", "LICENSE", "CODEOWNERS",
   "CHANGELOG.md", "SUPPORT.md", "BENCHMARK_G1.md", "SECURITY.md",
   "docs/README.md", "docs/SECURITY_MODEL.md", "docs/REPOSITORY_MAINTENANCE.md",
+  ".well-known/security.txt",
   "docs/SECURITY_TESTING_PLAYBOOK.md", "docs/CAPABILITY_EVALUATION_MATRIX.md",
+  "docs/index.html", "docs/docs.css", "docs/docs.js", "docs/SYSTEM_OVERVIEW.md", "docs/EVALUATION_PROTOCOL.md",
+  "schemas/README.md", "schemas/finding-record.schema.json", "schemas/benchmark-report.schema.json",
   "docs/ASSESSMENT_PLAN_TEMPLATE.md", "docs/FINDING_REPORT_STANDARD.md",
   "docs/BENCHMARK_GOVERNANCE.md", "docs/GLOSSARY.md", "docs/RELEASE_PROCESS.md",
   "templates/assessment-plan.md", "templates/finding-report.md",
@@ -127,6 +130,63 @@ for (const file of markdownFiles) {
   const text = fs.readFileSync(file, "utf8");
   record(!/\b(?:TODO|FIXME|Lorem ipsum)\b/i.test(text), `No unresolved drafting marker: ${path.relative(root, file)}`);
 }
+
+const docsHtml = read("docs/index.html");
+const docsIds = new Set([...docsHtml.matchAll(/\bid=["']([^"']+)["']/g)].map((match) => match[1]));
+let docsHtmlReferenceCount = 0;
+for (const match of docsHtml.matchAll(/\b(?:href|src)=["']([^"']+)["']/g)) {
+  const target = match[1].trim();
+  if (/^(?:https?:|mailto:|tel:|data:|javascript:|\/\/)/i.test(target)) continue;
+  if (target.startsWith("#")) {
+    record(docsIds.has(target.slice(1)), "Documentation HTML fragment exists: " + target);
+  } else {
+    const resolved = resolveLocalPath("docs/index.html", target);
+    record(isInsideRoot(resolved) && fs.existsSync(resolved), "Documentation local asset resolves: " + target);
+  }
+  docsHtmlReferenceCount += 1;
+}
+record(docsHtmlReferenceCount > 0, "Documentation portal local references were inspected");
+record(/<link rel="canonical" href="https:\/\//i.test(docsHtml), "Documentation portal canonical URL is present");
+record(docsHtml.includes('class="skip-link" href="#main"'), "Documentation portal skip link is present");
+record(docsHtml.includes('id="doc-search"') && docsHtml.includes('data-filter="all"'), "Documentation portal search and filters are present");
+
+record(docsHtml.split('class="doc-card"').length - 1 >= 20, "Documentation portal includes a useful searchable document catalogue");
+record(docsHtml.includes('name="twitter:title"') && docsHtml.includes('name="twitter:image"'), "Documentation portal social metadata is present");
+
+const docsCss = read("docs/docs.css");
+const docsJs = read("docs/docs.js");
+record(docsCss.includes(":focus-visible") && docsCss.includes("prefers-reduced-motion:reduce"), "Documentation portal focus and reduced-motion styles are present");
+record(docsJs.includes("applyFilters") && docsJs.includes("aria-pressed"), "Documentation search and filter behavior is wired");
+
+const docsStructuredData = docsHtml.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/i);
+let docsStructuredDataValid = false;
+if (docsStructuredData) {
+  try {
+    const parsed = JSON.parse(docsStructuredData[1]);
+    docsStructuredDataValid = parsed["@type"] === "CollectionPage" && parsed.name === "VulnGPT Documentation";
+  } catch (error) {
+    failures.push("Documentation structured data is valid JSON: " + error.message);
+  }
+}
+record(docsStructuredDataValid, "Documentation structured data identifies the documentation collection");
+
+for (const schemaPath of ["schemas/finding-record.schema.json", "schemas/benchmark-report.schema.json"]) {
+  try {
+    const schema = JSON.parse(read(schemaPath));
+    record(schema.$schema === "https://json-schema.org/draft/2020-12/schema", "JSON Schema draft is declared: " + schemaPath);
+    record(schema.type === "object" && Array.isArray(schema.required) && schema.required.length > 0, "JSON Schema contract and required fields exist: " + schemaPath);
+    record(typeof schema.title === "string" && schema.title.length > 0, "JSON Schema title exists: " + schemaPath);
+  } catch (error) {
+    failures.push("JSON Schema parses: " + schemaPath + " — " + error.message);
+  }
+}
+
+const securityTxt = read(".well-known/security.txt");
+const securityExpiryLine = securityTxt.split("\n").find((line) => line.startsWith("Expires:"));
+const securityExpiry = securityExpiryLine ? Date.parse(securityExpiryLine.slice("Expires:".length).trim()) : Number.NaN;
+record(securityTxt.includes("Contact: mailto:hello@novaseclabs.com"), "security.txt has a public security contact");
+record(securityTxt.includes("Policy: https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/SECURITY.md"), "security.txt points to the authoritative policy");
+record(Number.isFinite(securityExpiry) && securityExpiry > Date.now(), "security.txt expiry is in the future");
 
 const failedChecks = checks.filter((check) => !check.passed);
 console.log(`VulnGPT public repository validation: ${failedChecks.length ? "FAILED" : "PASSED"}`);

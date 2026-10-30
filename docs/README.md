@@ -1,5 +1,7 @@
 # VulnGPT documentation
 
+Browse the [searchable public documentation library](https://vulngpt-showcase.vercel.app/docs/) or read the Markdown source in this directory.
+
 This documentation describes the public product direction, conceptual testing approach, evidence principles, and enterprise evaluation topics for VulnGPT.
 
 VulnGPT is a NovaSecLabs product in private beta. These documents are public product and evaluation material—not a representation that every described capability is generally available, independently audited, or contractually committed.
@@ -18,7 +20,9 @@ VulnGPT is a NovaSecLabs product in private beta. These documents are public pro
 
 - [Product Overview](PRODUCT_OVERVIEW.md) — purpose, users, problem, product boundaries, and current status.
 - [Technical Approach](TECHNICAL_APPROACH.md) — a public-safe conceptual view of contextual application testing.
+- [System Overview](SYSTEM_OVERVIEW.md) — conceptual investigation flow and trust boundaries, not deployed architecture.
 - [Evidence and Validation](EVIDENCE_AND_VALIDATION.md) — how a suspected issue should be investigated, challenged, confirmed, and retested.
+- [Controlled Evaluation Protocol](EVALUATION_PROTOCOL.md) — pre-registered scenarios, independent ground truth, outcome classification, and scoring rules.
 - [Enterprise Evaluation](ENTERPRISE_EVALUATION.md) — a structured diligence checklist for security, IT, procurement, and product stakeholders.
 - [Security and Privacy](SECURITY_AND_PRIVACY.md) — public statements, information boundaries, and questions that require direct vendor confirmation.
 - [Security Model](SECURITY_MODEL.md) — conceptual trust boundaries, data assets, threat scenarios, and assurance limits.
@@ -36,6 +40,7 @@ VulnGPT is a NovaSecLabs product in private beta. These documents are public pro
 - [Benchmark Governance](BENCHMARK_GOVERNANCE.md) — scoring integrity, reproducibility, and publication approval gates.
 - [Glossary](GLOSSARY.md) — shared application-security terminology.
 - [Release Process](RELEASE_PROCESS.md) — review and publication process for this public repository.
+- [Public Evaluation Schemas](../schemas/README.md) — optional interchange schemas for finding and benchmark records; not product APIs.
 - [Reusable templates](../templates/README.md) — blank assessment-plan and finding-report files.
 
 ## Reading these documents accurately
