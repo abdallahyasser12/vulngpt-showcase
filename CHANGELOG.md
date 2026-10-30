@@ -11,6 +11,8 @@ The format follows the principles of Keep a Changelog. Dates and version identif
 ### Added
 - Structured public documentation for product overview, technical approach, evidence validation, enterprise evaluation, security and privacy, use cases, responsible testing, and FAQ.
 - A public conceptual security model with explicit trust boundaries and control-verification questions.
+- A contextual application-security playbook, scenario evaluation matrix, and assessment/finding templates.
+- Benchmark publication governance, a shared security glossary, and a public repository release process.
 - Repository maintenance guidance and a dependency-free local content validator.
 - Support guidance, issue forms, code ownership metadata, and asset provenance notes.
 
@@ -18,6 +20,7 @@ The format follows the principles of Keep a Changelog. Dates and version identif
 - Reworked the README into a product and documentation entry point.
 - Reframed benchmark publication status so unreconciled historical figures are not repeated as current marketing claims.
 - Improved website metadata, structured data, keyboard navigation, and documentation discovery.
+- Expanded practitioner documentation while explicitly separating evaluation guidance from a product support or coverage guarantee.
 
 ### Clarified
 - The public repository is a showcase and documentation package, not the proprietary scanning engine.

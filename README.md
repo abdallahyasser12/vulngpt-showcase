@@ -96,6 +96,13 @@ The product interface will be documented here when verified, shareable captures 
 | [Security and Privacy](docs/SECURITY_AND_PRIVACY.md) | Public security posture, data-handling questions, and evaluation boundaries |
 | [Security Model](docs/SECURITY_MODEL.md) | Public trust boundaries, assets, threat scenarios, and assurance limits |
 | [Use Cases](docs/USE_CASES.md) | Representative application-security scenarios |
+| [Security Testing Playbook](docs/SECURITY_TESTING_PLAYBOOK.md) | Practical, controlled test-design patterns for authorized assessments |
+| [Capability Evaluation Matrix](docs/CAPABILITY_EVALUATION_MATRIX.md) | Scenario selection and evidence criteria; not a support guarantee |
+| [Assessment Plan Template](docs/ASSESSMENT_PLAN_TEMPLATE.md) | Engagement scope, identities, constraints, and approvals worksheet |
+| [Finding Report Standard](docs/FINDING_REPORT_STANDARD.md) | Evidence-led security finding structure and reporting rules |
+| [Benchmark Governance](docs/BENCHMARK_GOVERNANCE.md) | Reproducibility, scoring integrity, and publication approval gates |
+| [Glossary](docs/GLOSSARY.md) | Shared application-security terminology |
+| [Release Process](docs/RELEASE_PROCESS.md) | Review and publication process for this public repository |
 | [FAQ](docs/FAQ.md) | Product, access, scope, and publication questions |
 | [Claims and Messaging](CLAIMS.md) | Approved public language and claims that must not be made |
 | [Benchmark publication status](BENCHMARK_G1.md) | Current status of public benchmark publication |
@@ -126,7 +133,7 @@ See [Repository Maintenance](docs/REPOSITORY_MAINTENANCE.md), the [Changelog](CH
 
 VulnGPT is intended only for applications and infrastructure that the operator owns or is explicitly authorized to test. Define the permitted scope, use approved test identities, and avoid destructive actions or production data unless the system owner has explicitly approved them.
 
-See [Responsible Testing](docs/RESPONSIBLE_TESTING.md) for practical guidance.
+See [Responsible Testing](docs/RESPONSIBLE_TESTING.md) and the [Security Testing Playbook](docs/SECURITY_TESTING_PLAYBOOK.md) for practical guidance. Reusable worksheets are available in [templates/](templates/).
 
 ---
 

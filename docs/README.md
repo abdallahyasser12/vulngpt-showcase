@@ -27,6 +27,17 @@ VulnGPT is a NovaSecLabs product in private beta. These documents are public pro
 - [Responsible Testing](RESPONSIBLE_TESTING.md) — authorization, scope, test data, and operational safeguards.
 - [FAQ](FAQ.md) — common questions about the repository and product.
 
+## Practitioner and evaluation resources
+
+- [Security Testing Playbook](SECURITY_TESTING_PLAYBOOK.md) — practical, controlled test-design patterns for authorized assessments.
+- [Capability Evaluation Matrix](CAPABILITY_EVALUATION_MATRIX.md) — scenario dimensions, required context, evidence criteria, and interpretation boundaries; not a support guarantee.
+- [Assessment Plan Template](ASSESSMENT_PLAN_TEMPLATE.md) — reusable scope, identity, operational-constraint, and approval worksheet.
+- [Finding Report Standard](FINDING_REPORT_STANDARD.md) — an evidence-led structure for findings, impact, remediation, and retesting.
+- [Benchmark Governance](BENCHMARK_GOVERNANCE.md) — scoring integrity, reproducibility, and publication approval gates.
+- [Glossary](GLOSSARY.md) — shared application-security terminology.
+- [Release Process](RELEASE_PROCESS.md) — review and publication process for this public repository.
+- [Reusable templates](../templates/README.md) — blank assessment-plan and finding-report files.
+
 ## Reading these documents accurately
 
 We distinguish between:
