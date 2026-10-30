@@ -23,3 +23,16 @@
 @media (prefers-reduced-motion: reduce) {
   .skip-link { transition: none; }
 }
+
+/* Product evidence gallery */
+.screenshot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.screenshot-card{min-width:0}
+.screenshot-card-wide{grid-column:1/-1}
+.screenshot-frame{display:block}
+.screenshot-frame img{max-height:560px;object-fit:contain;object-position:top;background:#080a10}
+.screenshot-card figcaption{gap:12px}
+.caption-index{white-space:nowrap}
+.screenshot-note{max-width:900px;line-height:1.8}
+.screenshot-tour-link{margin-top:14px}
+.screenshot-tour-link .text-link{font-size:11px}
+@media(max-width:680px){.screenshot-card-wide{grid-column:auto}.screenshot-frame img{max-height:none}}
