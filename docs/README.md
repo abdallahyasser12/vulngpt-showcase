@@ -21,6 +21,8 @@ VulnGPT is a NovaSecLabs product in private beta. These documents are public pro
 - [Evidence and Validation](EVIDENCE_AND_VALIDATION.md) — how a suspected issue should be investigated, challenged, confirmed, and retested.
 - [Enterprise Evaluation](ENTERPRISE_EVALUATION.md) — a structured diligence checklist for security, IT, procurement, and product stakeholders.
 - [Security and Privacy](SECURITY_AND_PRIVACY.md) — public statements, information boundaries, and questions that require direct vendor confirmation.
+- [Security Model](SECURITY_MODEL.md) — conceptual trust boundaries, data assets, threat scenarios, and assurance limits.
+- [Repository Maintenance](REPOSITORY_MAINTENANCE.md) — validation command, content review, asset, and release hygiene.
 - [Use Cases](USE_CASES.md) — representative scenarios involving authorization, roles, workflows, and application state.
 - [Responsible Testing](RESPONSIBLE_TESTING.md) — authorization, scope, test data, and operational safeguards.
 - [FAQ](FAQ.md) — common questions about the repository and product.

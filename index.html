@@ -6,14 +6,30 @@
   <meta name="theme-color" content="#090b12">
   <meta name="color-scheme" content="dark">
   <title>VulnGPT — Find the flaws scanners miss</title>
-  <meta name="description" content="VulnGPT is evidence-oriented AI-assisted web application security testing, being developed to investigate authenticated state, authorization boundaries, and business logic.">
+  <meta name="description" content="VulnGPT is AI-assisted web application security testing focused on authenticated state, authorization boundaries, and business logic.">
+  <link rel="canonical" href="https://vulngpt-showcase.vercel.app/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="VulnGPT — Security testing beyond payloads">
   <meta property="og:description" content="Investigate application behavior across identities, permissions, state, and workflows. Validate the evidence before drawing conclusions.">
   <meta property="og:image" content="/assets/social-preview.png">
+  <meta property="og:image:alt" content="VulnGPT evidence-first application security testing showcase">
+  <meta property="og:site_name" content="VulnGPT">
   <meta property="og:url" content="https://vulngpt-showcase.vercel.app/">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VulnGPT — Security testing beyond payloads">
+  <meta name="twitter:description" content="Investigate application behavior across identities, permissions, state, and workflows. Validate the evidence before drawing conclusions.">
+  <meta name="twitter:image" content="/assets/social-preview.png">
   <link rel="icon" href="/assets/mascot-confident.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "@id": "https://www.novaseclabs.com/#organization", "name": "NovaSecLabs", "url": "https://www.novaseclabs.com" },
+      { "@type": "WebSite", "@id": "https://vulngpt-showcase.vercel.app/#website", "url": "https://vulngpt-showcase.vercel.app/", "name": "VulnGPT", "publisher": { "@id": "https://www.novaseclabs.com/#organization" } },
+      { "@type": "SoftwareApplication", "@id": "https://vulngpt-showcase.vercel.app/#software", "name": "VulnGPT", "applicationCategory": "SecurityApplication", "operatingSystem": "Web", "description": "AI-assisted web application security testing by NovaSecLabs, currently in private beta and focused on contextual investigation of authorization, authenticated workflows, application state, and business logic.", "creator": { "@id": "https://www.novaseclabs.com/#organization" }, "url": "https://vulngpt-showcase.vercel.app/" }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,6 +37,7 @@
   <script defer src="/script.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#top">Skip to main content</a>
   <div class="ambient ambient-one" aria-hidden="true"></div>
   <div class="ambient ambient-two" aria-hidden="true"></div>
   <header class="site-header">
@@ -34,6 +51,7 @@
       <a href="#capabilities">Capabilities</a>
       <a href="#workflow">How it works</a>
       <a href="#evidence">Evidence</a>
+      <a href="https://github.com/abdallahyasser12/vulngpt-showcase/tree/main/docs">Documentation</a>
       <a class="nav-cta" href="https://www.novaseclabs.com/waitlist">Request private beta <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
@@ -150,7 +168,7 @@
   <footer class="site-footer shell">
     <a class="brand footer-brand" href="#top"><img src="/assets/mascot-confident.png" alt="" width="30" height="30"><span>Vuln<span class="brand-accent">GPT</span><small>BY NOVASECLABS</small></span></a>
     <p>Security testing should produce evidence, not noise.</p>
-    <div class="footer-links"><a href="https://www.novaseclabs.com">Website</a><a href="https://www.novaseclabs.com/waitlist">Private beta</a><a href="https://github.com/abdallahyasser12/vulngpt-showcase">GitHub</a></div>
+    <div class="footer-links"><a href="https://www.novaseclabs.com">Website</a><a href="https://www.novaseclabs.com/waitlist">Private beta</a><a href="https://github.com/abdallahyasser12/vulngpt-showcase/tree/main/docs">Documentation</a><a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/SECURITY.md">Security</a><a href="https://github.com/abdallahyasser12/vulngpt-showcase">GitHub</a></div>
     <small class="copyright">© <span id="year">2026</span> NovaSecLabs. All rights reserved.</small>
   </footer>
 </body>

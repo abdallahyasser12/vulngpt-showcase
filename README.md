@@ -94,12 +94,15 @@ The product interface will be documented here when verified, shareable captures 
 | [Evidence and Validation](docs/EVIDENCE_AND_VALIDATION.md) | Evidence quality, controlled testing, confirmation, and retesting |
 | [Enterprise Evaluation](docs/ENTERPRISE_EVALUATION.md) | Buyer diligence checklist and security questionnaire |
 | [Security and Privacy](docs/SECURITY_AND_PRIVACY.md) | Public security posture, data-handling questions, and evaluation boundaries |
+| [Security Model](docs/SECURITY_MODEL.md) | Public trust boundaries, assets, threat scenarios, and assurance limits |
 | [Use Cases](docs/USE_CASES.md) | Representative application-security scenarios |
 | [FAQ](docs/FAQ.md) | Product, access, scope, and publication questions |
 | [Claims and Messaging](CLAIMS.md) | Approved public language and claims that must not be made |
 | [Benchmark publication status](BENCHMARK_G1.md) | Current status of public benchmark publication |
 | [Security Policy](SECURITY.md) | Private vulnerability-reporting instructions |
 | [Contribution Guide](CONTRIBUTING.md) | Scope and standards for changes to this public repository |
+| [Support](SUPPORT.md) | Where to ask product questions and report showcase issues |
+| [Changelog](CHANGELOG.md) | Public repository and documentation change history |
 
 ## Product status
 
@@ -108,6 +111,16 @@ VulnGPT is in **private beta**. Access is currently handled through the [NovaSec
 This repository is the public showcase website and its supporting documentation. It is not the VulnGPT scanning engine, production backend, deployment configuration, or a complete source release. Proprietary implementation details, credentials, private customer material, and operational infrastructure are intentionally excluded.
 
 No public claim is made here that VulnGPT is independently certified, SOC 2 attested, ISO 27001 certified, or independently benchmark-audited. See [Security and Privacy](docs/SECURITY_AND_PRIVACY.md) for the appropriate enterprise evaluation questions.
+
+## Repository maintenance
+
+This repository uses a dependency-free local quality check for relative links, required metadata, accessibility entry points, and publication guardrails. Run it before submitting a documentation or website change:
+
+```bash
+node scripts/validate-public-repo.mjs
+```
+
+See [Repository Maintenance](docs/REPOSITORY_MAINTENANCE.md), the [Changelog](CHANGELOG.md), and [Support](SUPPORT.md).
 
 ## Responsible use
 
