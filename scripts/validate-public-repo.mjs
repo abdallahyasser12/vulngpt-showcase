@@ -191,6 +191,13 @@ record(securityTxt.includes("Contact: mailto:hello@novaseclabs.com"), "security.
 record(securityTxt.includes("Policy: https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/SECURITY.md"), "security.txt points to the authoritative policy");
 record(Number.isFinite(securityExpiry) && securityExpiry > Date.now(), "security.txt expiry is in the future");
 
+
+const productHtml = read("product/index.html");
+record(productHtml.includes("<title>Product walkthrough | VulnGPT</title>"), "Product walkthrough title is present");
+record(productHtml.includes('href="https://vulngpt-showcase.vercel.app/product/"'), "Product walkthrough canonical URL is present");
+record(productHtml.includes('href="/assets/dashboard.png"') && productHtml.includes('href="/assets/findings.png"') && productHtml.includes('href="/assets/live%20vision.png"'), "Product walkthrough links to original interface captures");
+record(productHtml.includes("static screenshots, not a live product session") && productHtml.includes("disabled by effective export policy"), "Product walkthrough preserves screenshot-state and export-policy caveats");
+
 const failedChecks = checks.filter((check) => !check.passed);
 console.log(`VulnGPT public repository validation: ${failedChecks.length ? "FAILED" : "PASSED"}`);
 console.log(`${checks.length - failedChecks.length}/${checks.length} checks passed; ${markdownFiles.length} Markdown files inspected.`);
@@ -198,9 +205,3 @@ if (failedChecks.length) {
   for (const failure of failures) console.error(`- ${failure}`);
   process.exitCode = 1;
 }
-
-const productHtml = read("product/index.html");
-record(productHtml.includes("<title>Product walkthrough | VulnGPT</title>"), "Product walkthrough title is present");
-record(productHtml.includes('href="https://vulngpt-showcase.vercel.app/product/"'), "Product walkthrough canonical URL is present");
-record(productHtml.includes('href="/assets/dashboard.png"') && productHtml.includes('href="/assets/findings.png"') && productHtml.includes('href="/assets/live%20vision.png"'), "Product walkthrough links to original interface captures");
-record(productHtml.includes("static screenshots, not a live product session") && productHtml.includes("disabled by effective export policy"), "Product walkthrough preserves screenshot-state and export-policy caveats");
