@@ -2,18 +2,41 @@
 
 ## Authorized use only
 
-VulnGPT is intended for systems you own or are explicitly authorized to test. Product-side target authorization, organization/project access, runtime policy, and engine execution gates are part of the security boundary; UI visibility is never authorization. Do not use VulnGPT, or anything in this repository, to test systems you do not own or do not have explicit written authorization to test.
+VulnGPT is intended for applications and infrastructure that the operator owns or is explicitly authorized to test. Public reachability is not permission. The operator is responsible for obtaining authorization and respecting the written scope, test window, and operational restrictions.
+
+Product-side target authorization, organization/project access, runtime policy, and execution controls are part of the intended security boundary. UI visibility alone must never be treated as authorization.
 
 ## Reporting a vulnerability
 
-If you find a security issue in VulnGPT itself, or in NovaSecLabs' public-facing infrastructure, email **hello@novaseclabs.com** with:
+If you discover a security issue affecting VulnGPT or NovaSecLabs public infrastructure, report it privately to:
 
-- a clear description of the issue and its impact;
-- steps to reproduce;
-- any relevant evidence (requests/responses, screenshots) with secrets redacted.
+**hello@novaseclabs.com**
 
-Please do not open a public GitHub issue for a security report. We'll acknowledge receipt and follow up as we assess and address it.
+Please include, where safe:
 
-## Scope
+- a concise description and potential impact;
+- affected product or public service;
+- steps to reproduce in an authorized environment;
+- timestamps and relevant request/response evidence;
+- the minimum information needed to reproduce the issue.
 
-This repository is a public-safe showcase package — it does not contain the proprietary scanning engine, production deployment internals, or customer data. Reports about the private beta product should still go through the email above rather than this repository's issue tracker.
+Redact passwords, API keys, bearer tokens, session cookies, personal data, and unrelated customer information. Do not attach a weaponized proof of concept when a minimal reproduction is sufficient.
+
+## Coordinated disclosure
+
+- Do not publish exploit details or sensitive evidence before coordinating with NovaSecLabs.
+- Do not access, modify, or retain third-party data beyond what is strictly necessary and authorized.
+- Stop testing if you encounter data belonging to another customer or an unexpected service impact.
+- NovaSecLabs will assess reports and coordinate any disclosure as appropriate.
+
+No public response-time or bounty commitment is stated in this policy. Do not assume an SLA or reward unless separately agreed in writing.
+
+## Repository scope
+
+This public repository contains the showcase website and supporting public documentation. It does not contain the proprietary scanning engine, production backend, deployment secrets, or customer data.
+
+For non-security questions or product access, use the [NovaSecLabs website](https://www.novaseclabs.com) or [private-beta application](https://www.novaseclabs.com/waitlist).
+
+## Scope exclusions
+
+Do not use this policy as authorization to test unrelated systems. Reports involving third-party applications should be sent to their respective owners under their published disclosure policies.

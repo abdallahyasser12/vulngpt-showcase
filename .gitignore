@@ -1,0 +1,21 @@
+# Local tooling and editor state
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+.vscode/
+.idea/
+
+# Local environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Build and test output
+node_modules/
+dist/
+coverage/
+
+# Vercel local project state
+.vercel/

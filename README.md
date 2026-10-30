@@ -1,48 +1,135 @@
-# VulnGPT — Public Showcase
+# VulnGPT
 
-![VulnGPT — evidence-first AI-assisted web application security testing](assets/social-preview.png)
+![VulnGPT — evidence-first application security testing](assets/social-preview.png)
 
-> Evidence-first AI-assisted web application security testing by **NovaSecLabs**.
+**AI-assisted web application security testing focused on behavior, authorization, and evidence.**
 
-VulnGPT is being built to go beyond surface-level payload scanning by reasoning across authenticated state, users and roles, authorization boundaries, object ownership, multi-step workflows, business logic, interference, and reproducible validation.
+VulnGPT is a NovaSecLabs product in private beta. It is being developed to help security practitioners and application builders investigate weaknesses that emerge from the relationships between identities, permissions, objects, sessions, and multi-step business workflows.
 
-This is the public-safe showcase for VulnGPT. It intentionally excludes proprietary engine code, secrets, deployment internals, private customer data, and benchmark implementation details that would compromise measurement integrity — the engine itself stays in a private repository.
+A suspicious response is a lead to investigate—not proof of a vulnerability.
 
-## What makes VulnGPT different
+<p align="left">
+  <a href="https://www.novaseclabs.com/waitlist"><strong>Request private beta access ↗</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://www.novaseclabs.com">NovaSecLabs</a>
+  &nbsp;·&nbsp;
+  <a href="docs/README.md">Documentation</a>
+</p>
 
-### Evidence before alert volume
-A suspicious response is a hypothesis, not automatically a vulnerability. VulnGPT is engineered to keep discovery, hypothesis generation, validation, and confirmation distinct so unsupported signals do not become customer findings.
+---
 
-### Stateful authenticated testing
-The engine is designed around session continuity, actor identity, role context, object ownership, and application state rather than treating every request as an isolated payload opportunity.
+## Product overview
 
-### Authorization and business logic
-Key engineering areas include BOLA/IDOR-style authorization boundaries, multi-role behavior, business-logic workflows, state transitions, and other classes where simple pattern matching is insufficient.
+Traditional automated testing is often strongest when a weakness can be expressed as a recognizable input and response. Important application-security failures can be harder to isolate: the behavior may depend on who is acting, which session is active, who owns an object, what happened earlier in a workflow, or which state transition the application permits.
 
-### Interference-aware validation
-WAF behavior, throttling, session expiry, changing application state, and other sources of ambiguity are treated as evidence-quality problems rather than automatically as proof of vulnerability.
+VulnGPT is being developed around that harder problem: testing application behavior in context and requiring a defensible basis before a suspected issue is treated as a finding.
 
-### Reproducible findings and retesting
-The product direction is discovery → hypothesis → controlled validation → evidence → finding → retest, with the goal of reducing the amount of manual false-positive triage imposed on security teams.
+### What the product is designed to investigate
 
-## Benchmark publication status
+| Investigation area | Security question |
+| --- | --- |
+| Authorization boundaries | Can one actor access or modify an object outside their permissions or ownership? |
+| Authenticated workflows | Does behavior change correctly across sessions, identities, and sequential actions? |
+| Multi-role applications | Are role boundaries consistently enforced across endpoints and workflow transitions? |
+| Business logic | Can a user violate an application rule by combining otherwise valid actions? |
+| Stateful behavior | Does the application preserve its security invariants as records and workflow states change? |
+| Interference and ambiguity | Could throttling, WAF behavior, session expiry, or changing state explain an observed signal? |
 
-The internal G1 v1.5 freeze certificate records a raw matrix of **39 / 51** and a false-positive sum of **0** under its documented controlled conditions. The same certificate records an adjudicated **41 / 42** score and **0 valid-in-scope misses**, but the public explanation currently contains an arithmetic inconsistency: it describes 39 exact-category passes plus 3 wrong-taxonomy credits (42 total) while reporting 41 / 42.
+These are product focus areas, not a guarantee that every vulnerability class or application workflow is currently supported. VulnGPT is in private beta; scope and availability should be confirmed during evaluation.
 
-We are preserving the historical record and reconciling the public score explanation against the frozen row-level scoring evidence. Until that reconciliation is complete, **do not use the 41 / 42 or zero-miss figures as public performance claims**. These are internal, self-run benchmark materials, not third-party audited results.
+## The validation approach
 
-See [BENCHMARK_G1.md](BENCHMARK_G1.md) for the publication caveat and methodology context.
+The product is designed around a disciplined progression from an observation to a result that a human can inspect.
 
-## Assets
+```mermaid
+flowchart LR
+    A["Authorized scope"] --> B["Build context"]
+    B --> C["Form a testable hypothesis"]
+    C --> D["Run a controlled test"]
+    D --> E["Evaluate observable evidence"]
+    E --> F["Document and retest"]
+```
 
-`assets/` holds the real files behind this README's header image and the brand mascot: `social-preview.png` (the banner above), `mascot-confident.png` (transparent cutout, background-removed and AI-upscaled from the reference sheet — not redrawn), `mascot-reference-sheet.jpg` (the full source sheet), and real captures of the live site (`site-home.png`, `site-waitlist.png`).
+1. **Establish context.** Identify relevant actors, sessions, objects, roles, preconditions, and application state.
+2. **State the invariant.** Define the security rule the application is expected to enforce.
+3. **Form a hypothesis.** Describe a specific way that rule might be violated.
+4. **Test the boundary.** Use controlled, authorized actions to distinguish a genuine weakness from an alternative explanation.
+5. **Evaluate evidence.** Examine the observed behavior, relevant controls, reproducibility, and impact.
+6. **Preserve the result.** Keep the reasoning and evidence clear enough for review and retesting.
 
-## Links
+Read the full [Evidence and Validation Standard](docs/EVIDENCE_AND_VALIDATION.md) and [Technical Approach](docs/TECHNICAL_APPROACH.md).
 
-- Showcase: https://vulngpt-showcase.vercel.app/
-- Website: https://www.novaseclabs.com
-- Private beta: https://www.novaseclabs.com/waitlist
+## Product principles
 
-## Authorized use only
+- **Evidence before conclusions.** A signal should not become a security finding merely because a response looks unusual.
+- **Context matters.** Identity, permissions, ownership, session continuity, and workflow state can change the meaning of a request.
+- **Falsification matters.** A credible validation process should test alternative explanations, not only seek confirmation.
+- **Reproducibility matters.** Results should describe the conditions and behavior needed for a reviewer to check them.
+- **Human judgment remains essential.** Automated analysis supports security work; it does not remove the need for authorization, review, or professional judgment.
 
-VulnGPT is intended for systems the operator owns or is explicitly authorized to test. Public marketing must never encourage testing unrelated third-party systems without permission.
+## Who it is for
+
+**Application security practitioners and penetration testers** investigating authorization, state, and business-logic weaknesses.
+
+**Product security and engineering teams** seeking a clearer way to reason about application behavior across users, roles, and workflows.
+
+**Founders and application builders** who need security findings explained in terms of the application behavior they can understand and fix.
+
+## Public showcase
+
+The images below are captures of the public NovaSecLabs website and private-beta entry point. They are not authenticated VulnGPT scanner-dashboard screenshots.
+
+| NovaSecLabs product site | Private beta entry point |
+| --- | --- |
+| ![NovaSecLabs public product website](assets/site-home.png) | ![VulnGPT private beta application page](assets/site-waitlist.png) |
+
+The product interface will be documented here when verified, shareable captures are available.
+
+## Documentation
+
+| Document | What it covers |
+| --- | --- |
+| [Product Overview](docs/PRODUCT_OVERVIEW.md) | Product purpose, intended users, problem definition, and boundaries |
+| [Technical Approach](docs/TECHNICAL_APPROACH.md) | Contextual testing model and conceptual workflow |
+| [Evidence and Validation](docs/EVIDENCE_AND_VALIDATION.md) | Evidence quality, controlled testing, confirmation, and retesting |
+| [Enterprise Evaluation](docs/ENTERPRISE_EVALUATION.md) | Buyer diligence checklist and security questionnaire |
+| [Security and Privacy](docs/SECURITY_AND_PRIVACY.md) | Public security posture, data-handling questions, and evaluation boundaries |
+| [Security Model](docs/SECURITY_MODEL.md) | Public trust boundaries, assets, threat scenarios, and assurance limits |
+| [Use Cases](docs/USE_CASES.md) | Representative application-security scenarios |
+| [FAQ](docs/FAQ.md) | Product, access, scope, and publication questions |
+| [Claims and Messaging](CLAIMS.md) | Approved public language and claims that must not be made |
+| [Benchmark publication status](BENCHMARK_G1.md) | Current status of public benchmark publication |
+| [Security Policy](SECURITY.md) | Private vulnerability-reporting instructions |
+| [Contribution Guide](CONTRIBUTING.md) | Scope and standards for changes to this public repository |
+| [Support](SUPPORT.md) | Where to ask product questions and report showcase issues |
+| [Changelog](CHANGELOG.md) | Public repository and documentation change history |
+
+## Product status
+
+VulnGPT is in **private beta**. Access is currently handled through the [NovaSecLabs private-beta application](https://www.novaseclabs.com/waitlist).
+
+This repository is the public showcase website and its supporting documentation. It is not the VulnGPT scanning engine, production backend, deployment configuration, or a complete source release. Proprietary implementation details, credentials, private customer material, and operational infrastructure are intentionally excluded.
+
+No public claim is made here that VulnGPT is independently certified, SOC 2 attested, ISO 27001 certified, or independently benchmark-audited. See [Security and Privacy](docs/SECURITY_AND_PRIVACY.md) for the appropriate enterprise evaluation questions.
+
+## Repository maintenance
+
+This repository uses a dependency-free local quality check for relative links, required metadata, accessibility entry points, and publication guardrails. Run it before submitting a documentation or website change:
+
+```bash
+node scripts/validate-public-repo.mjs
+```
+
+See [Repository Maintenance](docs/REPOSITORY_MAINTENANCE.md), the [Changelog](CHANGELOG.md), and [Support](SUPPORT.md).
+
+## Responsible use
+
+VulnGPT is intended only for applications and infrastructure that the operator owns or is explicitly authorized to test. Define the permitted scope, use approved test identities, and avoid destructive actions or production data unless the system owner has explicitly approved them.
+
+See [Responsible Testing](docs/RESPONSIBLE_TESTING.md) for practical guidance.
+
+---
+
+**Built by [NovaSecLabs](https://www.novaseclabs.com).**
+
+Security testing should produce evidence, not noise.
