@@ -1,6 +1,6 @@
 # VulnGPT documentation
 
-Browse the [searchable public documentation library](https://vulngpt-showcase.vercel.app/docs/) or read the Markdown source in this directory.
+Browse the [searchable public documentation library](https://showcase.novaseclabs.com/docs/) or read the Markdown source in this directory.
 
 This documentation describes the public product direction, conceptual testing approach, evidence principles, and enterprise evaluation topics for VulnGPT.
 

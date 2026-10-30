@@ -8,7 +8,7 @@ Product-side target authorization, organization/project access, runtime policy, 
 
 ## Reporting a vulnerability
 
-The public showcase also publishes a machine-readable contact and policy pointer at [/.well-known/security.txt](https://vulngpt-showcase.vercel.app/.well-known/security.txt). This policy remains the authoritative reporting guidance.
+The public showcase also publishes a machine-readable contact and policy pointer at [/.well-known/security.txt](https://showcase.novaseclabs.com/.well-known/security.txt). This policy remains the authoritative reporting guidance.
 
 If you discover a security issue affecting VulnGPT or NovaSecLabs public infrastructure, report it privately to:
 

@@ -7,26 +7,26 @@
   <meta name="color-scheme" content="dark">
   <title>VulnGPT — Find the flaws scanners miss</title>
   <meta name="description" content="VulnGPT is AI-assisted web application security testing focused on authenticated state, authorization boundaries, and business logic.">
-  <link rel="canonical" href="https://vulngpt-showcase.vercel.app/">
+  <link rel="canonical" href="https://showcase.novaseclabs.com/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="VulnGPT — Security testing beyond payloads">
   <meta property="og:description" content="Investigate application behavior across identities, permissions, state, and workflows. Validate the evidence before drawing conclusions.">
-  <meta property="og:image" content="/assets/social-preview.png">
+  <meta property="og:image" content="https://showcase.novaseclabs.com/assets/social-preview.png">
   <meta property="og:image:alt" content="VulnGPT evidence-first application security testing showcase">
   <meta property="og:site_name" content="VulnGPT">
-  <meta property="og:url" content="https://vulngpt-showcase.vercel.app/">
+  <meta property="og:url" content="https://showcase.novaseclabs.com/">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="VulnGPT — Security testing beyond payloads">
   <meta name="twitter:description" content="Investigate application behavior across identities, permissions, state, and workflows. Validate the evidence before drawing conclusions.">
-  <meta name="twitter:image" content="/assets/social-preview.png">
+  <meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social-preview.png">
   <link rel="icon" href="/assets/mascot-confident.png">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       { "@type": "Organization", "@id": "https://www.novaseclabs.com/#organization", "name": "NovaSecLabs", "url": "https://www.novaseclabs.com" },
-      { "@type": "WebSite", "@id": "https://vulngpt-showcase.vercel.app/#website", "url": "https://vulngpt-showcase.vercel.app/", "name": "VulnGPT", "publisher": { "@id": "https://www.novaseclabs.com/#organization" } },
-      { "@type": "SoftwareApplication", "@id": "https://vulngpt-showcase.vercel.app/#software", "name": "VulnGPT", "applicationCategory": "SecurityApplication", "operatingSystem": "Web", "description": "AI-assisted web application security testing by NovaSecLabs, currently in private beta and focused on contextual investigation of authorization, authenticated workflows, application state, and business logic.", "creator": { "@id": "https://www.novaseclabs.com/#organization" }, "url": "https://vulngpt-showcase.vercel.app/" }
+      { "@type": "WebSite", "@id": "https://showcase.novaseclabs.com/#website", "url": "https://showcase.novaseclabs.com/", "name": "VulnGPT", "publisher": { "@id": "https://www.novaseclabs.com/#organization" } },
+      { "@type": "SoftwareApplication", "@id": "https://showcase.novaseclabs.com/#software", "name": "VulnGPT", "applicationCategory": "SecurityApplication", "operatingSystem": "Web", "description": "AI-assisted web application security testing by NovaSecLabs, currently in private beta and focused on contextual investigation of authorization, authenticated workflows, application state, and business logic.", "creator": { "@id": "https://www.novaseclabs.com/#organization" }, "url": "https://showcase.novaseclabs.com/" }
     ]
   }
   </script>
@@ -51,6 +51,7 @@
       <a href="#capabilities">Capabilities</a>
       <a href="#workflow">How it works</a>
       <a href="#evidence">Evidence</a>
+      <a href="/product/">Product tour</a>
       <a href="/docs/">Documentation</a>
       <a class="nav-cta" href="https://www.novaseclabs.com/waitlist">Request private beta <span aria-hidden="true">↗</span></a>
     </nav>
@@ -81,9 +82,27 @@
       <div class="hero-proof"><span>BUILT FOR THE HARDER QUESTIONS</span><div><b>Who can access this?</b><i></i><b>What changes across roles?</b><i></i><b>Can the behavior be reproduced?</b></div></div>
     </section>
 
+    <section class="section showcase-section" id="evidence">
+      <div class="shell">
+        <div class="section-heading section-heading-wide">
+          <div><div class="eyebrow">01 / THE EXPERIENCE</div><h2>Designed for clarity.<br><span class="muted-heading">Built for scrutiny.</span></h2></div>
+          <p>VulnGPT is being developed for both hands-on security practitioners and builders who need a clearer path to application security.</p>
+        </div>
+        <div class="screenshot-grid product-screenshot-grid">
+          <figure class="screenshot-card screenshot-card-wide"><a class="screenshot-frame" href="/assets/dashboard.png" target="_blank" rel="noopener"><img src="/assets/dashboard.png" alt="VulnGPT dashboard with workspace overview, a completed Payments API scan, finding summary, and severity distribution" loading="lazy" decoding="async"></a><figcaption><span><b>Workspace dashboard</b><small>Scan overview and finding triage</small></span><span class="caption-index">01 / 05</span></figcaption></figure>
+          <figure class="screenshot-card"><a class="screenshot-frame" href="/assets/findings.png" target="_blank" rel="noopener"><img src="/assets/findings.png" alt="VulnGPT findings list with verdict filters, severity labels, and finding summaries" loading="lazy" decoding="async"></a><figcaption><span><b>Findings</b><small>Review by verdict and severity</small></span><span class="caption-index">02 / 05</span></figcaption></figure>
+          <figure class="screenshot-card"><a class="screenshot-frame" href="/assets/bola%20finding.png" target="_blank" rel="noopener"><img src="/assets/bola%20finding.png" alt="BOLA invoice lookup finding detail with description, status, operator feedback, targeted retest, and evidence sections" loading="lazy" decoding="async"></a><figcaption><span><b>Finding detail</b><small>BOLA investigation and review context</small></span><span class="caption-index">03 / 05</span></figcaption></figure>
+          <figure class="screenshot-card screenshot-card-wide"><a class="screenshot-frame" href="/assets/live%20vision.png" target="_blank" rel="noopener"><img src="/assets/live%20vision.png" alt="VulnGPT Live Vision recorded-scan view with activity map, selectable layers, recorded item details, and investigation timeline" loading="lazy" decoding="async"></a><figcaption><span><b>Live Vision</b><small>Recorded activity and investigation timeline</small></span><span class="caption-index">04 / 05</span></figcaption></figure>
+          <figure class="screenshot-card"><a class="screenshot-frame" href="/assets/elte%20red%20team%20report.png" target="_blank" rel="noopener"><img src="/assets/elte%20red%20team%20report.png" alt="Elite Red Team Reports interface; generation and download are disabled by export policy in this capture" loading="lazy" decoding="async"></a><figcaption><span><b>Elite Red Team Reports</b><small>Report library and intelligence categories</small></span><span class="caption-index">05 / 05</span></figcaption></figure>
+        </div>
+        <p class="screenshot-note">Genuine product-interface captures supplied for this showcase. Open any image for the full-size view. Workspace names, counts, statuses, and report controls reflect the captured state only; they are not live telemetry, customer outcomes, or a guarantee of current availability. The report capture explicitly shows generation and download disabled by export policy.</p>
+        <p class="screenshot-tour-link"><a class="text-link" href="/product/">Explore the product walkthrough <span aria-hidden="true">↗</span></a></p>
+      </div>
+    </section>
+
     <section class="section shell" id="approach">
       <div class="section-heading">
-        <div class="eyebrow">01 / THE APPROACH</div>
+        <div class="eyebrow">02 / THE APPROACH</div>
         <h2>A response is a clue.<br><span class="muted-heading">Not proof.</span></h2>
         <p>Finding a suspicious response is easy. Establishing what it means — under the right identity, state, and permissions — is the hard part.</p>
       </div>
@@ -106,7 +125,7 @@
     <section class="section section-dark" id="capabilities">
       <div class="shell">
         <div class="section-heading section-heading-wide">
-          <div><div class="eyebrow">02 / WHAT WE INVESTIGATE</div><h2>Beyond the payload.</h2></div>
+          <div><div class="eyebrow">03 / WHAT WE INVESTIGATE</div><h2>Beyond the payload.</h2></div>
           <p>Complex application vulnerabilities emerge from relationships and transitions — not just strings that match a known pattern.</p>
         </div>
         <div class="capability-grid">
@@ -120,7 +139,7 @@
 
     <section class="section shell" id="workflow">
       <div class="section-heading">
-        <div class="eyebrow">03 / THE WORKFLOW</div>
+        <div class="eyebrow">04 / THE WORKFLOW</div>
         <h2>From uncertainty<br>to evidence.</h2>
         <p>A disciplined path from a behavioral signal to a finding a human can inspect and reproduce.</p>
       </div>
@@ -130,20 +149,6 @@
         <article class="workflow-step"><span class="step-node">02</span><div><span class="step-label">HYPOTHESIZE</span><h3>Identify an invariant</h3><p>Form a testable hypothesis about what the application should enforce.</p></div></article>
         <article class="workflow-step"><span class="step-node">03</span><div><span class="step-label">FALSIFY</span><h3>Test the boundary</h3><p>Use controlled interventions to distinguish a real flaw from a misleading signal.</p></div></article>
         <article class="workflow-step"><span class="step-node">04</span><div><span class="step-label">PROVE & RETEST</span><h3>Preserve the evidence</h3><p>Keep findings tied to observable behavior and a path that can be checked again.</p></div></article>
-      </div>
-    </section>
-
-    <section class="section showcase-section" id="evidence">
-      <div class="shell">
-        <div class="section-heading section-heading-wide">
-          <div><div class="eyebrow">04 / THE EXPERIENCE</div><h2>Designed for clarity.<br><span class="muted-heading">Built for scrutiny.</span></h2></div>
-          <p>VulnGPT is being developed for both hands-on security practitioners and builders who need a clearer path to application security.</p>
-        </div>
-        <div class="screenshot-grid">
-          <figure class="screenshot-card screenshot-main"><div class="screenshot-frame"><img src="/assets/site-home.png" alt="Capture of the NovaSecLabs public website" loading="lazy"></div><figcaption><span><b>NovaSecLabs</b><small>Product home</small></span><span class="caption-index">01 / 02</span></figcaption></figure>
-          <figure class="screenshot-card"><div class="screenshot-frame"><img src="/assets/site-waitlist.png" alt="Capture of the VulnGPT private beta waitlist" loading="lazy"></div><figcaption><span><b>Private beta</b><small>Early access entry point</small></span><span class="caption-index">02 / 02</span></figcaption></figure>
-        </div>
-        <p class="screenshot-note">These are public-site captures, not authenticated scanner-dashboard screenshots. The product interface will be shown here when verified captures are available.</p>
       </div>
     </section>
 

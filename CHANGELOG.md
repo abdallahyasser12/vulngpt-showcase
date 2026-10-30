@@ -9,6 +9,8 @@ The format follows the principles of Keep a Changelog. Dates and version identif
 ## [Unreleased]
 
 ### Added
+- Prepared the branded showcase hostname and aligned canonical URLs, structured data, sitemap, robots.txt, and security.txt; external Cloudflare DNS publication remains pending.
+- Responsive full-size product screenshot viewer using the native dialog element, with a direct-image fallback.
 - Searchable documentation portal at `/docs/`, with audience filters, keyboard-accessible search, and direct links to maintained Markdown sources.
 - Public conceptual system overview and controlled product-evaluation protocol.
 - Optional JSON Schema interchange formats for externally documented findings and benchmark reports; these are not product API contracts.
@@ -33,3 +35,12 @@ The format follows the principles of Keep a Changelog. Dates and version identif
 - The public repository is a showcase and documentation package, not the proprietary scanning engine.
 - Private-beta product direction is distinct from verified availability and independent assurance.
 - Enterprise security and compliance topics require current, environment-specific confirmation.
+
+
+## 2026-10-31 — Product evidence showcase
+
+- Replaced the public-site-only screenshot section with five genuine product-interface captures: dashboard, findings queue, BOLA finding detail, Live Vision, and Elite Red Team Reports.
+- Added a dedicated visual product walkthrough with full-size screenshot links and capture-specific context.
+- Clarified that screenshot data is static and must not be interpreted as live telemetry, customer outcomes, or guaranteed feature availability.
+- Explicitly retained the export-policy limitation visible in the Elite Red Team Reports capture.
+- Updated repository asset guidance, README, sitemap, and navigation.

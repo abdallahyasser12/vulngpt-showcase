@@ -4,7 +4,9 @@
 
 This repository contains the static public showcase and public product documentation for VulnGPT. It is not the private product implementation repository.
 
-The maintenance goal is to keep public information accurate, navigable, accessible, searchable, and safe to publish. The searchable documentation portal is served from [docs/index.html](index.html) and is available at [vulngpt-showcase.vercel.app/docs/](https://vulngpt-showcase.vercel.app/docs/).
+The production-facing showcase hostname is [showcase.novaseclabs.com](https://showcase.novaseclabs.com/). The Vercel project is a hosting detail, not the product's public identity.
+
+The maintenance goal is to keep public information accurate, navigable, accessible, searchable, and safe to publish. The searchable documentation portal is served from [docs/index.html](index.html) and is available at [vulngpt-showcase.vercel.app/docs/](https://showcase.novaseclabs.com/docs/).
 
 ## Local validation
 
