@@ -21,6 +21,9 @@ Who benefits from this change, and which pages or documents are affected?
 - [ ] Images have descriptive alt text and appropriate usage rights.
 - [ ] No secrets, tokens, customer data, or proprietary implementation details were added.
 - [ ] Security-sensitive reports were not placed in a public issue or pull request.
+- [ ] `node scripts/validate-public-repo.mjs` passes, or any failure is explained with evidence.
+- [ ] New documents are linked from the documentation index and relative links resolve.
+- [ ] Benchmark and capability language follows the relevant publication/evaluation policy.
 
 ## Visual evidence
 

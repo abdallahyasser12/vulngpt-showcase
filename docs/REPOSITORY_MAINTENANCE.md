@@ -19,7 +19,7 @@ node scripts/validate-public-repo.mjs
 
 The validator checks relative Markdown links and image references, local HTML references and fragment targets, required title and social metadata, structured data, keyboard navigation, reduced-motion styling, and publication guardrails.
 
-The validator does not test external website availability, browser rendering, formal accessibility conformance, SEO ranking, or the private VulnGPT service.
+The validator does not test external website availability, browser rendering, formal accessibility conformance, SEO ranking, or the private VulnGPT service. It is a repository hygiene check, not a full static-analysis or security-scanning product.
 
 ## Content review
 
@@ -42,7 +42,7 @@ See [Asset Notes](../assets/README.md).
 
 This repository's static showcase is deployed independently from the private VulnGPT application. Website changes should be reviewed against the connected preview before they are merged. A successful static-site build is not validation of the scanner engine or backend.
 
-Use [CHANGELOG.md](../CHANGELOG.md) to record material public changes. Avoid publishing version numbers or release dates that do not correspond to an actual release.
+Use [CHANGELOG.md](../CHANGELOG.md) to record material public changes. Follow the [Release Process](RELEASE_PROCESS.md) and use the [release template](../.github/RELEASE_TEMPLATE.md) when publishing an actual public release. Avoid publishing version numbers or release dates that do not correspond to an actual release.
 
 ## Ownership and escalation
 

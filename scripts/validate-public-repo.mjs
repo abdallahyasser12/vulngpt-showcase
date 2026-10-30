@@ -43,9 +43,14 @@ function collectMarkdownFiles(directory) {
 }
 
 const requiredFiles = [
-  "README.md", "index.html", "styles.css", "CLAIMS.md",
-  "BENCHMARK_G1.md", "SECURITY.md", "docs/README.md",
-  "docs/SECURITY_MODEL.md", "docs/REPOSITORY_MAINTENANCE.md",
+  "README.md", "index.html", "styles.css", "CLAIMS.md", "LICENSE", "CODEOWNERS",
+  "CHANGELOG.md", "SUPPORT.md", "BENCHMARK_G1.md", "SECURITY.md",
+  "docs/README.md", "docs/SECURITY_MODEL.md", "docs/REPOSITORY_MAINTENANCE.md",
+  "docs/SECURITY_TESTING_PLAYBOOK.md", "docs/CAPABILITY_EVALUATION_MATRIX.md",
+  "docs/ASSESSMENT_PLAN_TEMPLATE.md", "docs/FINDING_REPORT_STANDARD.md",
+  "docs/BENCHMARK_GOVERNANCE.md", "docs/GLOSSARY.md", "docs/RELEASE_PROCESS.md",
+  "templates/assessment-plan.md", "templates/finding-report.md",
+  ".github/PULL_REQUEST_TEMPLATE.md", ".github/RELEASE_TEMPLATE.md",
   "scripts/validate-public-repo.mjs",
 ];
 for (const relativePath of requiredFiles) {
@@ -67,6 +72,7 @@ for (const absolutePath of markdownFiles) {
   }
 }
 record(markdownLinkCount > 0, "Markdown local references were inspected");
+record(fs.existsSync(path.join(root, "templates/finding-report.md")) && fs.existsSync(path.join(root, "templates/assessment-plan.md")), "Reusable assessment and finding templates are present");
 
 const html = read("index.html");
 const ids = new Set([...html.matchAll(/\bid=["']([^"']+)["']/g)].map((match) => match[1]));
