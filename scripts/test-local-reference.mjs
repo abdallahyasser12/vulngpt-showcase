@@ -21,6 +21,8 @@ const cases = [
   ['/assets/bola%20finding.png', 'index.html', 'assets/bola finding.png'],
   ['../README.md', 'docs/README.md', 'README.md'],
   ['/script.js?v=1#app', 'index.html', 'script.js'],
+  ['', 'docs/README.md', 'docs/README.md'],
+  ['?version=1', 'docs/README.md', 'docs/README.md'],
 ];
 for (const [target, fromFile, expected] of cases) {
   const result = resolveLocalPath(root, fromFile, target);

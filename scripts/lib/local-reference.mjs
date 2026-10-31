@@ -38,9 +38,13 @@ export function resolveLocalPath(root, fromFile, rawTarget) {
   const absoluteRoot = path.resolve(root);
   let resolvedPath;
   try {
-    resolvedPath = decodedPath.startsWith('/')
-      ? path.resolve(absoluteRoot, '.' + decodedPath)
-      : path.resolve(absoluteRoot, path.dirname(fromFile), decodedPath);
+    if (!decodedPath) {
+      resolvedPath = path.resolve(absoluteRoot, fromFile);
+    } else {
+      resolvedPath = decodedPath.startsWith('/')
+        ? path.resolve(absoluteRoot, '.' + decodedPath)
+        : path.resolve(absoluteRoot, path.dirname(fromFile), decodedPath);
+    }
   } catch (error) {
     return {
       path: null,
