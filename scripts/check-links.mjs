@@ -10,9 +10,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { fileURLToPath } from 'node:url';
+import { repositoryRootFromScript, resolveLocalPath } from './lib/local-reference.mjs';
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const ROOT = repositoryRootFromScript(import.meta.url);
 const SITE = 'https://showcase.novaseclabs.com';
 const EXTERNAL = process.argv.includes('--external');
 
@@ -84,16 +84,20 @@ function idsOf(rel) {
   return info;
 }
 
-/** Map an internal URL path to a repository file, or null. Returns {file, needsSlash}. */
+/** Map an internal URL path to a repository file, or return a structured resolution error. */
 function toFile(urlPath) {
-  const p = decodeURI(urlPath).replace(/^\/+/, '');
-  const abs = path.join(ROOT, p);
+  const resolution = resolveLocalPath(ROOT, 'index.html', urlPath);
+  if (resolution.error) return { error: resolution.error };
+  if (!resolution.insideRoot) return null;
+
+  const absolutePath = resolution.path;
+  const relativePath = path.relative(ROOT, absolutePath).split(path.sep).join('/');
   if (urlPath.endsWith('/')) {
-    const idx = path.join(abs, 'index.html');
-    return fs.existsSync(idx) ? { file: path.posix.join(p, 'index.html') } : null;
+    const indexPath = path.join(absolutePath, 'index.html');
+    return fs.existsSync(indexPath) ? { file: path.posix.join(relativePath, 'index.html') } : null;
   }
-  if (fs.existsSync(abs) && fs.statSync(abs).isFile()) return { file: p };
-  if (fs.existsSync(abs) && fs.statSync(abs).isDirectory()) return { needsSlash: true };
+  if (fs.existsSync(absolutePath) && fs.statSync(absolutePath).isFile()) return { file: relativePath };
+  if (fs.existsSync(absolutePath) && fs.statSync(absolutePath).isDirectory()) return { needsSlash: true };
   return null;
 }
 
@@ -116,10 +120,20 @@ function checkRef(page, raw, kind) {
     return;
   }
   const target = toFile(u.pathname);
+  if (target?.error) {
+    ok(false, `${page}: invalid percent-encoding in ${kind} path: ${value} (${target.error})`);
+    return;
+  }
   if (!ok(target && target.file, `${page}: ${kind} does not resolve to a file or route: ${value}${target?.needsSlash ? ' (directory route needs a trailing slash)' : ''}`)) return;
   if (/\.html$/.test(u.pathname) && page !== '404.html') ok(false, `${page}: link to an .html URL (use the clean trailing-slash route): ${value}`);
   if (u.hash && u.hash.length > 1 && target.file.endsWith('.html')) {
-    const id = decodeURIComponent(u.hash.slice(1));
+    let id;
+    try {
+      id = decodeURIComponent(u.hash.slice(1));
+    } catch (error) {
+      ok(false, `${page}: invalid percent-encoding in ${kind} fragment: ${value} (${error.message})`);
+      return;
+    }
     ok(idsOf(target.file).ids.has(id), `${page}: fragment #${id} not found on ${target.file}`);
   }
 }

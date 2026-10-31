@@ -1,8 +1,9 @@
 import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
+import { repositoryRootFromScript, resolveLocalPath } from "./lib/local-reference.mjs";
 
-const root = process.cwd();
+const root = repositoryRootFromScript(import.meta.url);
 const failures = [];
 const checks = [];
 
@@ -20,16 +21,20 @@ function read(relativePath) {
   return fs.readFileSync(absolutePath, "utf8");
 }
 
-function resolveLocalPath(fromFile, rawTarget) {
-  const cleanTarget = decodeURIComponent(rawTarget.split(/[?#]/, 1)[0]);
-  if (!cleanTarget) return fromFile;
-  if (cleanTarget.startsWith("/")) return path.join(root, cleanTarget.replace(/^\/+/, ""));
-  return path.resolve(root, path.dirname(fromFile), cleanTarget);
-}
-
-function isInsideRoot(filePath) {
-  const relative = path.relative(root, filePath);
-  return relative === "" || (!relative.startsWith("..") && !path.isAbsolute(relative));
+function checkLocalReference(fromFile, rawTarget, message) {
+  const result = resolveLocalPath(root, fromFile, rawTarget);
+  let reason = result.error;
+  let exists = false;
+  if (!reason && !result.insideRoot) reason = "reference escapes repository root";
+  if (!reason) {
+    try {
+      exists = fs.existsSync(result.path);
+    } catch {
+      reason = "filesystem rejected the resolved path";
+    }
+    if (!exists && !reason) reason = "target does not exist";
+  }
+  record(exists, reason ? `${message} (${reason})` : message);
 }
 
 function collectMarkdownFiles(directory) {
@@ -58,7 +63,7 @@ const requiredFiles = [
   "docs/BENCHMARK_GOVERNANCE.md", "docs/GLOSSARY.md", "docs/RELEASE_PROCESS.md",
   "templates/assessment-plan.md", "templates/finding-report.md",
   ".github/PULL_REQUEST_TEMPLATE.md", ".github/RELEASE_TEMPLATE.md",
-  "scripts/validate-public-repo.mjs",
+  "scripts/lib/local-reference.mjs", "scripts/test-local-reference.mjs", "scripts/validate-public-repo.mjs",
 ];
 for (const relativePath of requiredFiles) {
   record(fs.existsSync(path.join(root, relativePath)), `Required file exists: ${relativePath}`);
@@ -77,8 +82,7 @@ for (const absolutePath of markdownFiles) {
     const rawTarget = match[1].trim().split(/\s+/, 1)[0];
     if (/^(?:https?:|mailto:|tel:|#|data:)/i.test(rawTarget)) continue;
     markdownLinkCount += 1;
-    const resolved = resolveLocalPath(relativePath, rawTarget);
-    record(isInsideRoot(resolved) && fs.existsSync(resolved), `Local Markdown reference resolves: ${relativePath} -> ${rawTarget}`);
+    checkLocalReference(relativePath, rawTarget, `Local Markdown reference resolves: ${relativePath} -> ${rawTarget}`);
   }
 }
 record(markdownLinkCount > 0, "Markdown local references were inspected");
@@ -96,8 +100,7 @@ for (const match of html.matchAll(/\b(?:href|src)=["']([^"']+)["']/g)) {
     htmlReferenceCount += 1;
     continue;
   }
-  const resolved = resolveLocalPath("index.html", target);
-  record(isInsideRoot(resolved) && fs.existsSync(resolved), `Local HTML reference resolves: ${target}`);
+  checkLocalReference("index.html", target, `Local HTML reference resolves: ${target}`);
   htmlReferenceCount += 1;
 }
 record(htmlReferenceCount > 0, "HTML local references were inspected");
@@ -221,7 +224,7 @@ for (const file of publicTextFiles) {
 }
 
 // ---- Delegated checks: documentation build, link/site integrity, hosting configuration ----
-for (const [label, args] of [["Generated documentation is up to date (build-docs --check)", ["scripts/build-docs.mjs", "--check"]], ["Link and site integrity check passes (check-links)", ["scripts/check-links.mjs"]], ["Vercel configuration simulation passes (test-vercel-config)", ["scripts/test-vercel-config.mjs"]]]) {
+for (const [label, args] of [["Local reference resolver regression tests pass", ["scripts/test-local-reference.mjs"]], ["Generated documentation is up to date (build-docs --check)", ["scripts/build-docs.mjs", "--check"]], ["Link and site integrity check passes (check-links)", ["scripts/check-links.mjs"]], ["Vercel configuration simulation passes (test-vercel-config)", ["scripts/test-vercel-config.mjs"]]]) {
   const run = spawnSync(process.execPath, args, { cwd: root, encoding: "utf8" });
   record(run.status === 0, label);
   if (run.status !== 0) for (const line of `${run.stdout}${run.stderr}`.split("\n").filter(Boolean).slice(0, 12)) failures.push(`    ${line}`);
