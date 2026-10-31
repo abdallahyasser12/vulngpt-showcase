@@ -4,11 +4,35 @@ This document is the source of truth for public product language in this reposit
 
 ## Approved product description
 
-> VulnGPT is an AI-assisted web application security testing product by NovaSecLabs, currently in private beta and being developed to investigate application behavior across authenticated identities, authorization boundaries, object ownership, state transitions, and business logic, with an emphasis on evidence-oriented validation.
+> VulnGPT is an autonomous web application security testing product by NovaSecLabs, currently in private beta and being developed to investigate application behavior across authenticated identities, authorization boundaries, object ownership, state transitions, and business logic, with an emphasis on evidence-oriented validation.
 
 Short description:
 
-> Evidence-oriented AI-assisted web application security testing for complex application behavior.
+> Evidence-oriented autonomous web application security testing for complex application behavior.
+
+Always pair the product name with its maker on first mention ("VulnGPT by NovaSecLabs"). Other, unrelated projects share the name VulnGPT.
+
+### Autonomy language
+
+VulnGPT is described as **autonomous** (founder decision, 2026-10-30). This replaces "AI-assisted" wherever the phrase described VulnGPT itself. The meaning is fixed and must travel with the word:
+
+> Autonomous means VulnGPT plans and runs the test steps itself inside the target, scope, and runtime budget you authorize; it does not mean unsupervised: you verify the target, set scope, confirm authorization, and review the evidence.
+
+Allowed phrases:
+
+- "autonomous web application security testing" and "autonomous penetration tests";
+- "plans and runs the test steps itself inside the scope you authorize";
+- "autonomous, within the target, scope, and runtime budget you set";
+- "you verify the target, set scope, confirm authorization, and review the evidence".
+
+Banned phrases (they claim more than the definition supports):
+
+- "fully autonomous";
+- "hands-free";
+- "replaces pentesters" (or any wording that replaces human testers or reviewers);
+- "no human needed" (or "no human required", "set and forget").
+
+"AI-assisted" may still describe the product category or other tools, but never VulnGPT itself. Every limit elsewhere in this document still applies: autonomy does not change what may be claimed about detection rates, certifications, availability, or customers.
 
 ## Safe capability language
 
@@ -51,7 +75,7 @@ Do not claim:
 - a guaranteed real-world detection rate;
 - "certified" or "independently verified" without the relevant independent artifact;
 - that VulnGPT detects every vulnerability;
-- that VulnGPT replaces penetration testers;
+- that VulnGPT replaces penetration testers or runs without human supervision;
 - customer adoption, endorsements, or outcomes that have not been approved and substantiated.
 
 ## Security, privacy, and compliance claims

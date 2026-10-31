@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Application Security Glossary | VulnGPT Docs</title>
+<meta name="description" content="Plain definitions of BOLA, IDOR, actor, invariant, tenant isolation, WAF and other terms used across the VulnGPT documentation.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://showcase.novaseclabs.com/docs/glossary/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VulnGPT by NovaSecLabs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Application Security Glossary | VulnGPT Docs">
+<meta property="og:description" content="Plain definitions of BOLA, IDOR, actor, invariant, tenant isolation, WAF and other terms used across the VulnGPT documentation.">
+<meta property="og:url" content="https://showcase.novaseclabs.com/docs/glossary/">
+<meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Application Security Glossary | VulnGPT Docs">
+<meta name="twitter:description" content="Plain definitions of BOLA, IDOR, actor, invariant, tenant isolation, WAF and other terms used across the VulnGPT documentation.">
+<meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta name="twitter:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/docs/docs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"TechArticle","@id":"https://showcase.novaseclabs.com/docs/glossary/#article","headline":"Application Security Glossary","description":"Plain definitions of BOLA, IDOR, actor, invariant, tenant isolation, WAF and other terms used across the VulnGPT documentation.","url":"https://showcase.novaseclabs.com/docs/glossary/","mainEntityOfPage":"https://showcase.novaseclabs.com/docs/glossary/","inLanguage":"en","dateModified":"2026-10-31","articleSection":"Product & technical","wordCount":397,"timeRequired":"PT2M","image":"https://showcase.novaseclabs.com/assets/social/og-doc.png","author":{"@id":"https://www.novaseclabs.com/#organization"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"isPartOf":[{"@id":"https://showcase.novaseclabs.com/#website"},{"@id":"https://showcase.novaseclabs.com/docs/#webpage"}],"about":{"@id":"https://www.novaseclabs.com/#vulngpt"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/docs/glossary/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://showcase.novaseclabs.com/docs/"},{"@type":"ListItem","position":3,"name":"Security glossary","item":"https://showcase.novaseclabs.com/docs/glossary/"}]}]}</script>
+<script src="/script.js" defer></script>
+<script src="/docs/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+<span class="nav-toggle__bars" aria-hidden="true">
+</span>
+<span>Menu</span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/#approach">Approach</a>
+</li>
+<li>
+<a href="/#evidence">Evidence</a>
+</li>
+<li>
+<a href="/docs/" aria-current="page">Docs</a>
+</li>
+<li>
+<a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero doc-head">
+<div class="container">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/docs/">Documentation</a></li>
+<li aria-current="page">Security glossary</li>
+</ol>
+</nav>
+<p class="eyebrow"><b>Product &amp; technical</b> · VulnGPT by NovaSecLabs</p>
+<h1>Application Security Glossary</h1>
+<p class="lede">Plain definitions of BOLA, IDOR, actor, invariant, tenant isolation, WAF and other terms used across the VulnGPT documentation.</p>
+<p class="doc-meta"><span>2 min read</span><span>Last updated <time datetime="2026-10-31">31 Oct 2026</time></span><a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/GLOSSARY.md" rel="noopener">View source on GitHub</a></p>
+</div>
+</section>
+<div class="container doc-layout doc-layout--solo">
+
+<div class="doc-main">
+<article class="prose doc-prose">
+
+<p>This glossary explains terms used throughout the VulnGPT public documentation. Definitions are intentionally practical and scoped to application-security testing.</p>
+<div class="table-wrap" role="region" aria-label="Table: Application Security Glossary" tabindex="0">
+<table>
+<thead><tr><th scope="col">Term</th><th scope="col">Meaning</th></tr></thead>
+<tbody>
+<tr><td>Actor</td><td>A user, service, or identity performing an application action.</td></tr>
+<tr><td>Authorization</td><td>The decision about whether an authenticated or identified actor may perform a particular action on a resource.</td></tr>
+<tr><td>Authentication</td><td>The process of establishing or verifying an identity.</td></tr>
+<tr><td>BOLA</td><td>Broken Object Level Authorization: an access-control failure in which an actor can access an object they should not be permitted to access.</td></tr>
+<tr><td>Business logic flaw</td><td>A weakness in the rules, assumptions, or workflow constraints governing application operations.</td></tr>
+<tr><td>Control case</td><td>A known-good comparison used to interpret a test result.</td></tr>
+<tr><td>Evidence</td><td>Observable information that supports or weakens a security hypothesis.</td></tr>
+<tr><td>Falsification</td><td>Testing an alternative explanation or attempting to disprove a hypothesis rather than only seeking confirmation.</td></tr>
+<tr><td>Ground truth</td><td>A documented expected result for a test scenario, established independently of the system's result being evaluated.</td></tr>
+<tr><td>Hypothesis</td><td>A specific, testable statement about a possible security failure.</td></tr>
+<tr><td>IDOR</td><td>Insecure Direct Object Reference: a common pattern associated with object-level authorization failures, where changing or supplying a reference can expose an access-control weakness.</td></tr>
+<tr><td>Invariant</td><td>A security or business rule that should remain true across relevant actors, objects, actions, and state transitions.</td></tr>
+<tr><td>Multi-actor testing</td><td>A test design that compares behavior across multiple authorized identities or roles.</td></tr>
+<tr><td>Object ownership</td><td>The user, tenant, or business entity to which an application resource belongs.</td></tr>
+<tr><td>Retest</td><td>A follow-up assessment of the same security expectation after a proposed remediation.</td></tr>
+<tr><td>Session</td><td>The application context that associates multiple requests with an authenticated or otherwise identified actor.</td></tr>
+<tr><td>State transition</td><td>A change from one application or workflow state to another.</td></tr>
+<tr><td>Tenant isolation</td><td>The separation of data and operations belonging to different customer organizations or tenants.</td></tr>
+<tr><td>WAF</td><td>Web Application Firewall: an intermediary security control that inspects or filters application traffic. A WAF response is not, by itself, proof of the application's underlying security behavior.</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="related-documents">Related documents<a class="anchor" href="#related-documents" aria-label="Link to this section: Related documents">#</a></h2>
+<ul>
+<li><a href="/docs/technical-approach/">Technical Approach</a></li>
+<li><a href="/docs/security-testing-playbook/">Security Testing Playbook</a></li>
+<li><a href="/docs/evidence-and-validation/">Evidence and Validation</a></li>
+</ul>
+</article>
+<section class="doc-related" aria-labelledby="related-h">
+<h2 id="related-h">Related documentation</h2>
+<ul>
+<li><a href="/docs/technical-approach/"><h3>Technical approach</h3><p>A conceptual model for investigating behavior across identity, authorization, and application state.</p></a></li>
+<li><a href="/docs/use-cases/"><h3>Use cases</h3><p>Representative application behaviors that motivate contextual security testing.</p></a></li>
+<li><a href="/docs/security-testing-playbook/"><h3>Security testing playbook</h3><p>Controlled patterns for object ownership, roles, multi-step workflows, sessions, and ambiguous results.</p></a></li>
+<li><a href="/docs/evidence-and-validation/"><h3>Evidence and validation</h3><p>How to distinguish a suspicious signal from a supported, reviewable security conclusion.</p></a></li>
+</ul>
+</section>
+<nav class="doc-pager" aria-label="More in Product &amp; technical">
+<a class="doc-pager__prev" rel="prev" href="/docs/evidence-and-validation/"><span>Previous in Product &amp; technical</span>Evidence and validation</a>
+<a class="doc-pager__next" rel="next" href="/docs/faq/"><span>Next in Product &amp; technical</span>FAQ</a>
+</nav>
+<aside class="doc-cta" aria-labelledby="cta-h">
+<h2 id="cta-h">Evaluate VulnGPT in private beta</h2>
+<p>VulnGPT by NovaSecLabs is in private beta. This page describes product direction and evaluation guidance. It does not guarantee that every capability is currently available.</p>
+<div class="doc-cta__actions">
+<a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_docs&amp;utm_content=glossary">Request private beta</a>
+<a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/GLOSSARY.md" rel="noopener">View source on GitHub</a>
+</div>
+<p class="hero__auth">For applications you own or are authorized to test.</p>
+</aside>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid">
+<div class="site-footer__about">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p>
+</div>
+<nav aria-label="Product">
+<h2>Product</h2>
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/docs/">Documentation</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h2>Company</h2>
+<ul>
+<li>
+<a href="https://www.novaseclabs.com">NovaSecLabs</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/about">About</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/pricing">Pricing</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/resources">Resources</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Connect">
+<h2>Connect</h2>
+<ul>
+<li>
+<a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a>
+</li>
+<li>
+<a href="https://x.com/novaseclabs" rel="noopener">X</a>
+</li>
+<li>
+<a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a>
+</li>
+<li>
+<a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__legal">
+<p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p>
+<p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

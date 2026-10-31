@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finding Report Standard | VulnGPT Docs</title>
+<meta name="description" content="An evidence-led structure for security findings: expected boundary, test context, observation, impact, limits, remediation and retest.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://showcase.novaseclabs.com/docs/finding-report-standard/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VulnGPT by NovaSecLabs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Finding Report Standard | VulnGPT Docs">
+<meta property="og:description" content="An evidence-led structure for security findings: expected boundary, test context, observation, impact, limits, remediation and retest.">
+<meta property="og:url" content="https://showcase.novaseclabs.com/docs/finding-report-standard/">
+<meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Finding Report Standard | VulnGPT Docs">
+<meta name="twitter:description" content="An evidence-led structure for security findings: expected boundary, test context, observation, impact, limits, remediation and retest.">
+<meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta name="twitter:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/docs/docs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"TechArticle","@id":"https://showcase.novaseclabs.com/docs/finding-report-standard/#article","headline":"Finding Report Standard","description":"An evidence-led structure for security findings: expected boundary, test context, observation, impact, limits, remediation and retest.","url":"https://showcase.novaseclabs.com/docs/finding-report-standard/","mainEntityOfPage":"https://showcase.novaseclabs.com/docs/finding-report-standard/","inLanguage":"en","dateModified":"2026-10-31","articleSection":"Practitioner resources","wordCount":612,"timeRequired":"PT3M","image":"https://showcase.novaseclabs.com/assets/social/og-doc.png","author":{"@id":"https://www.novaseclabs.com/#organization"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"isPartOf":[{"@id":"https://showcase.novaseclabs.com/#website"},{"@id":"https://showcase.novaseclabs.com/docs/#webpage"}],"about":{"@id":"https://www.novaseclabs.com/#vulngpt"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/docs/finding-report-standard/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://showcase.novaseclabs.com/docs/"},{"@type":"ListItem","position":3,"name":"Finding report standard","item":"https://showcase.novaseclabs.com/docs/finding-report-standard/"}]}]}</script>
+<script src="/script.js" defer></script>
+<script src="/docs/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+<span class="nav-toggle__bars" aria-hidden="true">
+</span>
+<span>Menu</span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/#approach">Approach</a>
+</li>
+<li>
+<a href="/#evidence">Evidence</a>
+</li>
+<li>
+<a href="/docs/" aria-current="page">Docs</a>
+</li>
+<li>
+<a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero doc-head">
+<div class="container">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/docs/">Documentation</a></li>
+<li aria-current="page">Finding report standard</li>
+</ol>
+</nav>
+<p class="eyebrow"><b>Practitioner resources</b> · VulnGPT by NovaSecLabs</p>
+<h1>Finding Report Standard</h1>
+<p class="lede">An evidence-led structure for security findings: expected boundary, test context, observation, impact, limits, remediation and retest.</p>
+<p class="doc-meta"><span>3 min read</span><span>Last updated <time datetime="2026-10-31">31 Oct 2026</time></span><a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/FINDING_REPORT_STANDARD.md" rel="noopener">View source on GitHub</a></p>
+</div>
+</section>
+<div class="container doc-layout">
+<aside class="doc-aside">
+<nav class="doc-toc" aria-label="On this page" data-spy>
+<details open>
+<summary>On this page</summary>
+<ol>
+<li><a href="#purpose">Purpose</a></li>
+<li><a href="#report-principles">Report principles</a></li>
+<li><a href="#recommended-finding-structure">Recommended finding structure</a>
+<ol>
+<li><a href="#1-title">1. Title</a></li>
+<li><a href="#2-summary">2. Summary</a></li>
+<li><a href="#3-affected-component">3. Affected component</a></li>
+<li><a href="#4-security-expectation">4. Security expectation</a></li>
+<li><a href="#5-preconditions-and-actor-context">5. Preconditions and actor context</a></li>
+<li><a href="#6-reproduction-steps">6. Reproduction steps</a></li>
+<li><a href="#7-expected-versus-observed-behavior">7. Expected versus observed behavior</a></li>
+<li><a href="#8-evidence">8. Evidence</a></li>
+<li><a href="#9-impact-and-severity-rationale">9. Impact and severity rationale</a></li>
+<li><a href="#10-alternative-explanations-and-limitations">10. Alternative explanations and limitations</a></li>
+<li><a href="#11-remediation-guidance">11. Remediation guidance</a></li>
+<li><a href="#12-retest-record">12. Retest record</a></li>
+</ol>
+</li>
+<li><a href="#finding-confidence-versus-severity">Finding confidence versus severity</a></li>
+<li><a href="#report-hygiene">Report hygiene</a></li>
+<li><a href="#template">Template</a></li>
+</ol>
+</details>
+</nav>
+</aside>
+<div class="doc-main">
+<article class="prose doc-prose">
+
+<h2 id="purpose">Purpose<a class="anchor" href="#purpose" aria-label="Link to this section: Purpose">#</a></h2>
+<p>A finding report should allow an authorized reviewer to understand the security expectation, test context, observed behavior, impact, limitations, and remediation path.</p>
+<p>This standard is a public reporting guide. It does not claim that every field is currently generated automatically by VulnGPT or that every output format is available in the private beta.</p>
+<h2 id="report-principles">Report principles<a class="anchor" href="#report-principles" aria-label="Link to this section: Report principles">#</a></h2>
+<ol>
+<li>Distinguish observation from inference.</li>
+<li>Identify the authorization and test scope.</li>
+<li>Describe the relevant actors, roles, tenants, objects, sessions, and states.</li>
+<li>State the security invariant that was expected to hold.</li>
+<li>Show the controlled action and the observable result.</li>
+<li>Include a control comparison where practical.</li>
+<li>Describe impact supported by evidence, not hypothetical maximum impact.</li>
+<li>State uncertainty, limitations, and untested conditions.</li>
+<li>Provide a safe, minimal reproduction path.</li>
+<li>Redact secrets, personal data, and unrelated customer information.</li>
+</ol>
+<h2 id="recommended-finding-structure">Recommended finding structure<a class="anchor" href="#recommended-finding-structure" aria-label="Link to this section: Recommended finding structure">#</a></h2>
+<h3 id="1-title">1. Title<a class="anchor" href="#1-title" aria-label="Link to this section: 1. Title">#</a></h3>
+<p>Use a concise title that describes the security boundary or behavior that failed.</p>
+<h3 id="2-summary">2. Summary<a class="anchor" href="#2-summary" aria-label="Link to this section: 2. Summary">#</a></h3>
+<p>Explain what happened, under which test context, and why it matters.</p>
+<h3 id="3-affected-component">3. Affected component<a class="anchor" href="#3-affected-component" aria-label="Link to this section: 3. Affected component">#</a></h3>
+<p>Identify the application, environment, endpoint or workflow, object type, and affected version where known. Avoid including unnecessary internal identifiers.</p>
+<h3 id="4-security-expectation">4. Security expectation<a class="anchor" href="#4-security-expectation" aria-label="Link to this section: 4. Security expectation">#</a></h3>
+<p>State the expected authorization rule, workflow precondition, or invariant.</p>
+<h3 id="5-preconditions-and-actor-context">5. Preconditions and actor context<a class="anchor" href="#5-preconditions-and-actor-context" aria-label="Link to this section: 5. Preconditions and actor context">#</a></h3>
+<p>Document:</p>
+<ul>
+<li>test actor and effective role;</li>
+<li>tenant or organization context;</li>
+<li>object ownership and relevant relationships;</li>
+<li>session and authentication state;</li>
+<li>workflow state and required prior actions.</li>
+</ul>
+<h3 id="6-reproduction-steps">6. Reproduction steps<a class="anchor" href="#6-reproduction-steps" aria-label="Link to this section: 6. Reproduction steps">#</a></h3>
+<p>Provide a minimal, ordered sequence that an authorized reviewer can repeat. Use placeholders for secrets and synthetic identifiers. Do not include a live token or password.</p>
+<h3 id="7-expected-versus-observed-behavior">7. Expected versus observed behavior<a class="anchor" href="#7-expected-versus-observed-behavior" aria-label="Link to this section: 7. Expected versus observed behavior">#</a></h3>
+<div class="table-wrap" role="region" aria-label="Table: 7. Expected versus observed behavior" tabindex="0">
+<table>
+<thead><tr><th scope="col">Dimension</th><th scope="col">Expected</th><th scope="col">Observed</th></tr></thead>
+<tbody>
+<tr><td>Authorization</td><td>[Expected boundary]</td><td>[Observed behavior]</td></tr>
+<tr><td>Data access</td><td>[Expected visibility]</td><td>[Observed visibility]</td></tr>
+<tr><td>State transition</td><td>[Expected state]</td><td>[Observed state]</td></tr>
+<tr><td>Side effect</td><td>[Expected result]</td><td>[Observed result]</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="8-evidence">8. Evidence<a class="anchor" href="#8-evidence" aria-label="Link to this section: 8. Evidence">#</a></h3>
+<p>Attach only the minimum request/response excerpt, state observation, screenshot, or audit record needed to support the finding. Redact:</p>
+<ul>
+<li>passwords and API keys;</li>
+<li>cookies, bearer tokens, and session IDs;</li>
+<li>personal information;</li>
+<li>unrelated tenant or customer records;</li>
+<li>proprietary data not necessary to demonstrate impact.</li>
+</ul>
+<h3 id="9-impact-and-severity-rationale">9. Impact and severity rationale<a class="anchor" href="#9-impact-and-severity-rationale" aria-label="Link to this section: 9. Impact and severity rationale">#</a></h3>
+<p>Explain the affected security property, the actors and data exposed, the preconditions, and the demonstrated consequence.</p>
+<p>Severity should follow the customer's agreed methodology and be justified by the demonstrated impact. Do not invent a CVSS score or imply a validated score when one has not been calculated.</p>
+<h3 id="10-alternative-explanations-and-limitations">10. Alternative explanations and limitations<a class="anchor" href="#10-alternative-explanations-and-limitations" aria-label="Link to this section: 10. Alternative explanations and limitations">#</a></h3>
+<p>Record relevant caching, asynchronous processing, WAF, rate-limit, session, race, or environment effects considered. State what remains unknown.</p>
+<h3 id="11-remediation-guidance">11. Remediation guidance<a class="anchor" href="#11-remediation-guidance" aria-label="Link to this section: 11. Remediation guidance">#</a></h3>
+<p>Describe the control that should be enforced at the authoritative server-side boundary. Keep remediation specific to the demonstrated failure and avoid assuming the underlying implementation.</p>
+<h3 id="12-retest-record">12. Retest record<a class="anchor" href="#12-retest-record" aria-label="Link to this section: 12. Retest record">#</a></h3>
+<p>Record the retest date, environment, actor and role context, original invariant, observed outcome, and any changed conditions.</p>
+<h2 id="finding-confidence-versus-severity">Finding confidence versus severity<a class="anchor" href="#finding-confidence-versus-severity" aria-label="Link to this section: Finding confidence versus severity">#</a></h2>
+<p>Confidence and severity answer different questions.</p>
+<ul>
+<li><strong>Confidence</strong> describes how strongly the evidence supports the finding.</li>
+<li><strong>Severity</strong> describes the risk of the demonstrated security impact.</li>
+</ul>
+<p>A high-impact hypothesis with weak evidence should not be reported as a confirmed critical vulnerability. A well-confirmed issue may still have limited impact.</p>
+<h2 id="report-hygiene">Report hygiene<a class="anchor" href="#report-hygiene" aria-label="Link to this section: Report hygiene">#</a></h2>
+<p>Store reports only in approved locations. Limit access to authorized recipients. Agree retention and deletion requirements with the system owner. Do not publish findings or exploit detail without coordinated authorization.</p>
+<h2 id="template">Template<a class="anchor" href="#template" aria-label="Link to this section: Template">#</a></h2>
+<p>A copy-ready blank report is available at <a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/templates/finding-report.md" rel="noopener">templates/finding-report.md</a>.</p>
+</article>
+<section class="doc-related" aria-labelledby="related-h">
+<h2 id="related-h">Related documentation</h2>
+<ul>
+<li><a href="/docs/evidence-and-validation/"><h3>Evidence and validation</h3><p>How to distinguish a suspicious signal from a supported, reviewable security conclusion.</p></a></li>
+<li><a href="/docs/security-testing-playbook/"><h3>Security testing playbook</h3><p>Controlled patterns for object ownership, roles, multi-step workflows, sessions, and ambiguous results.</p></a></li>
+<li><a href="/docs/assessment-plan-template/"><h3>Assessment plan template</h3><p>Define scope, identities, operational constraints, data handling, approvals, and success criteria.</p></a></li>
+<li><a href="/docs/glossary/"><h3>Security glossary</h3><p>Shared definitions for application-security, evidence, authorization, and workflow terminology.</p></a></li>
+</ul>
+</section>
+<nav class="doc-pager" aria-label="More in Practitioner resources">
+<a class="doc-pager__prev" rel="prev" href="/docs/evaluation-protocol/"><span>Previous in Practitioner resources</span>Evaluation protocol</a>
+<span></span>
+</nav>
+<aside class="doc-cta" aria-labelledby="cta-h">
+<h2 id="cta-h">Evaluate VulnGPT in private beta</h2>
+<p>VulnGPT by NovaSecLabs is in private beta. This page describes product direction and evaluation guidance. It does not guarantee that every capability is currently available.</p>
+<div class="doc-cta__actions">
+<a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_docs&amp;utm_content=finding-report-standard">Request private beta</a>
+<a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/FINDING_REPORT_STANDARD.md" rel="noopener">View source on GitHub</a>
+</div>
+<p class="hero__auth">For applications you own or are authorized to test.</p>
+</aside>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid">
+<div class="site-footer__about">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p>
+</div>
+<nav aria-label="Product">
+<h2>Product</h2>
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/docs/">Documentation</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h2>Company</h2>
+<ul>
+<li>
+<a href="https://www.novaseclabs.com">NovaSecLabs</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/about">About</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/pricing">Pricing</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/resources">Resources</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Connect">
+<h2>Connect</h2>
+<ul>
+<li>
+<a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a>
+</li>
+<li>
+<a href="https://x.com/novaseclabs" rel="noopener">X</a>
+</li>
+<li>
+<a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a>
+</li>
+<li>
+<a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__legal">
+<p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p>
+<p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

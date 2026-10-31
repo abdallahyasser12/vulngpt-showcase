@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Responsible Testing | VulnGPT Docs</title>
+<meta name="description" content="Authorization, scope, test data and operational safeguards for using VulnGPT by NovaSecLabs only on applications you own or may test.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://showcase.novaseclabs.com/docs/responsible-testing/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VulnGPT by NovaSecLabs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Responsible Testing | VulnGPT Docs">
+<meta property="og:description" content="Authorization, scope, test data and operational safeguards for using VulnGPT by NovaSecLabs only on applications you own or may test.">
+<meta property="og:url" content="https://showcase.novaseclabs.com/docs/responsible-testing/">
+<meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Responsible Testing | VulnGPT Docs">
+<meta name="twitter:description" content="Authorization, scope, test data and operational safeguards for using VulnGPT by NovaSecLabs only on applications you own or may test.">
+<meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta name="twitter:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/docs/docs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"TechArticle","@id":"https://showcase.novaseclabs.com/docs/responsible-testing/#article","headline":"Responsible Testing","description":"Authorization, scope, test data and operational safeguards for using VulnGPT by NovaSecLabs only on applications you own or may test.","url":"https://showcase.novaseclabs.com/docs/responsible-testing/","mainEntityOfPage":"https://showcase.novaseclabs.com/docs/responsible-testing/","inLanguage":"en","dateModified":"2026-10-31","articleSection":"Governance & reference","wordCount":246,"timeRequired":"PT2M","image":"https://showcase.novaseclabs.com/assets/social/og-doc.png","author":{"@id":"https://www.novaseclabs.com/#organization"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"isPartOf":[{"@id":"https://showcase.novaseclabs.com/#website"},{"@id":"https://showcase.novaseclabs.com/docs/#webpage"}],"about":{"@id":"https://www.novaseclabs.com/#vulngpt"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/docs/responsible-testing/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://showcase.novaseclabs.com/docs/"},{"@type":"ListItem","position":3,"name":"Responsible testing","item":"https://showcase.novaseclabs.com/docs/responsible-testing/"}]}]}</script>
+<script src="/script.js" defer></script>
+<script src="/docs/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+<span class="nav-toggle__bars" aria-hidden="true">
+</span>
+<span>Menu</span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/#approach">Approach</a>
+</li>
+<li>
+<a href="/#evidence">Evidence</a>
+</li>
+<li>
+<a href="/docs/" aria-current="page">Docs</a>
+</li>
+<li>
+<a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero doc-head">
+<div class="container">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/docs/">Documentation</a></li>
+<li aria-current="page">Responsible testing</li>
+</ol>
+</nav>
+<p class="eyebrow"><b>Governance &amp; reference</b> · VulnGPT by NovaSecLabs</p>
+<h1>Responsible Testing</h1>
+<p class="lede">Authorization, scope, test data and operational safeguards for using VulnGPT by NovaSecLabs only on applications you own or may test.</p>
+<p class="doc-meta"><span>2 min read</span><span>Last updated <time datetime="2026-10-31">31 Oct 2026</time></span><a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/RESPONSIBLE_TESTING.md" rel="noopener">View source on GitHub</a></p>
+</div>
+</section>
+<div class="container doc-layout">
+<aside class="doc-aside">
+<nav class="doc-toc" aria-label="On this page" data-spy>
+<details open>
+<summary>On this page</summary>
+<ol>
+<li><a href="#before-testing">Before testing</a></li>
+<li><a href="#during-testing">During testing</a></li>
+<li><a href="#after-testing">After testing</a></li>
+<li><a href="#public-disclosure">Public disclosure</a></li>
+</ol>
+</details>
+</nav>
+</aside>
+<div class="doc-main">
+<article class="prose doc-prose">
+
+<p>VulnGPT is intended for applications and infrastructure that the operator owns or is explicitly authorized to test. Access to a product or endpoint is not permission to assess it.</p>
+<h2 id="before-testing">Before testing<a class="anchor" href="#before-testing" aria-label="Link to this section: Before testing">#</a></h2>
+<ul>
+<li>Obtain written authorization from the system owner.</li>
+<li>Define exact hosts, applications, APIs, environments, identities, and test windows.</li>
+<li>Document allowed and prohibited techniques.</li>
+<li>Use dedicated, least-privilege test accounts.</li>
+<li>Prefer synthetic records and non-production data.</li>
+<li>Agree on rate limits, concurrency, destructive actions, and emergency stop procedures.</li>
+<li>Identify an owner who can pause testing if the application becomes unstable.</li>
+</ul>
+<h2 id="during-testing">During testing<a class="anchor" href="#during-testing" aria-label="Link to this section: During testing">#</a></h2>
+<ul>
+<li>Stay within the approved scope.</li>
+<li>Do not access, copy, alter, or disclose unrelated user data.</li>
+<li>Avoid destructive actions and uncontrolled state changes.</li>
+<li>Respect rate limits and operational constraints.</li>
+<li>Stop and escalate when testing causes unexpected service impact or exposes sensitive information.</li>
+<li>Preserve only the evidence necessary to support the authorized assessment.</li>
+</ul>
+<h2 id="after-testing">After testing<a class="anchor" href="#after-testing" aria-label="Link to this section: After testing">#</a></h2>
+<ul>
+<li>Securely share findings with the authorized owner.</li>
+<li>Redact credentials, tokens, personal data, and unrelated records.</li>
+<li>Explain conditions, limitations, and reproducibility.</li>
+<li>Agree on remediation and retest scope.</li>
+<li>Handle and delete retained artifacts according to the applicable agreement and customer policy.</li>
+</ul>
+<h2 id="public-disclosure">Public disclosure<a class="anchor" href="#public-disclosure" aria-label="Link to this section: Public disclosure">#</a></h2>
+<p>Do not publish exploit details or sensitive vulnerability information before coordinating with the affected owner. For concerns involving VulnGPT or NovaSecLabs public infrastructure, follow <a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/SECURITY.md" rel="noopener">SECURITY.md</a>.</p>
+<p>This guidance does not replace applicable law, contracts, customer rules, or professional obligations.</p>
+</article>
+<section class="doc-related" aria-labelledby="related-h">
+<h2 id="related-h">Related documentation</h2>
+<ul>
+<li><a href="/docs/assessment-plan-template/"><h3>Assessment plan template</h3><p>Define scope, identities, operational constraints, data handling, approvals, and success criteria.</p></a></li>
+<li><a href="/docs/security-and-privacy/"><h3>Security and privacy</h3><p>Public trust boundaries and the specific questions that require current vendor confirmation.</p></a></li>
+<li><a href="/docs/faq/"><h3>FAQ</h3><p>Product status, access, intended use, supported claims, and common evaluation questions.</p></a></li>
+<li><a href="/docs/product-overview/"><h3>Product overview</h3><p>What VulnGPT is being built to investigate, who it serves, and where its boundaries are.</p></a></li>
+</ul>
+</section>
+<nav class="doc-pager" aria-label="More in Governance &amp; reference">
+<span></span>
+<a class="doc-pager__next" rel="next" href="/docs/benchmark-governance/"><span>Next in Governance &amp; reference</span>Benchmark governance</a>
+</nav>
+<aside class="doc-cta" aria-labelledby="cta-h">
+<h2 id="cta-h">Evaluate VulnGPT in private beta</h2>
+<p>VulnGPT by NovaSecLabs is in private beta. This page describes product direction and evaluation guidance. It does not guarantee that every capability is currently available.</p>
+<div class="doc-cta__actions">
+<a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_docs&amp;utm_content=responsible-testing">Request private beta</a>
+<a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/RESPONSIBLE_TESTING.md" rel="noopener">View source on GitHub</a>
+</div>
+<p class="hero__auth">For applications you own or are authorized to test.</p>
+</aside>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid">
+<div class="site-footer__about">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p>
+</div>
+<nav aria-label="Product">
+<h2>Product</h2>
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/docs/">Documentation</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h2>Company</h2>
+<ul>
+<li>
+<a href="https://www.novaseclabs.com">NovaSecLabs</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/about">About</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/pricing">Pricing</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/resources">Resources</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Connect">
+<h2>Connect</h2>
+<ul>
+<li>
+<a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a>
+</li>
+<li>
+<a href="https://x.com/novaseclabs" rel="noopener">X</a>
+</li>
+<li>
+<a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a>
+</li>
+<li>
+<a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__legal">
+<p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p>
+<p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

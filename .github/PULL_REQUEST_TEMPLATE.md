@@ -22,7 +22,8 @@ Who benefits from this change, and which pages or documents are affected?
 - [ ] No secrets, tokens, customer data, or proprietary implementation details were added.
 - [ ] Security-sensitive reports were not placed in a public issue or pull request.
 - [ ] `node scripts/validate-public-repo.mjs` passes, or any failure is explained with evidence.
-- [ ] New documents are linked from the documentation index and relative links resolve.
+- [ ] New or edited documents were rebuilt with `node scripts/build-docs.mjs`, are linked from the documentation index, and relative links resolve.
+- [ ] Public wording uses the approved autonomous description and its fixed definition from `CLAIMS.md` (no "fully autonomous", "hands-free", or "no human needed").
 - [ ] Benchmark and capability language follows the relevant publication/evaluation policy.
 
 ## Visual evidence

@@ -1,0 +1,97 @@
+/* VulnGPT showcase design tokens. Light is the default; dark swaps every colour token.
+   Brand gradient is a hairline rule and logo-only: never use it for text or backgrounds. */
+:root {
+  color-scheme: light dark;
+
+  /* Surfaces and text */
+  --paper: #f6f4ef;
+  --paper-2: #ede9e0;
+  --paper-3: #fbfaf7;
+  --ink: #0b0c10;
+  --ink-2: #3a3d47;
+  --ink-3: #5b5f6c;
+  --line: rgba(11, 12, 16, 0.14);
+  --line-strong: rgba(11, 12, 16, 0.32);
+
+  /* Accent (mascot purple). One accent colour only. */
+  --accent: #6b46e5;
+  --accent-ink: #5a36d4;
+  --accent-wash: rgba(107, 70, 229, 0.08);
+
+  /* Controls */
+  --btn-bg: var(--ink);
+  --btn-fg: var(--paper);
+  --focus: #6b46e5;
+
+  /* Instrument panels: product captures always sit on near-black in both schemes */
+  --night: #0a0b10;
+  --night-2: #11131b;
+  --night-line: rgba(255, 255, 255, 0.09);
+  --night-ink: #e9e7e0;
+  --night-ink-2: #a9adb9;
+
+  /* Severity and status semantics only */
+  --sev-critical: #e5484d;
+  --sev-amber: #f5a524;
+  --sev-ok: #30a46c;
+  --sev-critical-ink: #b42328;
+
+  /* Brand hairline */
+  --brand-rule: linear-gradient(90deg, #aab4ff, #e1a6f4 50%, #7fd3ff);
+
+  /* Type */
+  --f-serif: 'Newsreader', 'Newsreader Fallback', Georgia, 'Times New Roman', serif;
+  --f-sans: 'Instrument Sans', 'Instrument Sans Fallback', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+  --f-mono: 'JetBrains Mono', 'JetBrains Mono Fallback', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-base: clamp(1.0625rem, 1.02rem + 0.2vw, 1.125rem);
+  --fs-lg: clamp(1.1875rem, 1.1rem + 0.45vw, 1.375rem);
+  --fs-h3: clamp(1.375rem, 1.25rem + 0.6vw, 1.75rem);
+  --fs-h2: clamp(1.9375rem, 1.5rem + 2vw, 3rem);
+  --fs-h1: clamp(2.5rem, 1.2rem + 5.2vw, 4.5rem);
+
+  /* Space (4px base) */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4.5rem;
+  --s-9: clamp(4.5rem, 3rem + 6vw, 8.5rem);
+
+  /* Radius */
+  --r-1: 4px;
+  --r-2: 8px;
+  --r-3: 12px;
+
+  --shadow-frame: 0 18px 40px -22px rgba(11, 12, 16, 0.38);
+  --container: 1200px;
+  --gutter: 24px;
+  --header-h: 68px;
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --paper: #0d0e13;
+    --paper-2: #151821;
+    --paper-3: #12141b;
+    --ink: #efece4;
+    --ink-2: #bcbfca;
+    --ink-3: #9094a3;
+    --line: rgba(255, 255, 255, 0.12);
+    --line-strong: rgba(255, 255, 255, 0.3);
+    --accent: #b7a4ff;
+    --accent-ink: #c4b5ff;
+    --accent-wash: rgba(183, 164, 255, 0.1);
+    --btn-bg: var(--ink);
+    --btn-fg: #0b0c10;
+    --focus: #b7a4ff;
+    --sev-critical-ink: #ff8a8e;
+    --shadow-frame: 0 18px 40px -22px rgba(0, 0, 0, 0.8);
+  }
+}

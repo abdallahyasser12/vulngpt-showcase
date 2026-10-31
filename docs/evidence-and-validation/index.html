@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evidence and Validation Standard | VulnGPT Docs</title>
+<meta name="description" content="How VulnGPT by NovaSecLabs treats a suspicious signal: hypothesis, control comparison, alternative explanations, confirmation and retest.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://showcase.novaseclabs.com/docs/evidence-and-validation/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VulnGPT by NovaSecLabs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Evidence and Validation Standard | VulnGPT Docs">
+<meta property="og:description" content="How VulnGPT by NovaSecLabs treats a suspicious signal: hypothesis, control comparison, alternative explanations, confirmation and retest.">
+<meta property="og:url" content="https://showcase.novaseclabs.com/docs/evidence-and-validation/">
+<meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Evidence and Validation Standard | VulnGPT Docs">
+<meta name="twitter:description" content="How VulnGPT by NovaSecLabs treats a suspicious signal: hypothesis, control comparison, alternative explanations, confirmation and retest.">
+<meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta name="twitter:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/docs/docs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"TechArticle","@id":"https://showcase.novaseclabs.com/docs/evidence-and-validation/#article","headline":"Evidence and Validation Standard","description":"How VulnGPT by NovaSecLabs treats a suspicious signal: hypothesis, control comparison, alternative explanations, confirmation and retest.","url":"https://showcase.novaseclabs.com/docs/evidence-and-validation/","mainEntityOfPage":"https://showcase.novaseclabs.com/docs/evidence-and-validation/","inLanguage":"en","dateModified":"2026-10-31","articleSection":"Product & technical","wordCount":808,"timeRequired":"PT4M","image":"https://showcase.novaseclabs.com/assets/social/og-doc.png","author":{"@id":"https://www.novaseclabs.com/#organization"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"isPartOf":[{"@id":"https://showcase.novaseclabs.com/#website"},{"@id":"https://showcase.novaseclabs.com/docs/#webpage"}],"about":{"@id":"https://www.novaseclabs.com/#vulngpt"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/docs/evidence-and-validation/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://showcase.novaseclabs.com/docs/"},{"@type":"ListItem","position":3,"name":"Evidence and validation","item":"https://showcase.novaseclabs.com/docs/evidence-and-validation/"}]}]}</script>
+<script src="/script.js" defer></script>
+<script src="/docs/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+<span class="nav-toggle__bars" aria-hidden="true">
+</span>
+<span>Menu</span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/#approach">Approach</a>
+</li>
+<li>
+<a href="/#evidence">Evidence</a>
+</li>
+<li>
+<a href="/docs/" aria-current="page">Docs</a>
+</li>
+<li>
+<a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero doc-head">
+<div class="container">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/docs/">Documentation</a></li>
+<li aria-current="page">Evidence and validation</li>
+</ol>
+</nav>
+<p class="eyebrow"><b>Product &amp; technical</b> · VulnGPT by NovaSecLabs</p>
+<h1>Evidence and Validation Standard</h1>
+<p class="lede">How VulnGPT by NovaSecLabs treats a suspicious signal: hypothesis, control comparison, alternative explanations, confirmation and retest.</p>
+<p class="doc-meta"><span>4 min read</span><span>Last updated <time datetime="2026-10-31">31 Oct 2026</time></span><a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/EVIDENCE_AND_VALIDATION.md" rel="noopener">View source on GitHub</a></p>
+</div>
+</section>
+<div class="container doc-layout">
+<aside class="doc-aside">
+<nav class="doc-toc" aria-label="On this page" data-spy>
+<details open>
+<summary>On this page</summary>
+<ol>
+<li><a href="#purpose">Purpose</a></li>
+<li><a href="#the-central-rule">The central rule</a></li>
+<li><a href="#minimum-evidence-record">Minimum evidence record</a></li>
+<li><a href="#evidence-quality">Evidence quality</a>
+<ol>
+<li><a href="#direct-evidence">Direct evidence</a></li>
+<li><a href="#comparative-evidence">Comparative evidence</a></li>
+<li><a href="#supporting-evidence">Supporting evidence</a></li>
+<li><a href="#ambiguous-evidence">Ambiguous evidence</a></li>
+</ol>
+</li>
+<li><a href="#controlled-comparison">Controlled comparison</a></li>
+<li><a href="#common-sources-of-false-conclusions">Common sources of false conclusions</a></li>
+<li><a href="#bounded-conclusions">Bounded conclusions</a></li>
+<li><a href="#retesting">Retesting</a></li>
+<li><a href="#public-performance-claims">Public performance claims</a></li>
+<li><a href="#related-documents">Related documents</a></li>
+</ol>
+</details>
+</nav>
+</aside>
+<div class="doc-main">
+<article class="prose doc-prose">
+
+<h2 id="purpose">Purpose<a class="anchor" href="#purpose" aria-label="Link to this section: Purpose">#</a></h2>
+<p>This document defines the evidence principles behind VulnGPT's public product positioning. It explains what a defensible application-security result should communicate and why a raw signal should not automatically become a confirmed finding.</p>
+<p>It is a public methodology statement, not a claim that every stage is fully automated or available for every vulnerability class in the current private beta.</p>
+<h2 id="the-central-rule">The central rule<a class="anchor" href="#the-central-rule" aria-label="Link to this section: The central rule">#</a></h2>
+<p><strong>A finding should be supported by observable behavior that violates a stated security expectation under a known, authorized test context.</strong></p>
+<p>An interesting response may justify investigation. It does not, by itself, establish impact, exploitability, or root cause.</p>
+<h2 id="minimum-evidence-record">Minimum evidence record<a class="anchor" href="#minimum-evidence-record" aria-label="Link to this section: Minimum evidence record">#</a></h2>
+<p>A reviewer should be able to understand the following elements.</p>
+<div class="table-wrap" role="region" aria-label="Table: Minimum evidence record" tabindex="0">
+<table>
+<thead><tr><th scope="col">Element</th><th scope="col">Required question</th></tr></thead>
+<tbody>
+<tr><td>Authorization</td><td>Was this target, identity, action, and test window explicitly authorized?</td></tr>
+<tr><td>Security expectation</td><td>What rule or boundary should the application enforce?</td></tr>
+<tr><td>Actor context</td><td>Which user, role, tenant, session, or privilege level performed the action?</td></tr>
+<tr><td>Resource context</td><td>Which object or workflow was involved, and who was entitled to access it?</td></tr>
+<tr><td>Preconditions</td><td>What state and prior actions were necessary for the test?</td></tr>
+<tr><td>Intervention</td><td>What controlled action was performed, and what variable changed?</td></tr>
+<tr><td>Observation</td><td>What data, state change, or side effect was actually observed?</td></tr>
+<tr><td>Control</td><td>What comparison helps rule out an unrelated explanation?</td></tr>
+<tr><td>Reproducibility</td><td>Can an authorized reviewer repeat the test safely?</td></tr>
+<tr><td>Impact</td><td>What security consequence follows from the demonstrated behavior?</td></tr>
+<tr><td>Limitations</td><td>What remains uncertain, environment-specific, or unverified?</td></tr>
+</tbody>
+</table>
+</div>
+<p>Do not include credentials, live session tokens, unrelated customer records, or secrets in public reports.</p>
+<h2 id="evidence-quality">Evidence quality<a class="anchor" href="#evidence-quality" aria-label="Link to this section: Evidence quality">#</a></h2>
+<h3 id="direct-evidence">Direct evidence<a class="anchor" href="#direct-evidence" aria-label="Link to this section: Direct evidence">#</a></h3>
+<p>An observable result that directly supports the security claim, such as a test actor retrieving private data belonging to a separate test actor where the application's access rule prohibits it.</p>
+<h3 id="comparative-evidence">Comparative evidence<a class="anchor" href="#comparative-evidence" aria-label="Link to this section: Comparative evidence">#</a></h3>
+<p>A controlled comparison showing that the result changes with one relevant variable, such as actor identity, role, object ownership, or workflow state.</p>
+<h3 id="supporting-evidence">Supporting evidence<a class="anchor" href="#supporting-evidence" aria-label="Link to this section: Supporting evidence">#</a></h3>
+<p>Context that helps interpret the result, such as a request sequence, state transition, application response, or relevant authorization expectation.</p>
+<h3 id="ambiguous-evidence">Ambiguous evidence<a class="anchor" href="#ambiguous-evidence" aria-label="Link to this section: Ambiguous evidence">#</a></h3>
+<p>An observation with plausible alternative explanations that have not been ruled out. It should remain an open hypothesis or an explicitly qualified result—not be promoted beyond what the evidence supports.</p>
+<h2 id="controlled-comparison">Controlled comparison<a class="anchor" href="#controlled-comparison" aria-label="Link to this section: Controlled comparison">#</a></h2>
+<p>Where feasible and safe, compare:</p>
+<ol>
+<li>a permitted control action under the expected identity and state;</li>
+<li>the test action under the identity or state being evaluated;</li>
+<li>the resulting data, state, and side effects;</li>
+<li>a repeat of the comparison to check stability.</li>
+</ol>
+<p>Avoid changing several variables simultaneously unless the workflow requires it and the resulting limitations are documented.</p>
+<h2 id="common-sources-of-false-conclusions">Common sources of false conclusions<a class="anchor" href="#common-sources-of-false-conclusions" aria-label="Link to this section: Common sources of false conclusions">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: Common sources of false conclusions" tabindex="0">
+<table>
+<thead><tr><th scope="col">Observation</th><th scope="col">Why it is insufficient on its own</th></tr></thead>
+<tbody>
+<tr><td>HTTP 200 response</td><td>The body may contain no protected information or state change</td></tr>
+<tr><td>HTTP 403 response</td><td>One blocked request does not establish that all relevant authorization paths are protected</td></tr>
+<tr><td>Different response length</td><td>Caching, personalization, dynamic fields, or error handling can cause differences</td></tr>
+<tr><td>WAF challenge or block</td><td>It may reflect an intermediary control rather than the application's underlying authorization logic</td></tr>
+<tr><td>Timeout</td><td>It may be environmental, rate-related, or transient</td></tr>
+<tr><td>State mismatch</td><td>It may result from asynchronous processing, stale reads, or an incomplete workflow</td></tr>
+<tr><td>Unexpected object identifier</td><td>An identifier being accepted does not prove unauthorized access or impact</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="bounded-conclusions">Bounded conclusions<a class="anchor" href="#bounded-conclusions" aria-label="Link to this section: Bounded conclusions">#</a></h2>
+<p>Reports should separate what was observed from what is inferred. A useful report distinguishes:</p>
+<ul>
+<li>the behavior directly demonstrated;</li>
+<li>the security expectation it violates;</li>
+<li>the impact supported by the evidence;</li>
+<li>the assumptions and limitations;</li>
+<li>any remaining uncertainty.</li>
+</ul>
+<p>Avoid universal statements when the test covers only one actor, object, endpoint, state, or environment.</p>
+<h2 id="retesting">Retesting<a class="anchor" href="#retesting" aria-label="Link to this section: Retesting">#</a></h2>
+<p>A retest should preserve the original security expectation and the conditions necessary to exercise it. The reviewer should compare the original and updated behavior, verify that the attempted remediation did not introduce a different failure, and record any environmental or workflow changes that affect comparability.</p>
+<p>A changed response status alone is not sufficient to demonstrate remediation.</p>
+<h2 id="public-performance-claims">Public performance claims<a class="anchor" href="#public-performance-claims" aria-label="Link to this section: Public performance claims">#</a></h2>
+<p>Detection rates, false-positive rates, benchmark scores, and comparisons require a documented dataset, ground truth, scope, run conditions, scoring rules, and limitations. Internal testing is not independent certification. A result should not be generalized beyond the environments and conditions it actually measures.</p>
+<p>The current public benchmark publication status is described in <a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/BENCHMARK_G1.md" rel="noopener">BENCHMARK_G1.md</a>. No unresolved or unreconciled score should be used as a marketing claim.</p>
+<h2 id="related-documents">Related documents<a class="anchor" href="#related-documents" aria-label="Link to this section: Related documents">#</a></h2>
+<ul>
+<li><a href="/docs/technical-approach/">Technical Approach</a></li>
+<li><a href="/docs/responsible-testing/">Responsible Testing</a></li>
+<li><a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/CLAIMS.md" rel="noopener">Claims and Messaging</a></li>
+</ul>
+</article>
+<section class="doc-related" aria-labelledby="related-h">
+<h2 id="related-h">Related documentation</h2>
+<ul>
+<li><a href="/docs/technical-approach/"><h3>Technical approach</h3><p>A conceptual model for investigating behavior across identity, authorization, and application state.</p></a></li>
+<li><a href="/docs/finding-report-standard/"><h3>Finding report standard</h3><p>Structure a finding around the expected boundary, evidence, impact, uncertainty, and retest.</p></a></li>
+<li><a href="/docs/evaluation-protocol/"><h3>Evaluation protocol</h3><p>Define ground truth and outcomes before a run; separate execution, observability, correctness, and evidence quality.</p></a></li>
+<li><a href="/docs/security-testing-playbook/"><h3>Security testing playbook</h3><p>Controlled patterns for object ownership, roles, multi-step workflows, sessions, and ambiguous results.</p></a></li>
+</ul>
+</section>
+<nav class="doc-pager" aria-label="More in Product &amp; technical">
+<a class="doc-pager__prev" rel="prev" href="/docs/system-overview/"><span>Previous in Product &amp; technical</span>System overview</a>
+<a class="doc-pager__next" rel="next" href="/docs/glossary/"><span>Next in Product &amp; technical</span>Security glossary</a>
+</nav>
+<aside class="doc-cta" aria-labelledby="cta-h">
+<h2 id="cta-h">Evaluate VulnGPT in private beta</h2>
+<p>VulnGPT by NovaSecLabs is in private beta. This page describes product direction and evaluation guidance. It does not guarantee that every capability is currently available.</p>
+<div class="doc-cta__actions">
+<a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_docs&amp;utm_content=evidence-and-validation">Request private beta</a>
+<a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/EVIDENCE_AND_VALIDATION.md" rel="noopener">View source on GitHub</a>
+</div>
+<p class="hero__auth">For applications you own or are authorized to test.</p>
+</aside>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid">
+<div class="site-footer__about">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p>
+</div>
+<nav aria-label="Product">
+<h2>Product</h2>
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/docs/">Documentation</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h2>Company</h2>
+<ul>
+<li>
+<a href="https://www.novaseclabs.com">NovaSecLabs</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/about">About</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/pricing">Pricing</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/resources">Resources</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Connect">
+<h2>Connect</h2>
+<ul>
+<li>
+<a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a>
+</li>
+<li>
+<a href="https://x.com/novaseclabs" rel="noopener">X</a>
+</li>
+<li>
+<a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a>
+</li>
+<li>
+<a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__legal">
+<p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p>
+<p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

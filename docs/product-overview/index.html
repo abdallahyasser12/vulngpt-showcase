@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Product Overview | VulnGPT Docs</title>
+<meta name="description" content="What VulnGPT by NovaSecLabs is designed to investigate, who it is for, the principles behind it, and what it is not. Private beta.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://showcase.novaseclabs.com/docs/product-overview/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VulnGPT by NovaSecLabs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Product Overview | VulnGPT Docs">
+<meta property="og:description" content="What VulnGPT by NovaSecLabs is designed to investigate, who it is for, the principles behind it, and what it is not. Private beta.">
+<meta property="og:url" content="https://showcase.novaseclabs.com/docs/product-overview/">
+<meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Product Overview | VulnGPT Docs">
+<meta name="twitter:description" content="What VulnGPT by NovaSecLabs is designed to investigate, who it is for, the principles behind it, and what it is not. Private beta.">
+<meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta name="twitter:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/docs/docs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"TechArticle","@id":"https://showcase.novaseclabs.com/docs/product-overview/#article","headline":"Product Overview","description":"What VulnGPT by NovaSecLabs is designed to investigate, who it is for, the principles behind it, and what it is not. Private beta.","url":"https://showcase.novaseclabs.com/docs/product-overview/","mainEntityOfPage":"https://showcase.novaseclabs.com/docs/product-overview/","inLanguage":"en","dateModified":"2026-10-31","articleSection":"Product & technical","wordCount":871,"timeRequired":"PT4M","image":"https://showcase.novaseclabs.com/assets/social/og-doc.png","author":{"@id":"https://www.novaseclabs.com/#organization"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"isPartOf":[{"@id":"https://showcase.novaseclabs.com/#website"},{"@id":"https://showcase.novaseclabs.com/docs/#webpage"}],"about":{"@id":"https://www.novaseclabs.com/#vulngpt"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/docs/product-overview/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://showcase.novaseclabs.com/docs/"},{"@type":"ListItem","position":3,"name":"Product overview","item":"https://showcase.novaseclabs.com/docs/product-overview/"}]}]}</script>
+<script src="/script.js" defer></script>
+<script src="/docs/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+<span class="nav-toggle__bars" aria-hidden="true">
+</span>
+<span>Menu</span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/#approach">Approach</a>
+</li>
+<li>
+<a href="/#evidence">Evidence</a>
+</li>
+<li>
+<a href="/docs/" aria-current="page">Docs</a>
+</li>
+<li>
+<a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero doc-head">
+<div class="container">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/docs/">Documentation</a></li>
+<li aria-current="page">Product overview</li>
+</ol>
+</nav>
+<p class="eyebrow"><b>Product &amp; technical</b> · VulnGPT by NovaSecLabs</p>
+<h1>Product Overview</h1>
+<p class="lede">What VulnGPT by NovaSecLabs is designed to investigate, who it is for, the principles behind it, and what it is not. Private beta.</p>
+<p class="doc-meta"><span>4 min read</span><span>Last updated <time datetime="2026-10-31">31 Oct 2026</time></span><a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/PRODUCT_OVERVIEW.md" rel="noopener">View source on GitHub</a></p>
+</div>
+</section>
+<div class="container doc-layout">
+<aside class="doc-aside">
+<nav class="doc-toc" aria-label="On this page" data-spy>
+<details open>
+<summary>On this page</summary>
+<ol>
+<li><a href="#executive-summary">Executive summary</a></li>
+<li><a href="#autonomy-defined">Autonomy, defined</a></li>
+<li><a href="#the-problem">The problem</a></li>
+<li><a href="#product-direction">Product direction</a>
+<ol>
+<li><a href="#authorization-and-object-ownership">Authorization and object ownership</a></li>
+<li><a href="#authenticated-and-multi-actor-workflows">Authenticated and multi-actor workflows</a></li>
+<li><a href="#business-logic-and-workflow-integrity">Business logic and workflow integrity</a></li>
+<li><a href="#stateful-application-behavior">Stateful application behavior</a></li>
+<li><a href="#interference-aware-interpretation">Interference-aware interpretation</a></li>
+</ol>
+</li>
+<li><a href="#intended-users">Intended users</a></li>
+<li><a href="#product-principles">Product principles</a></li>
+<li><a href="#what-vulngpt-is-not">What VulnGPT is not</a></li>
+<li><a href="#current-availability">Current availability</a></li>
+<li><a href="#related-documents">Related documents</a></li>
+</ol>
+</details>
+</nav>
+</aside>
+<div class="doc-main">
+<article class="prose doc-prose">
+
+<p><strong>Product:</strong> VulnGPT<br>
+<strong>Company:</strong> NovaSecLabs<br>
+<strong>Status:</strong> Private beta<br>
+<strong>Category:</strong> Autonomous web application security testing</p>
+<h2 id="executive-summary">Executive summary<a class="anchor" href="#executive-summary" aria-label="Link to this section: Executive summary">#</a></h2>
+<p>VulnGPT is being developed to investigate web application security weaknesses that depend on behavior across identities, permissions, objects, sessions, and multi-step workflows.</p>
+<p>Its central product premise is straightforward: a suspicious request or response is not enough to establish a vulnerability. The application context must be understood, a security expectation must be made explicit, and the observed behavior must be tested against that expectation.</p>
+<p>The product direction combines contextual investigation with evidence-oriented validation. It is intended to support security practitioners and application builders—not to claim that autonomous testing can replace expert judgment.</p>
+<h2 id="autonomy-defined">Autonomy, defined<a class="anchor" href="#autonomy-defined" aria-label="Link to this section: Autonomy, defined">#</a></h2>
+<p>VulnGPT by NovaSecLabs is described as autonomous. The word has a fixed meaning here:</p>
+<blockquote>
+<p>Autonomous means VulnGPT plans and runs the test steps itself inside the target, scope, and runtime budget you authorize; it does not mean unsupervised: you verify the target, set scope, confirm authorization, and review the evidence.</p>
+</blockquote>
+<p>In practice, the operator authorizes a target, sets the scope and a runtime budget, and confirms that testing is permitted. VulnGPT is designed to plan and run test steps within those limits without step-by-step direction. It does not mean testing without human review: authorization, scope, evidence review, risk decisions, and remediation remain human responsibilities.</p>
+<h2 id="the-problem">The problem<a class="anchor" href="#the-problem" aria-label="Link to this section: The problem">#</a></h2>
+<p>Modern web applications are systems of relationships and state.</p>
+<p>A user action may depend on a previously established session. An API object may belong to a different tenant. A workflow may permit an action only after an approval or payment transition. A role may be allowed to view a record but not modify it. A request may appear successful while the application's underlying state remains unchanged.</p>
+<p>When testing treats requests as isolated payload opportunities, it can miss failures that depend on these relationships. Conversely, a scanner may observe unusual behavior and overstate what that behavior proves.</p>
+<p>The difficult work is to answer questions such as:</p>
+<ul>
+<li>Which identity performed the action?</li>
+<li>What role and permissions did that identity have at the time?</li>
+<li>Which user or tenant owned the target object?</li>
+<li>What was the application's state before and after the action?</li>
+<li>What security invariant should have held?</li>
+<li>Could caching, session expiry, throttling, WAF behavior, or another condition explain the observation?</li>
+<li>Can the result be reproduced safely and reviewed by another person?</li>
+</ul>
+<h2 id="product-direction">Product direction<a class="anchor" href="#product-direction" aria-label="Link to this section: Product direction">#</a></h2>
+<p>VulnGPT is designed to focus on the following investigation areas:</p>
+<h3 id="authorization-and-object-ownership">Authorization and object ownership<a class="anchor" href="#authorization-and-object-ownership" aria-label="Link to this section: Authorization and object ownership">#</a></h3>
+<p>Investigate whether an authenticated actor can read, change, or otherwise affect an object outside the actor's permitted ownership or access boundary. This includes BOLA/IDOR-style scenarios and authorization differences between users or roles.</p>
+<h3 id="authenticated-and-multi-actor-workflows">Authenticated and multi-actor workflows<a class="anchor" href="#authenticated-and-multi-actor-workflows" aria-label="Link to this section: Authenticated and multi-actor workflows">#</a></h3>
+<p>Preserve the significance of actor identity and session context across sequences of actions. Some access-control failures only become visible when behavior is compared between two or more appropriately configured test identities.</p>
+<h3 id="business-logic-and-workflow-integrity">Business logic and workflow integrity<a class="anchor" href="#business-logic-and-workflow-integrity" aria-label="Link to this section: Business logic and workflow integrity">#</a></h3>
+<p>Examine whether the application enforces important rules across related actions: eligibility, approval, quantity, ownership, sequencing, account state, or other domain invariants.</p>
+<h3 id="stateful-application-behavior">Stateful application behavior<a class="anchor" href="#stateful-application-behavior" aria-label="Link to this section: Stateful application behavior">#</a></h3>
+<p>Consider transitions between states, the ordering of operations, and whether a later action is permitted only after a required earlier event.</p>
+<h3 id="interference-aware-interpretation">Interference-aware interpretation<a class="anchor" href="#interference-aware-interpretation" aria-label="Link to this section: Interference-aware interpretation">#</a></h3>
+<p>Treat WAF responses, rate limits, transient failures, session expiry, caching, and environmental changes as possible alternative explanations. Such behavior should not automatically be described as proof of an application vulnerability.</p>
+<p>These areas describe the product's focus. They are not a guarantee of universal coverage, support for every application architecture, or availability of every workflow in the current private beta.</p>
+<h2 id="intended-users">Intended users<a class="anchor" href="#intended-users" aria-label="Link to this section: Intended users">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: Intended users" tabindex="0">
+<table>
+<thead><tr><th scope="col">User</th><th scope="col">Intended value</th></tr></thead>
+<tbody>
+<tr><td>Penetration testers</td><td>Investigate contextual authorization and business-logic weaknesses with evidence that can be reviewed</td></tr>
+<tr><td>Application security teams</td><td>Add another investigative approach to existing security testing and triage practices</td></tr>
+<tr><td>Product security engineers</td><td>Examine security invariants across identities, records, and state transitions</td></tr>
+<tr><td>Developers and technical founders</td><td>Understand security behavior in the workflows they build and maintain</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="product-principles">Product principles<a class="anchor" href="#product-principles" aria-label="Link to this section: Product principles">#</a></h2>
+<ol>
+<li><strong>Context over isolated observations.</strong> Identity, role, ownership, and state are part of the security question.</li>
+<li><strong>Hypotheses over assumptions.</strong> A suspected issue should be expressed as a testable claim.</li>
+<li><strong>Falsification over confirmation bias.</strong> A sound investigation considers alternative explanations and controls.</li>
+<li><strong>Evidence over alert volume.</strong> Findings should explain the behavior that supports them.</li>
+<li><strong>Reproducibility over opaque conclusions.</strong> A reviewer should understand the relevant conditions and verification path.</li>
+<li><strong>Human accountability.</strong> Operators remain responsible for authorization, scope, impact decisions, and remediation.</li>
+</ol>
+<h2 id="what-vulngpt-is-not">What VulnGPT is not<a class="anchor" href="#what-vulngpt-is-not" aria-label="Link to this section: What VulnGPT is not">#</a></h2>
+<p>VulnGPT is not presented as:</p>
+<ul>
+<li>a guarantee that all vulnerabilities will be found;</li>
+<li>a universal replacement for penetration testers or application security engineers;</li>
+<li>a substitute for secure software development, code review, threat modeling, or incident response;</li>
+<li>an authorization to test third-party systems;</li>
+<li>a certification, compliance attestation, or independent performance benchmark.</li>
+</ul>
+<h2 id="current-availability">Current availability<a class="anchor" href="#current-availability" aria-label="Link to this section: Current availability">#</a></h2>
+<p>VulnGPT is in private beta. Access is coordinated through the <a href="https://www.novaseclabs.com/waitlist" rel="noopener">NovaSecLabs private-beta application</a>. Capabilities, supported workflows, evaluation arrangements, and commercial terms should be confirmed directly with NovaSecLabs.</p>
+<h2 id="related-documents">Related documents<a class="anchor" href="#related-documents" aria-label="Link to this section: Related documents">#</a></h2>
+<ul>
+<li><a href="/docs/technical-approach/">Technical Approach</a></li>
+<li><a href="/docs/evidence-and-validation/">Evidence and Validation</a></li>
+<li><a href="/docs/enterprise-evaluation/">Enterprise Evaluation</a></li>
+<li><a href="/docs/faq/">FAQ</a></li>
+</ul>
+</article>
+<section class="doc-related" aria-labelledby="related-h">
+<h2 id="related-h">Related documentation</h2>
+<ul>
+<li><a href="/docs/technical-approach/"><h3>Technical approach</h3><p>A conceptual model for investigating behavior across identity, authorization, and application state.</p></a></li>
+<li><a href="/docs/evidence-and-validation/"><h3>Evidence and validation</h3><p>How to distinguish a suspicious signal from a supported, reviewable security conclusion.</p></a></li>
+<li><a href="/docs/faq/"><h3>FAQ</h3><p>Product status, access, intended use, supported claims, and common evaluation questions.</p></a></li>
+<li><a href="/docs/enterprise-evaluation/"><h3>Enterprise evaluation</h3><p>A structured diligence guide for security, architecture, procurement, privacy, and product stakeholders.</p></a></li>
+</ul>
+</section>
+<nav class="doc-pager" aria-label="More in Product &amp; technical">
+<span></span>
+<a class="doc-pager__next" rel="next" href="/docs/technical-approach/"><span>Next in Product &amp; technical</span>Technical approach</a>
+</nav>
+<aside class="doc-cta" aria-labelledby="cta-h">
+<h2 id="cta-h">Evaluate VulnGPT in private beta</h2>
+<p>VulnGPT by NovaSecLabs is in private beta. This page describes product direction and evaluation guidance. It does not guarantee that every capability is currently available.</p>
+<div class="doc-cta__actions">
+<a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_docs&amp;utm_content=product-overview">Request private beta</a>
+<a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/PRODUCT_OVERVIEW.md" rel="noopener">View source on GitHub</a>
+</div>
+<p class="hero__auth">For applications you own or are authorized to test.</p>
+</aside>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid">
+<div class="site-footer__about">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p>
+</div>
+<nav aria-label="Product">
+<h2>Product</h2>
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/docs/">Documentation</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h2>Company</h2>
+<ul>
+<li>
+<a href="https://www.novaseclabs.com">NovaSecLabs</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/about">About</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/pricing">Pricing</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/resources">Resources</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Connect">
+<h2>Connect</h2>
+<ul>
+<li>
+<a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a>
+</li>
+<li>
+<a href="https://x.com/novaseclabs" rel="noopener">X</a>
+</li>
+<li>
+<a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a>
+</li>
+<li>
+<a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__legal">
+<p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p>
+<p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -3,7 +3,7 @@
 **Product:** VulnGPT  
 **Company:** NovaSecLabs  
 **Status:** Private beta  
-**Category:** AI-assisted web application security testing
+**Category:** Autonomous web application security testing
 
 ## Executive summary
 
@@ -11,7 +11,15 @@ VulnGPT is being developed to investigate web application security weaknesses th
 
 Its central product premise is straightforward: a suspicious request or response is not enough to establish a vulnerability. The application context must be understood, a security expectation must be made explicit, and the observed behavior must be tested against that expectation.
 
-The product direction combines contextual investigation with evidence-oriented validation. It is intended to support security practitioners and application builders—not to claim that automated testing can replace expert judgment.
+The product direction combines contextual investigation with evidence-oriented validation. It is intended to support security practitioners and application builders—not to claim that autonomous testing can replace expert judgment.
+
+## Autonomy, defined
+
+VulnGPT by NovaSecLabs is described as autonomous. The word has a fixed meaning here:
+
+> Autonomous means VulnGPT plans and runs the test steps itself inside the target, scope, and runtime budget you authorize; it does not mean unsupervised: you verify the target, set scope, confirm authorization, and review the evidence.
+
+In practice, the operator authorizes a target, sets the scope and a runtime budget, and confirms that testing is permitted. VulnGPT is designed to plan and run test steps within those limits without step-by-step direction. It does not mean testing without human review: authorization, scope, evidence review, risk decisions, and remediation remain human responsibilities.
 
 ## The problem
 

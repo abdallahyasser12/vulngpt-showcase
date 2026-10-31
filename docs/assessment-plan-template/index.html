@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assessment Plan Template | VulnGPT Docs</title>
+<meta name="description" content="A reusable worksheet for scoping an authorized assessment: targets, identities, constraints, data handling, approvals and stop conditions.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://showcase.novaseclabs.com/docs/assessment-plan-template/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VulnGPT by NovaSecLabs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Assessment Plan Template | VulnGPT Docs">
+<meta property="og:description" content="A reusable worksheet for scoping an authorized assessment: targets, identities, constraints, data handling, approvals and stop conditions.">
+<meta property="og:url" content="https://showcase.novaseclabs.com/docs/assessment-plan-template/">
+<meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Assessment Plan Template | VulnGPT Docs">
+<meta name="twitter:description" content="A reusable worksheet for scoping an authorized assessment: targets, identities, constraints, data handling, approvals and stop conditions.">
+<meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta name="twitter:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/docs/docs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"TechArticle","@id":"https://showcase.novaseclabs.com/docs/assessment-plan-template/#article","headline":"Application Security Assessment Plan — Template","description":"A reusable worksheet for scoping an authorized assessment: targets, identities, constraints, data handling, approvals and stop conditions.","url":"https://showcase.novaseclabs.com/docs/assessment-plan-template/","mainEntityOfPage":"https://showcase.novaseclabs.com/docs/assessment-plan-template/","inLanguage":"en","dateModified":"2026-10-31","articleSection":"Enterprise evaluation","wordCount":693,"timeRequired":"PT4M","image":"https://showcase.novaseclabs.com/assets/social/og-doc.png","author":{"@id":"https://www.novaseclabs.com/#organization"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"isPartOf":[{"@id":"https://showcase.novaseclabs.com/#website"},{"@id":"https://showcase.novaseclabs.com/docs/#webpage"}],"about":{"@id":"https://www.novaseclabs.com/#vulngpt"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/docs/assessment-plan-template/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://showcase.novaseclabs.com/docs/"},{"@type":"ListItem","position":3,"name":"Assessment plan template","item":"https://showcase.novaseclabs.com/docs/assessment-plan-template/"}]}]}</script>
+<script src="/script.js" defer></script>
+<script src="/docs/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+<span class="nav-toggle__bars" aria-hidden="true">
+</span>
+<span>Menu</span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/#approach">Approach</a>
+</li>
+<li>
+<a href="/#evidence">Evidence</a>
+</li>
+<li>
+<a href="/docs/" aria-current="page">Docs</a>
+</li>
+<li>
+<a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero doc-head">
+<div class="container">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/docs/">Documentation</a></li>
+<li aria-current="page">Assessment plan template</li>
+</ol>
+</nav>
+<p class="eyebrow"><b>Enterprise evaluation</b> · VulnGPT by NovaSecLabs</p>
+<h1>Application Security Assessment Plan — Template</h1>
+<p class="lede">A reusable worksheet for scoping an authorized assessment: targets, identities, constraints, data handling, approvals and stop conditions.</p>
+<p class="doc-meta"><span>4 min read</span><span>Last updated <time datetime="2026-10-31">31 Oct 2026</time></span><a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/ASSESSMENT_PLAN_TEMPLATE.md" rel="noopener">View source on GitHub</a></p>
+</div>
+</section>
+<div class="container doc-layout">
+<aside class="doc-aside">
+<nav class="doc-toc" aria-label="On this page" data-spy>
+<details open>
+<summary>On this page</summary>
+<ol>
+<li><a href="#1-engagement-record">1. Engagement record</a></li>
+<li><a href="#2-objective">2. Objective</a></li>
+<li><a href="#3-authorized-target-inventory">3. Authorized target inventory</a></li>
+<li><a href="#4-test-identities-and-data">4. Test identities and data</a></li>
+<li><a href="#5-test-scenarios">5. Test scenarios</a></li>
+<li><a href="#6-operational-constraints">6. Operational constraints</a></li>
+<li><a href="#7-data-handling">7. Data handling</a></li>
+<li><a href="#8-success-and-stop-criteria">8. Success and stop criteria</a></li>
+<li><a href="#9-findings-and-reporting">9. Findings and reporting</a></li>
+<li><a href="#10-authorization-record">10. Authorization record</a></li>
+</ol>
+</details>
+</nav>
+</aside>
+<div class="doc-main">
+<article class="prose doc-prose">
+
+<blockquote>
+<p>Complete this document with the system owner before testing. This template does not grant authorization. Testing must not begin until the required approvals and scope are documented.</p>
+</blockquote>
+<h2 id="1-engagement-record">1. Engagement record<a class="anchor" href="#1-engagement-record" aria-label="Link to this section: 1. Engagement record">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: 1. Engagement record" tabindex="0">
+<table>
+<thead><tr><th scope="col">Field</th><th scope="col">Value</th></tr></thead>
+<tbody>
+<tr><td>Organization / system owner</td><td>[Complete]</td></tr>
+<tr><td>Assessment owner</td><td>[Complete]</td></tr>
+<tr><td>Technical contact</td><td>[Complete]</td></tr>
+<tr><td>Emergency / stop contact</td><td>[Complete]</td></tr>
+<tr><td>Assessment reference</td><td>[Complete]</td></tr>
+<tr><td>Planned start and end</td><td>[Complete]</td></tr>
+<tr><td>Approval reference</td><td>[Link to written authorization]</td></tr>
+<tr><td>Environment</td><td>[Staging / test / other approved environment]</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="2-objective">2. Objective<a class="anchor" href="#2-objective" aria-label="Link to this section: 2. Objective">#</a></h2>
+<p><strong>Business or security question</strong></p>
+<p>[Describe the behavior or security boundary to evaluate.]</p>
+<p><strong>In-scope investigation areas</strong></p>
+<p>[Identify only the areas approved for this assessment.]</p>
+<p><strong>Out-of-scope areas</strong></p>
+<p>[List excluded applications, domains, accounts, techniques, data, and operations.]</p>
+<h2 id="3-authorized-target-inventory">3. Authorized target inventory<a class="anchor" href="#3-authorized-target-inventory" aria-label="Link to this section: 3. Authorized target inventory">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: 3. Authorized target inventory" tabindex="0">
+<table>
+<thead><tr><th scope="col">Target / application</th><th scope="col">Environment</th><th scope="col">Owner</th><th scope="col">In scope?</th><th scope="col">Constraints</th></tr></thead>
+<tbody>
+<tr><td>[Host, API, or app]</td><td>[Environment]</td><td>[Owner]</td><td>[Yes / No]</td><td>[Notes]</td></tr>
+</tbody>
+</table>
+</div>
+<p>Do not use wildcard scope unless the written authorization explicitly defines and approves it.</p>
+<h2 id="4-test-identities-and-data">4. Test identities and data<a class="anchor" href="#4-test-identities-and-data" aria-label="Link to this section: 4. Test identities and data">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: 4. Test identities and data" tabindex="0">
+<table>
+<thead><tr><th scope="col">Identity</th><th scope="col">Role / tenant</th><th scope="col">Purpose</th><th scope="col">Credential owner</th><th scope="col">Expiry / revocation</th></tr></thead>
+<tbody>
+<tr><td>[Test user A]</td><td>[Role / tenant]</td><td>[Control actor]</td><td>[Owner]</td><td>[Date / process]</td></tr>
+<tr><td>[Test user B]</td><td>[Role / tenant]</td><td>[Comparison actor]</td><td>[Owner]</td><td>[Date / process]</td></tr>
+</tbody>
+</table>
+</div>
+<p>Use least-privilege test identities and synthetic records wherever possible. Never paste passwords, API secrets, private keys, or active session tokens into this plan.</p>
+<h2 id="5-test-scenarios">5. Test scenarios<a class="anchor" href="#5-test-scenarios" aria-label="Link to this section: 5. Test scenarios">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: 5. Test scenarios" tabindex="0">
+<table>
+<thead><tr><th scope="col">Scenario ID</th><th scope="col">Security invariant</th><th scope="col">Preconditions</th><th scope="col">Approved actions</th><th scope="col">Evidence required</th></tr></thead>
+<tbody>
+<tr><td>[S-01]</td><td>[Expected security rule]</td><td>[State / roles / objects]</td><td>[Bounded test actions]</td><td>[Observable criteria]</td></tr>
+<tr><td>[S-02]</td><td>[Expected security rule]</td><td>[State / roles / objects]</td><td>[Bounded test actions]</td><td>[Observable criteria]</td></tr>
+</tbody>
+</table>
+</div>
+<p>Use the <a href="/docs/security-testing-playbook/">Security Testing Playbook</a> to design controlled comparisons.</p>
+<h2 id="6-operational-constraints">6. Operational constraints<a class="anchor" href="#6-operational-constraints" aria-label="Link to this section: 6. Operational constraints">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: 6. Operational constraints" tabindex="0">
+<table>
+<thead><tr><th scope="col">Constraint</th><th scope="col">Agreed value</th></tr></thead>
+<tbody>
+<tr><td>Permitted test window</td><td>[Time and timezone]</td></tr>
+<tr><td>Maximum request rate / concurrency</td><td>[Owner-approved limit]</td></tr>
+<tr><td>Destructive operations</td><td>[Prohibited / explicitly approved list]</td></tr>
+<tr><td>Production data access</td><td>[Prohibited by default / explicit approval]</td></tr>
+<tr><td>Data exfiltration</td><td>[Prohibited / narrowly defined approval]</td></tr>
+<tr><td>Emergency stop trigger</td><td>[Condition]</td></tr>
+<tr><td>Escalation procedure</td><td>[Contact and channel]</td></tr>
+<tr><td>Maintenance or freeze windows</td><td>[Dates / times]</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="7-data-handling">7. Data handling<a class="anchor" href="#7-data-handling" aria-label="Link to this section: 7. Data handling">#</a></h2>
+<ul>
+<li>Approved data categories: [Complete]</li>
+<li>Prohibited data categories: [Complete]</li>
+<li>Sanitization and redaction requirements: [Complete]</li>
+<li>Approved evidence storage: [Location and access owner]</li>
+<li>Evidence access list: [Complete]</li>
+<li>Retention and deletion requirements: [Complete]</li>
+<li>External service / model processing approval: [Confirm in writing]</li>
+</ul>
+<p>Do not proceed with sensitive data until applicable vendor terms, data flows, and processing arrangements have been reviewed.</p>
+<h2 id="8-success-and-stop-criteria">8. Success and stop criteria<a class="anchor" href="#8-success-and-stop-criteria" aria-label="Link to this section: 8. Success and stop criteria">#</a></h2>
+<p><strong>Success criteria</strong></p>
+<p>[Define observable outcomes before testing. Include evidence sufficiency and safety.]</p>
+<p><strong>Stop criteria</strong></p>
+<p>[Unexpected service impact, out-of-scope access, exposure of unrelated data, rate-limit warnings, or another owner-defined trigger.]</p>
+<h2 id="9-findings-and-reporting">9. Findings and reporting<a class="anchor" href="#9-findings-and-reporting" aria-label="Link to this section: 9. Findings and reporting">#</a></h2>
+<ul>
+<li>Report recipient: [Complete]</li>
+<li>Approved delivery channel: [Complete]</li>
+<li>Severity methodology: [Customer standard / agreed method]</li>
+<li>Evidence redaction owner: [Complete]</li>
+<li>Remediation review date: [Complete]</li>
+<li>Retest approval and window: [Complete]</li>
+</ul>
+<p>Use the <a href="/docs/finding-report-standard/">Finding Report Standard</a> to document results.</p>
+<h2 id="10-authorization-record">10. Authorization record<a class="anchor" href="#10-authorization-record" aria-label="Link to this section: 10. Authorization record">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: 10. Authorization record" tabindex="0">
+<table>
+<thead><tr><th scope="col">Approval</th><th scope="col">Name / role</th><th scope="col">Date</th><th scope="col">Reference</th></tr></thead>
+<tbody>
+<tr><td>System owner</td><td>[Complete]</td><td>[Date]</td><td>[Reference]</td></tr>
+<tr><td>Security owner</td><td>[Complete]</td><td>[Date]</td><td>[Reference]</td></tr>
+<tr><td>Operations owner</td><td>[Complete]</td><td>[Date]</td><td>[Reference]</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>No testing is authorized by this template alone.</strong> Retain the written approval and the final agreed scope with the engagement record.</p>
+</article>
+<section class="doc-related" aria-labelledby="related-h">
+<h2 id="related-h">Related documentation</h2>
+<ul>
+<li><a href="/docs/responsible-testing/"><h3>Responsible testing</h3><p>Authorization, scope, data minimization, safe execution, and coordinated disclosure guidance.</p></a></li>
+<li><a href="/docs/finding-report-standard/"><h3>Finding report standard</h3><p>Structure a finding around the expected boundary, evidence, impact, uncertainty, and retest.</p></a></li>
+<li><a href="/docs/security-testing-playbook/"><h3>Security testing playbook</h3><p>Controlled patterns for object ownership, roles, multi-step workflows, sessions, and ambiguous results.</p></a></li>
+<li><a href="/docs/enterprise-evaluation/"><h3>Enterprise evaluation</h3><p>A structured diligence guide for security, architecture, procurement, privacy, and product stakeholders.</p></a></li>
+</ul>
+</section>
+<nav class="doc-pager" aria-label="More in Enterprise evaluation">
+<a class="doc-pager__prev" rel="prev" href="/docs/security-model/"><span>Previous in Enterprise evaluation</span>Security model</a>
+<span></span>
+</nav>
+<aside class="doc-cta" aria-labelledby="cta-h">
+<h2 id="cta-h">Evaluate VulnGPT in private beta</h2>
+<p>VulnGPT by NovaSecLabs is in private beta. This page describes product direction and evaluation guidance. It does not guarantee that every capability is currently available.</p>
+<div class="doc-cta__actions">
+<a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_docs&amp;utm_content=assessment-plan-template">Request private beta</a>
+<a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/ASSESSMENT_PLAN_TEMPLATE.md" rel="noopener">View source on GitHub</a>
+</div>
+<p class="hero__auth">For applications you own or are authorized to test.</p>
+</aside>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid">
+<div class="site-footer__about">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p>
+</div>
+<nav aria-label="Product">
+<h2>Product</h2>
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/docs/">Documentation</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h2>Company</h2>
+<ul>
+<li>
+<a href="https://www.novaseclabs.com">NovaSecLabs</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/about">About</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/pricing">Pricing</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/resources">Resources</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Connect">
+<h2>Connect</h2>
+<ul>
+<li>
+<a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a>
+</li>
+<li>
+<a href="https://x.com/novaseclabs" rel="noopener">X</a>
+</li>
+<li>
+<a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a>
+</li>
+<li>
+<a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__legal">
+<p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p>
+<p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

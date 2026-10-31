@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Controlled Evaluation Protocol | VulnGPT Docs</title>
+<meta name="description" content="A protocol for a fair, reproducible evaluation of an application-security testing product: pre-registered scenarios, ground truth and outcome classes.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://showcase.novaseclabs.com/docs/evaluation-protocol/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VulnGPT by NovaSecLabs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Controlled Evaluation Protocol | VulnGPT Docs">
+<meta property="og:description" content="A protocol for a fair, reproducible evaluation of an application-security testing product: pre-registered scenarios, ground truth and outcome classes.">
+<meta property="og:url" content="https://showcase.novaseclabs.com/docs/evaluation-protocol/">
+<meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Controlled Evaluation Protocol | VulnGPT Docs">
+<meta name="twitter:description" content="A protocol for a fair, reproducible evaluation of an application-security testing product: pre-registered scenarios, ground truth and outcome classes.">
+<meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta name="twitter:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/docs/docs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"TechArticle","@id":"https://showcase.novaseclabs.com/docs/evaluation-protocol/#article","headline":"Controlled Product Evaluation Protocol","description":"A protocol for a fair, reproducible evaluation of an application-security testing product: pre-registered scenarios, ground truth and outcome classes.","url":"https://showcase.novaseclabs.com/docs/evaluation-protocol/","mainEntityOfPage":"https://showcase.novaseclabs.com/docs/evaluation-protocol/","inLanguage":"en","dateModified":"2026-10-31","articleSection":"Practitioner resources","wordCount":855,"timeRequired":"PT4M","image":"https://showcase.novaseclabs.com/assets/social/og-doc.png","author":{"@id":"https://www.novaseclabs.com/#organization"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"isPartOf":[{"@id":"https://showcase.novaseclabs.com/#website"},{"@id":"https://showcase.novaseclabs.com/docs/#webpage"}],"about":{"@id":"https://www.novaseclabs.com/#vulngpt"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/docs/evaluation-protocol/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://showcase.novaseclabs.com/docs/"},{"@type":"ListItem","position":3,"name":"Evaluation protocol","item":"https://showcase.novaseclabs.com/docs/evaluation-protocol/"}]}]}</script>
+<script src="/script.js" defer></script>
+<script src="/docs/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+<span class="nav-toggle__bars" aria-hidden="true">
+</span>
+<span>Menu</span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/#approach">Approach</a>
+</li>
+<li>
+<a href="/#evidence">Evidence</a>
+</li>
+<li>
+<a href="/docs/" aria-current="page">Docs</a>
+</li>
+<li>
+<a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero doc-head">
+<div class="container">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/docs/">Documentation</a></li>
+<li aria-current="page">Evaluation protocol</li>
+</ol>
+</nav>
+<p class="eyebrow"><b>Practitioner resources</b> · VulnGPT by NovaSecLabs</p>
+<h1>Controlled Product Evaluation Protocol</h1>
+<p class="lede">A protocol for a fair, reproducible evaluation of an application-security testing product: pre-registered scenarios, ground truth and outcome classes.</p>
+<p class="doc-meta"><span>4 min read</span><span>Last updated <time datetime="2026-10-31">31 Oct 2026</time></span><a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/EVALUATION_PROTOCOL.md" rel="noopener">View source on GitHub</a></p>
+</div>
+</section>
+<div class="container doc-layout">
+<aside class="doc-aside">
+<nav class="doc-toc" aria-label="On this page" data-spy>
+<details open>
+<summary>On this page</summary>
+<ol>
+<li><a href="#purpose">Purpose</a></li>
+<li><a href="#1-pre-register-the-evaluation">1. Pre-register the evaluation</a></li>
+<li><a href="#2-design-a-balanced-scenario-set">2. Design a balanced scenario set</a></li>
+<li><a href="#3-freeze-ground-truth">3. Freeze ground truth</a></li>
+<li><a href="#4-classify-execution-outcomes-separately">4. Classify execution outcomes separately</a></li>
+<li><a href="#5-adjudicate-positive-and-negative-cases">5. Adjudicate positive and negative cases</a></li>
+<li><a href="#6-report-metrics-with-explicit-denominators">6. Report metrics with explicit denominators</a></li>
+<li><a href="#7-preserve-reproducibility">7. Preserve reproducibility</a></li>
+<li><a href="#8-disclose-independence-and-limitations">8. Disclose independence and limitations</a></li>
+<li><a href="#9-publication-gate">9. Publication gate</a></li>
+<li><a href="#related-resources">Related resources</a></li>
+</ol>
+</details>
+</nav>
+</aside>
+<div class="doc-main">
+<article class="prose doc-prose">
+
+<h2 id="purpose">Purpose<a class="anchor" href="#purpose" aria-label="Link to this section: Purpose">#</a></h2>
+<p>This protocol helps a customer or independent reviewer design a fair, reproducible evaluation of an application-security testing product.</p>
+<p>It is not a VulnGPT performance report, a claim of benchmark completion, or a promise of feature coverage. VulnGPT is in private beta; the precise product scope and execution conditions must be agreed before evaluation.</p>
+<h2 id="1-pre-register-the-evaluation">1. Pre-register the evaluation<a class="anchor" href="#1-pre-register-the-evaluation" aria-label="Link to this section: 1. Pre-register the evaluation">#</a></h2>
+<p>Before the first run, record the evaluation owner and independent reviewer; product build or version identifier where available; target application and environment; authorization and approved scope; scenario inventory and scenario versions; expected ground truth for each scenario; test identities, roles, tenants, and relevant object ownership; allowed actions, prohibited actions, rate and concurrency limits; timeout, retry, and resource rules; evidence required for adjudication; scoring and exclusion rules; success criteria; and stop conditions.</p>
+<p>Do not change the rules after seeing results without recording a versioned amendment and explaining its effect.</p>
+<h2 id="2-design-a-balanced-scenario-set">2. Design a balanced scenario set<a class="anchor" href="#2-design-a-balanced-scenario-set" aria-label="Link to this section: 2. Design a balanced scenario set">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: 2. Design a balanced scenario set" tabindex="0">
+<table>
+<thead><tr><th scope="col">Category</th><th scope="col">Purpose</th></tr></thead>
+<tbody>
+<tr><td>Known positive</td><td>A controlled, independently established security violation should be observable</td></tr>
+<tr><td>Known negative</td><td>A legitimate behavior should not be reported as a vulnerability</td></tr>
+<tr><td>Boundary pair</td><td>Two scenarios differ by one relevant variable such as actor, role, ownership, or state</td></tr>
+<tr><td>Ambiguous</td><td>Known interference or incomplete observability tests conservative interpretation</td></tr>
+<tr><td>Retest</td><td>A known remediation should restore the defined security invariant</td></tr>
+</tbody>
+</table>
+</div>
+<p>Use synthetic test data and a staging environment wherever possible.</p>
+<h2 id="3-freeze-ground-truth">3. Freeze ground truth<a class="anchor" href="#3-freeze-ground-truth" aria-label="Link to this section: 3. Freeze ground truth">#</a></h2>
+<p>For every scenario, record a unique scenario ID and version; expected secure or vulnerable condition; security invariant; relevant actor, role, tenant, object owner, and state; setup and reset procedure; expected observable evidence; independent source of truth; and adjudication owner.</p>
+<p>Ground truth must not be inferred from the product's own result. Prefer a controlled fixture, source-owner verification, or an independent reviewer.</p>
+<h2 id="4-classify-execution-outcomes-separately">4. Classify execution outcomes separately<a class="anchor" href="#4-classify-execution-outcomes-separately" aria-label="Link to this section: 4. Classify execution outcomes separately">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: 4. Classify execution outcomes separately" tabindex="0">
+<table>
+<thead><tr><th scope="col">Outcome</th><th scope="col">Meaning</th></tr></thead>
+<tbody>
+<tr><td>Executed and observable</td><td>The scenario ran and produced evidence suitable for review</td></tr>
+<tr><td>Executed but unobservable</td><td>It ran, but the expected behavior could not be reliably observed</td></tr>
+<tr><td>Incomplete</td><td>The run stopped before the scenario's required actions were completed</td></tr>
+<tr><td>Not executed</td><td>The scenario was not attempted</td></tr>
+<tr><td>Invalid ground truth</td><td>The expected result could not be independently established</td></tr>
+<tr><td>Out of scope</td><td>The scenario was excluded by authorization or evaluation rules</td></tr>
+<tr><td>Ambiguous</td><td>Conflicting or insufficient observations prevent a bounded conclusion</td></tr>
+</tbody>
+</table>
+</div>
+<p>Do not collapse all outcomes into pass/fail. An unexecuted, incomplete, or unobservable scenario must not be converted into a true negative or a successful detection.</p>
+<h2 id="5-adjudicate-positive-and-negative-cases">5. Adjudicate positive and negative cases<a class="anchor" href="#5-adjudicate-positive-and-negative-cases" aria-label="Link to this section: 5. Adjudicate positive and negative cases">#</a></h2>
+<p>For a known-positive scenario:</p>
+<ul>
+<li><strong>True positive:</strong> a valid, evidence-supported finding matches the ground-truth weakness.</li>
+<li><strong>False negative:</strong> the scenario was fully executed and observable, but the expected weakness was not identified under the pre-registered matching rules.</li>
+<li><strong>Unscored:</strong> evidence, scope, execution, or ground truth is insufficient for classification.</li>
+</ul>
+<p>For a known-negative scenario:</p>
+<ul>
+<li><strong>True negative:</strong> no unsupported finding is raised under the pre-registered rules.</li>
+<li><strong>False positive:</strong> a finding is raised that contradicts the independently established secure ground truth.</li>
+<li><strong>Unscored:</strong> execution or evidence is insufficient to decide.</li>
+</ul>
+<h2 id="6-report-metrics-with-explicit-denominators">6. Report metrics with explicit denominators<a class="anchor" href="#6-report-metrics-with-explicit-denominators" aria-label="Link to this section: 6. Report metrics with explicit denominators">#</a></h2>
+<p>At minimum, report raw counts for known-positive and known-negative cases, true positives, false negatives, true negatives, false positives, incomplete scenarios, unobservable scenarios, unexecuted scenarios, invalid ground truth, and exclusions.</p>
+<p>Where the evaluation supports them, define:</p>
+<p>[
+\text{Precision} = \frac{TP}{TP + FP}
+]</p>
+<p>[
+\text{Recall} = \frac{TP}{TP + FN}
+]</p>
+<p>[
+\text{Specificity} = \frac{TN}{TN + FP}
+]</p>
+<p>State the denominator and number of unscored cases beside every metric. If a denominator is zero, report the metric as not applicable rather than zero or one.</p>
+<p>Do not describe a small, self-selected scenario set as a universal real-world detection rate. Keep coverage, execution completion, observability, correctness, and evidence quality separate.</p>
+<h2 id="7-preserve-reproducibility">7. Preserve reproducibility<a class="anchor" href="#7-preserve-reproducibility" aria-label="Link to this section: 7. Preserve reproducibility">#</a></h2>
+<p>Record the run configuration, environment, relevant logs, artifact hashes where possible, scenario reset state, and exact scoring implementation. Repeat the evaluation when practical and disclose run-to-run variation. A benchmark report should include raw row-level outcomes or a reviewable evidence bundle, not only an aggregate percentage.</p>
+<h2 id="8-disclose-independence-and-limitations">8. Disclose independence and limitations<a class="anchor" href="#8-disclose-independence-and-limitations" aria-label="Link to this section: 8. Disclose independence and limitations">#</a></h2>
+<p>Identify who designed the scenarios, established ground truth, configured and ran the product, scored the outputs, adjudicated ambiguous cases, and approved publication. Disclose when these responsibilities are held by the same organization or team. Internal testing is not independent evaluation.</p>
+<h2 id="9-publication-gate">9. Publication gate<a class="anchor" href="#9-publication-gate" aria-label="Link to this section: 9. Publication gate">#</a></h2>
+<p>Do not publish a score until the scenario inventory is frozen and versioned; all numerator and denominator counts reconcile to row-level records; exclusions and unscored outcomes are explicit; scoring rules are deterministic and reviewable; an independent or clearly disclosed adjudication process is complete; limitations and conflicts are stated; and the exact public wording is approved against the source evidence.</p>
+<p>See <a href="/docs/benchmark-governance/">Benchmark Governance</a> for the full publication standard and <a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/BENCHMARK_G1.md" rel="noopener">BENCHMARK_G1.md</a> for the current historical publication status.</p>
+<h2 id="related-resources">Related resources<a class="anchor" href="#related-resources" aria-label="Link to this section: Related resources">#</a></h2>
+<ul>
+<li><a href="/docs/capability-evaluation-matrix/">Capability Evaluation Matrix</a></li>
+<li><a href="/docs/assessment-plan-template/">Assessment Plan Template</a></li>
+<li><a href="/docs/finding-report-standard/">Finding Report Standard</a></li>
+</ul>
+</article>
+<section class="doc-related" aria-labelledby="related-h">
+<h2 id="related-h">Related documentation</h2>
+<ul>
+<li><a href="/docs/capability-evaluation-matrix/"><h3>Capability evaluation matrix</h3><p>Scenario dimensions, required context, evidence expectations, and common false conclusions.</p></a></li>
+<li><a href="/docs/benchmark-governance/"><h3>Benchmark governance</h3><p>Reproducibility, denominator integrity, independent review, and benchmark publication gates.</p></a></li>
+<li><a href="/docs/evidence-and-validation/"><h3>Evidence and validation</h3><p>How to distinguish a suspicious signal from a supported, reviewable security conclusion.</p></a></li>
+<li><a href="/docs/enterprise-evaluation/"><h3>Enterprise evaluation</h3><p>A structured diligence guide for security, architecture, procurement, privacy, and product stakeholders.</p></a></li>
+</ul>
+</section>
+<nav class="doc-pager" aria-label="More in Practitioner resources">
+<a class="doc-pager__prev" rel="prev" href="/docs/capability-evaluation-matrix/"><span>Previous in Practitioner resources</span>Capability evaluation matrix</a>
+<a class="doc-pager__next" rel="next" href="/docs/finding-report-standard/"><span>Next in Practitioner resources</span>Finding report standard</a>
+</nav>
+<aside class="doc-cta" aria-labelledby="cta-h">
+<h2 id="cta-h">Evaluate VulnGPT in private beta</h2>
+<p>VulnGPT by NovaSecLabs is in private beta. This page describes product direction and evaluation guidance. It does not guarantee that every capability is currently available.</p>
+<div class="doc-cta__actions">
+<a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_docs&amp;utm_content=evaluation-protocol">Request private beta</a>
+<a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/EVALUATION_PROTOCOL.md" rel="noopener">View source on GitHub</a>
+</div>
+<p class="hero__auth">For applications you own or are authorized to test.</p>
+</aside>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid">
+<div class="site-footer__about">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p>
+</div>
+<nav aria-label="Product">
+<h2>Product</h2>
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/docs/">Documentation</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h2>Company</h2>
+<ul>
+<li>
+<a href="https://www.novaseclabs.com">NovaSecLabs</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/about">About</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/pricing">Pricing</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/resources">Resources</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Connect">
+<h2>Connect</h2>
+<ul>
+<li>
+<a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a>
+</li>
+<li>
+<a href="https://x.com/novaseclabs" rel="noopener">X</a>
+</li>
+<li>
+<a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a>
+</li>
+<li>
+<a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__legal">
+<p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p>
+<p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

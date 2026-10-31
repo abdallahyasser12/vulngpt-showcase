@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Technical Approach | VulnGPT Docs</title>
+<meta name="description" content="A conceptual model for testing application behavior in context: scope, baseline, invariant, hypothesis, controlled test and a reviewable result.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://showcase.novaseclabs.com/docs/technical-approach/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VulnGPT by NovaSecLabs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Technical Approach | VulnGPT Docs">
+<meta property="og:description" content="A conceptual model for testing application behavior in context: scope, baseline, invariant, hypothesis, controlled test and a reviewable result.">
+<meta property="og:url" content="https://showcase.novaseclabs.com/docs/technical-approach/">
+<meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Technical Approach | VulnGPT Docs">
+<meta name="twitter:description" content="A conceptual model for testing application behavior in context: scope, baseline, invariant, hypothesis, controlled test and a reviewable result.">
+<meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta name="twitter:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/docs/docs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"TechArticle","@id":"https://showcase.novaseclabs.com/docs/technical-approach/#article","headline":"Technical Approach","description":"A conceptual model for testing application behavior in context: scope, baseline, invariant, hypothesis, controlled test and a reviewable result.","url":"https://showcase.novaseclabs.com/docs/technical-approach/","mainEntityOfPage":"https://showcase.novaseclabs.com/docs/technical-approach/","inLanguage":"en","dateModified":"2026-10-31","articleSection":"Product & technical","wordCount":782,"timeRequired":"PT4M","image":"https://showcase.novaseclabs.com/assets/social/og-doc.png","author":{"@id":"https://www.novaseclabs.com/#organization"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"isPartOf":[{"@id":"https://showcase.novaseclabs.com/#website"},{"@id":"https://showcase.novaseclabs.com/docs/#webpage"}],"about":{"@id":"https://www.novaseclabs.com/#vulngpt"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/docs/technical-approach/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://showcase.novaseclabs.com/docs/"},{"@type":"ListItem","position":3,"name":"Technical approach","item":"https://showcase.novaseclabs.com/docs/technical-approach/"}]}]}</script>
+<script src="/script.js" defer></script>
+<script src="/docs/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+<span class="nav-toggle__bars" aria-hidden="true">
+</span>
+<span>Menu</span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/#approach">Approach</a>
+</li>
+<li>
+<a href="/#evidence">Evidence</a>
+</li>
+<li>
+<a href="/docs/" aria-current="page">Docs</a>
+</li>
+<li>
+<a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero doc-head">
+<div class="container">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/docs/">Documentation</a></li>
+<li aria-current="page">Technical approach</li>
+</ol>
+</nav>
+<p class="eyebrow"><b>Product &amp; technical</b> · VulnGPT by NovaSecLabs</p>
+<h1>Technical Approach</h1>
+<p class="lede">A conceptual model for testing application behavior in context: scope, baseline, invariant, hypothesis, controlled test and a reviewable result.</p>
+<p class="doc-meta"><span>4 min read</span><span>Last updated <time datetime="2026-10-31">31 Oct 2026</time></span><a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/TECHNICAL_APPROACH.md" rel="noopener">View source on GitHub</a></p>
+</div>
+</section>
+<div class="container doc-layout">
+<aside class="doc-aside">
+<nav class="doc-toc" aria-label="On this page" data-spy>
+<details open>
+<summary>On this page</summary>
+<ol>
+<li><a href="#why-context-changes-the-test">Why context changes the test</a></li>
+<li><a href="#conceptual-investigation-model">Conceptual investigation model</a>
+<ol>
+<li><a href="#1-establish-authorized-scope">1. Establish authorized scope</a></li>
+<li><a href="#2-build-an-application-context">2. Build an application context</a></li>
+<li><a href="#3-observe-baseline-behavior">3. Observe baseline behavior</a></li>
+<li><a href="#4-state-the-security-invariant">4. State the security invariant</a></li>
+<li><a href="#5-form-a-falsifiable-hypothesis">5. Form a falsifiable hypothesis</a></li>
+<li><a href="#6-run-a-controlled-intervention">6. Run a controlled intervention</a></li>
+<li><a href="#7-evaluate-the-outcome">7. Evaluate the outcome</a></li>
+<li><a href="#8-preserve-a-reviewable-result">8. Preserve a reviewable result</a></li>
+</ol>
+</li>
+<li><a href="#conceptual-separation-of-stages">Conceptual separation of stages</a></li>
+<li><a href="#design-boundaries">Design boundaries</a></li>
+<li><a href="#implementation-boundary">Implementation boundary</a></li>
+</ol>
+</details>
+</nav>
+</aside>
+<div class="doc-main">
+<article class="prose doc-prose">
+
+<p>This document describes VulnGPT's public-facing conceptual model. It is not an implementation specification, a promise of support for every workflow, or a disclosure of proprietary engine internals.</p>
+<h2 id="why-context-changes-the-test">Why context changes the test<a class="anchor" href="#why-context-changes-the-test" aria-label="Link to this section: Why context changes the test">#</a></h2>
+<p>A web application request does not have a security meaning in isolation.</p>
+<p>Consider a request to retrieve an invoice. Its expected result may depend on the authenticated user, the user's organization, the invoice owner, the role assigned to that user, and the invoice's state. The same endpoint and object identifier can be legitimate in one context and unauthorized in another.</p>
+<p>A useful test must preserve the context needed to interpret the result.</p>
+<h2 id="conceptual-investigation-model">Conceptual investigation model<a class="anchor" href="#conceptual-investigation-model" aria-label="Link to this section: Conceptual investigation model">#</a></h2>
+<figure class="code-figure">
+<figcaption>Diagram source (Mermaid). This flowchart branches, so it is shown as text rather than as an ordered list.</figcaption>
+<pre tabindex="0"><code class="language-mermaid">flowchart TD
+    A[&quot;1. Authorized target and scope&quot;] --&gt; B[&quot;2. Actors, sessions, roles, objects&quot;]
+    B --&gt; C[&quot;3. Observe baseline behavior&quot;]
+    C --&gt; D[&quot;4. State the security invariant&quot;]
+    D --&gt; E[&quot;5. Form a falsifiable hypothesis&quot;]
+    E --&gt; F[&quot;6. Run a controlled intervention&quot;]
+    F --&gt; G[&quot;7. Compare outcome and alternatives&quot;]
+    G --&gt; H{&quot;Evidence sufficient?&quot;}
+    H -- &quot;No&quot; --&gt; I[&quot;Record uncertainty / gather more evidence&quot;]
+    I --&gt; F
+    H -- &quot;Yes&quot; --&gt; J[&quot;Document finding and retest path&quot;]</code></pre>
+</figure>
+<h3 id="1-establish-authorized-scope">1. Establish authorized scope<a class="anchor" href="#1-establish-authorized-scope" aria-label="Link to this section: 1. Establish authorized scope">#</a></h3>
+<p>Testing begins with a defined target and explicit authorization. The operator should understand permitted hosts, accounts, environments, test windows, data boundaries, and prohibited actions before execution.</p>
+<h3 id="2-build-an-application-context">2. Build an application context<a class="anchor" href="#2-build-an-application-context" aria-label="Link to this section: 2. Build an application context">#</a></h3>
+<p>The relevant context may include:</p>
+<ul>
+<li>actors and authenticated identities;</li>
+<li>roles, permissions, and organizational boundaries;</li>
+<li>sessions, tokens, and authentication state;</li>
+<li>objects and their owners or tenants;</li>
+<li>workflow state and relevant prior actions;</li>
+<li>preconditions and expected application behavior.</li>
+</ul>
+<p>The exact context required depends on the application and hypothesis. Not every investigation needs every item.</p>
+<h3 id="3-observe-baseline-behavior">3. Observe baseline behavior<a class="anchor" href="#3-observe-baseline-behavior" aria-label="Link to this section: 3. Observe baseline behavior">#</a></h3>
+<p>A baseline establishes what the application does under a known, permitted set of conditions. Without a useful baseline, a later difference may be difficult to interpret.</p>
+<p>The baseline should record enough information to distinguish actor, object, action, state, and outcome without unnecessarily collecting secrets or unrelated personal data.</p>
+<h3 id="4-state-the-security-invariant">4. State the security invariant<a class="anchor" href="#4-state-the-security-invariant" aria-label="Link to this section: 4. State the security invariant">#</a></h3>
+<p>An invariant is the security expectation that should remain true across relevant actions and state changes.</p>
+<p>Examples:</p>
+<ul>
+<li>A user must not read another tenant's private record.</li>
+<li>A lower-privileged role must not perform an administrative transition.</li>
+<li>A workflow action must not be accepted before its required precondition.</li>
+<li>An object update must not silently change ownership or bypass an approval rule.</li>
+</ul>
+<p>A well-formed invariant is specific enough to test and review.</p>
+<h3 id="5-form-a-falsifiable-hypothesis">5. Form a falsifiable hypothesis<a class="anchor" href="#5-form-a-falsifiable-hypothesis" aria-label="Link to this section: 5. Form a falsifiable hypothesis">#</a></h3>
+<p>A useful hypothesis identifies the actor, action, resource, precondition, expected restriction, and possible observable violation.</p>
+<p>For example:</p>
+<blockquote>
+<p>Given two authorized test users in separate tenants, an authenticated request made by the first user should not reveal or modify a private object owned by the second user.</p>
+</blockquote>
+<p>The hypothesis should describe what would count as supporting evidence and what observations would weaken it.</p>
+<h3 id="6-run-a-controlled-intervention">6. Run a controlled intervention<a class="anchor" href="#6-run-a-controlled-intervention" aria-label="Link to this section: 6. Run a controlled intervention">#</a></h3>
+<p>Change one relevant variable at a time where practical: actor, role, object owner, session, workflow state, or action sequence. Keep the test within scope and use safe test records.</p>
+<p>Controlled comparisons make it easier to distinguish authorization failures from unrelated response differences.</p>
+<h3 id="7-evaluate-the-outcome">7. Evaluate the outcome<a class="anchor" href="#7-evaluate-the-outcome" aria-label="Link to this section: 7. Evaluate the outcome">#</a></h3>
+<p>A response code or textual difference is rarely sufficient on its own. Interpretation should consider observable data exposure, state changes, side effects, the control case, repeatability, and plausible alternatives such as caching, stale sessions, throttling, or environmental instability.</p>
+<h3 id="8-preserve-a-reviewable-result">8. Preserve a reviewable result<a class="anchor" href="#8-preserve-a-reviewable-result" aria-label="Link to this section: 8. Preserve a reviewable result">#</a></h3>
+<p>A useful result should explain the security expectation, test context, action taken, observed outcome, impact, limitations, and safe reproduction path. Retesting should determine whether the relevant behavior has changed—not merely whether an endpoint now returns a different status code.</p>
+<h2 id="conceptual-separation-of-stages">Conceptual separation of stages<a class="anchor" href="#conceptual-separation-of-stages" aria-label="Link to this section: Conceptual separation of stages">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: Conceptual separation of stages" tabindex="0">
+<table>
+<thead><tr><th scope="col">Stage</th><th scope="col">Main question</th><th scope="col">Output</th></tr></thead>
+<tbody>
+<tr><td>Discovery</td><td>What behavior or surface is available to investigate?</td><td>Candidate behavior</td></tr>
+<tr><td>Context</td><td>Which actor, object, permission, and state matter?</td><td>Test context</td></tr>
+<tr><td>Hypothesis</td><td>What security rule could be violated?</td><td>Falsifiable hypothesis</td></tr>
+<tr><td>Validation</td><td>What controlled test distinguishes the hypothesis from alternatives?</td><td>Observations and control comparison</td></tr>
+<tr><td>Adjudication</td><td>Does the evidence support the claimed weakness?</td><td>Bounded conclusion</td></tr>
+<tr><td>Retest</td><td>Does the same security invariant now hold?</td><td>Updated verification record</td></tr>
+</tbody>
+</table>
+</div>
+<p>The stages are conceptually distinct even when a practical workflow revisits earlier stages.</p>
+<h2 id="design-boundaries">Design boundaries<a class="anchor" href="#design-boundaries" aria-label="Link to this section: Design boundaries">#</a></h2>
+<ul>
+<li>A successful HTTP response does not establish unauthorized access.</li>
+<li>A failed request does not establish that authorization is correct.</li>
+<li>A WAF block is not proof that the underlying application is secure.</li>
+<li>A timeout is not proof that a vulnerability exists or does not exist.</li>
+<li>An unusual response is not automatically a finding.</li>
+<li>A valid test in one state does not establish behavior in every role, tenant, or workflow state.</li>
+</ul>
+<h2 id="implementation-boundary">Implementation boundary<a class="anchor" href="#implementation-boundary" aria-label="Link to this section: Implementation boundary">#</a></h2>
+<p>This public document intentionally omits proprietary detection logic, internal service topology, deployment architecture, credentials, and customer-specific material. It describes the conceptual approach, not source-level implementation.</p>
+<p>For product availability and supported evaluation workflows, use the <a href="https://www.novaseclabs.com/waitlist" rel="noopener">private-beta application</a>.</p>
+</article>
+<section class="doc-related" aria-labelledby="related-h">
+<h2 id="related-h">Related documentation</h2>
+<ul>
+<li><a href="/docs/system-overview/"><h3>System overview</h3><p>Public conceptual architecture, trust boundaries, and the separation between test context and evidence review.</p></a></li>
+<li><a href="/docs/evidence-and-validation/"><h3>Evidence and validation</h3><p>How to distinguish a suspicious signal from a supported, reviewable security conclusion.</p></a></li>
+<li><a href="/docs/security-testing-playbook/"><h3>Security testing playbook</h3><p>Controlled patterns for object ownership, roles, multi-step workflows, sessions, and ambiguous results.</p></a></li>
+<li><a href="/docs/glossary/"><h3>Security glossary</h3><p>Shared definitions for application-security, evidence, authorization, and workflow terminology.</p></a></li>
+</ul>
+</section>
+<nav class="doc-pager" aria-label="More in Product &amp; technical">
+<a class="doc-pager__prev" rel="prev" href="/docs/product-overview/"><span>Previous in Product &amp; technical</span>Product overview</a>
+<a class="doc-pager__next" rel="next" href="/docs/system-overview/"><span>Next in Product &amp; technical</span>System overview</a>
+</nav>
+<aside class="doc-cta" aria-labelledby="cta-h">
+<h2 id="cta-h">Evaluate VulnGPT in private beta</h2>
+<p>VulnGPT by NovaSecLabs is in private beta. This page describes product direction and evaluation guidance. It does not guarantee that every capability is currently available.</p>
+<div class="doc-cta__actions">
+<a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_docs&amp;utm_content=technical-approach">Request private beta</a>
+<a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/TECHNICAL_APPROACH.md" rel="noopener">View source on GitHub</a>
+</div>
+<p class="hero__auth">For applications you own or are authorized to test.</p>
+</aside>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid">
+<div class="site-footer__about">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p>
+</div>
+<nav aria-label="Product">
+<h2>Product</h2>
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/docs/">Documentation</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h2>Company</h2>
+<ul>
+<li>
+<a href="https://www.novaseclabs.com">NovaSecLabs</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/about">About</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/pricing">Pricing</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/resources">Resources</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Connect">
+<h2>Connect</h2>
+<ul>
+<li>
+<a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a>
+</li>
+<li>
+<a href="https://x.com/novaseclabs" rel="noopener">X</a>
+</li>
+<li>
+<a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a>
+</li>
+<li>
+<a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__legal">
+<p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p>
+<p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -2,7 +2,15 @@
 
 ## What is VulnGPT?
 
-VulnGPT is an AI-assisted web application security testing product by NovaSecLabs. It is being developed to investigate application behavior across authenticated identities, authorization boundaries, object ownership, state transitions, and business workflows.
+VulnGPT is an autonomous web application security testing product by NovaSecLabs. It is being developed to investigate application behavior across authenticated identities, authorization boundaries, object ownership, state transitions, and business workflows.
+
+## What does "autonomous" mean here?
+
+Autonomous means VulnGPT plans and runs the test steps itself inside the target, scope, and runtime budget you authorize; it does not mean unsupervised: you verify the target, set scope, confirm authorization, and review the evidence.
+
+## Does autonomous mean unsupervised?
+
+No. Autonomous describes who plans and runs the individual test steps, not who is accountable. You verify the target, set the scope and runtime budget, confirm that you are authorized to test, and review the evidence before acting on it. No operation without human oversight is claimed.
 
 ## What problem is it focused on?
 

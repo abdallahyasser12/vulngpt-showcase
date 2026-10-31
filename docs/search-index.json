@@ -1,0 +1,399 @@
+[
+ {
+  "title": "Product overview",
+  "heading": "Product Overview",
+  "description": "What VulnGPT by NovaSecLabs is designed to investigate, who it is for, the principles behind it, and what it is not. Private beta.",
+  "category": "Product & technical",
+  "url": "/docs/product-overview/",
+  "minutes": 4,
+  "headings": [
+   "Executive summary",
+   "Autonomy, defined",
+   "The problem",
+   "Product direction",
+   "Authorization and object ownership",
+   "Authenticated and multi-actor workflows",
+   "Business logic and workflow integrity",
+   "Stateful application behavior",
+   "Interference-aware interpretation",
+   "Intended users",
+   "Product principles",
+   "What VulnGPT is not",
+   "Current availability",
+   "Related documents"
+  ]
+ },
+ {
+  "title": "Technical approach",
+  "heading": "Technical Approach",
+  "description": "A conceptual model for testing application behavior in context: scope, baseline, invariant, hypothesis, controlled test and a reviewable result.",
+  "category": "Product & technical",
+  "url": "/docs/technical-approach/",
+  "minutes": 4,
+  "headings": [
+   "Why context changes the test",
+   "Conceptual investigation model",
+   "1. Establish authorized scope",
+   "2. Build an application context",
+   "3. Observe baseline behavior",
+   "4. State the security invariant",
+   "5. Form a falsifiable hypothesis",
+   "6. Run a controlled intervention",
+   "7. Evaluate the outcome",
+   "8. Preserve a reviewable result",
+   "Conceptual separation of stages",
+   "Design boundaries",
+   "Implementation boundary"
+  ]
+ },
+ {
+  "title": "System overview",
+  "heading": "Public System Overview",
+  "description": "A conceptual view of the VulnGPT by NovaSecLabs investigation flow and trust boundaries. Not a deployed architecture or a component inventory.",
+  "category": "Product & technical",
+  "url": "/docs/system-overview/",
+  "minutes": 3,
+  "headings": [
+   "Status and scope",
+   "The problem model",
+   "Conceptual investigation flow",
+   "Conceptual trust boundaries",
+   "Security invariants",
+   "What this document does not establish",
+   "Related resources"
+  ]
+ },
+ {
+  "title": "Evidence and validation",
+  "heading": "Evidence and Validation Standard",
+  "description": "How VulnGPT by NovaSecLabs treats a suspicious signal: hypothesis, control comparison, alternative explanations, confirmation and retest.",
+  "category": "Product & technical",
+  "url": "/docs/evidence-and-validation/",
+  "minutes": 4,
+  "headings": [
+   "Purpose",
+   "The central rule",
+   "Minimum evidence record",
+   "Evidence quality",
+   "Direct evidence",
+   "Comparative evidence",
+   "Supporting evidence",
+   "Ambiguous evidence",
+   "Controlled comparison",
+   "Common sources of false conclusions",
+   "Bounded conclusions",
+   "Retesting",
+   "Public performance claims",
+   "Related documents"
+  ]
+ },
+ {
+  "title": "Security glossary",
+  "heading": "Application Security Glossary",
+  "description": "Plain definitions of BOLA, IDOR, actor, invariant, tenant isolation, WAF and other terms used across the VulnGPT documentation.",
+  "category": "Product & technical",
+  "url": "/docs/glossary/",
+  "minutes": 2,
+  "headings": [
+   "Related documents"
+  ]
+ },
+ {
+  "title": "FAQ",
+  "heading": "Frequently Asked Questions",
+  "description": "Answers about VulnGPT by NovaSecLabs: what it is, what autonomous means, private-beta access, benchmark status, certification and authorized testing.",
+  "category": "Product & technical",
+  "url": "/docs/faq/",
+  "minutes": 3,
+  "headings": [
+   "What is VulnGPT?",
+   "What does \"autonomous\" mean here?",
+   "Does autonomous mean unsupervised?",
+   "What problem is it focused on?",
+   "Is VulnGPT open source?",
+   "Is the product generally available?",
+   "Does VulnGPT replace penetration testers?",
+   "Does VulnGPT find every vulnerability?",
+   "Does VulnGPT have zero false positives?",
+   "Are benchmark scores published?",
+   "Is VulnGPT independently certified or audited?",
+   "Which applications, frameworks, or integrations are supported?",
+   "Can I test a third-party website?",
+   "Where can I request access?",
+   "Where do I report a security issue?"
+  ]
+ },
+ {
+  "title": "Security testing playbook",
+  "heading": "Contextual Application Security Testing Playbook",
+  "description": "A practitioner playbook for controlled, authorized tests of identity, ownership, role, workflow and session behavior in web applications.",
+  "category": "Practitioner resources",
+  "url": "/docs/security-testing-playbook/",
+  "minutes": 6,
+  "headings": [
+   "Purpose",
+   "1. Define the assessment boundary",
+   "2. Write the security invariant first",
+   "3. Choose a controlled comparison",
+   "4. Test patterns",
+   "A. Object ownership and cross-user access",
+   "B. Role and privilege boundaries",
+   "C. Workflow preconditions and state transitions",
+   "D. Multi-step business logic",
+   "E. Session and authentication lifecycle",
+   "F. Interference and ambiguous outcomes",
+   "5. Evidence record",
+   "6. Adjudicate conservatively",
+   "7. Close the loop",
+   "Related resources"
+  ]
+ },
+ {
+  "title": "Use cases",
+  "heading": "Application Security Use Cases",
+  "description": "Representative application behaviors that motivate contextual testing: ownership, roles, tenants, workflows and session state. Illustrative only.",
+  "category": "Practitioner resources",
+  "url": "/docs/use-cases/",
+  "minutes": 3,
+  "headings": [
+   "1. Cross-user object access",
+   "2. Role-boundary violations",
+   "3. Multi-step business logic",
+   "4. Tenant isolation",
+   "5. Session and state transitions",
+   "6. Interference and ambiguous outcomes",
+   "Designing a useful evaluation",
+   "Related documents"
+  ]
+ },
+ {
+  "title": "Capability evaluation matrix",
+  "heading": "Capability Evaluation Matrix",
+  "description": "Scenario dimensions, required context and evidence criteria for evaluating VulnGPT by NovaSecLabs. Not a support or coverage guarantee.",
+  "category": "Practitioner resources",
+  "url": "/docs/capability-evaluation-matrix/",
+  "minutes": 4,
+  "headings": [
+   "How to read this matrix",
+   "Evaluation dimensions",
+   "Selecting a representative test set",
+   "Suggested evaluation worksheet",
+   "Interpreting results",
+   "Related resources"
+  ]
+ },
+ {
+  "title": "Evaluation protocol",
+  "heading": "Controlled Product Evaluation Protocol",
+  "description": "A protocol for a fair, reproducible evaluation of an application-security testing product: pre-registered scenarios, ground truth and outcome classes.",
+  "category": "Practitioner resources",
+  "url": "/docs/evaluation-protocol/",
+  "minutes": 4,
+  "headings": [
+   "Purpose",
+   "1. Pre-register the evaluation",
+   "2. Design a balanced scenario set",
+   "3. Freeze ground truth",
+   "4. Classify execution outcomes separately",
+   "5. Adjudicate positive and negative cases",
+   "6. Report metrics with explicit denominators",
+   "7. Preserve reproducibility",
+   "8. Disclose independence and limitations",
+   "9. Publication gate",
+   "Related resources"
+  ]
+ },
+ {
+  "title": "Finding report standard",
+  "heading": "Finding Report Standard",
+  "description": "An evidence-led structure for security findings: expected boundary, test context, observation, impact, limits, remediation and retest.",
+  "category": "Practitioner resources",
+  "url": "/docs/finding-report-standard/",
+  "minutes": 3,
+  "headings": [
+   "Purpose",
+   "Report principles",
+   "Recommended finding structure",
+   "1. Title",
+   "2. Summary",
+   "3. Affected component",
+   "4. Security expectation",
+   "5. Preconditions and actor context",
+   "6. Reproduction steps",
+   "7. Expected versus observed behavior",
+   "8. Evidence",
+   "9. Impact and severity rationale",
+   "10. Alternative explanations and limitations",
+   "11. Remediation guidance",
+   "12. Retest record",
+   "Finding confidence versus severity",
+   "Report hygiene",
+   "Template"
+  ]
+ },
+ {
+  "title": "Enterprise evaluation",
+  "heading": "Enterprise Evaluation Guide",
+  "description": "A diligence guide for security, IT, procurement and privacy reviewers evaluating VulnGPT by NovaSecLabs during private beta.",
+  "category": "Enterprise evaluation",
+  "url": "/docs/enterprise-evaluation/",
+  "minutes": 7,
+  "headings": [
+   "1. Evaluation summary",
+   "2. Technical and architecture diligence",
+   "3. Identity and access management",
+   "4. Target authorization and testing safety",
+   "5. Data protection and privacy",
+   "6. Security assurance and compliance",
+   "7. Operations and service management",
+   "8. Reporting and workflow integration",
+   "9. Proof-of-value evaluation",
+   "10. Customer evaluation record",
+   "11. Evaluation contact"
+  ]
+ },
+ {
+  "title": "Security and privacy",
+  "heading": "Security and Privacy — Public Evaluation Notes",
+  "description": "Public security and privacy notes for VulnGPT by NovaSecLabs, and the questions to confirm directly before using sensitive systems or data.",
+  "category": "Enterprise evaluation",
+  "url": "/docs/security-and-privacy/",
+  "minutes": 3,
+  "headings": [
+   "Purpose and scope",
+   "Publicly stated boundaries",
+   "Data minimization for evaluations",
+   "Questions to resolve before sensitive use",
+   "Customer-side responsibilities",
+   "Reporting a security concern",
+   "Contact"
+  ]
+ },
+ {
+  "title": "Security model",
+  "heading": "Public Security Model",
+  "description": "A conceptual security model for evaluating VulnGPT by NovaSecLabs: actors, assets, trust boundaries, threat scenarios and assurance limits.",
+  "category": "Enterprise evaluation",
+  "url": "/docs/security-model/",
+  "minutes": 5,
+  "headings": [
+   "Scope and interpretation",
+   "Security objectives",
+   "Information assets",
+   "Actors and trust boundaries",
+   "Threat scenarios and review questions",
+   "Secure evaluation assumptions",
+   "Controls requiring direct confirmation",
+   "Related material"
+  ]
+ },
+ {
+  "title": "Assessment plan template",
+  "heading": "Application Security Assessment Plan — Template",
+  "description": "A reusable worksheet for scoping an authorized assessment: targets, identities, constraints, data handling, approvals and stop conditions.",
+  "category": "Enterprise evaluation",
+  "url": "/docs/assessment-plan-template/",
+  "minutes": 4,
+  "headings": [
+   "1. Engagement record",
+   "2. Objective",
+   "3. Authorized target inventory",
+   "4. Test identities and data",
+   "5. Test scenarios",
+   "6. Operational constraints",
+   "7. Data handling",
+   "8. Success and stop criteria",
+   "9. Findings and reporting",
+   "10. Authorization record"
+  ]
+ },
+ {
+  "title": "Responsible testing",
+  "heading": "Responsible Testing",
+  "description": "Authorization, scope, test data and operational safeguards for using VulnGPT by NovaSecLabs only on applications you own or may test.",
+  "category": "Governance & reference",
+  "url": "/docs/responsible-testing/",
+  "minutes": 2,
+  "headings": [
+   "Before testing",
+   "During testing",
+   "After testing",
+   "Public disclosure"
+  ]
+ },
+ {
+  "title": "Benchmark governance",
+  "heading": "Benchmark Governance and Publication Standard",
+  "description": "The governance gates for publishing any VulnGPT benchmark: reproducibility, denominator integrity, independent review and approved wording.",
+  "category": "Governance & reference",
+  "url": "/docs/benchmark-governance/",
+  "minutes": 4,
+  "headings": [
+   "Purpose",
+   "Current publication status",
+   "Required benchmark record",
+   "Denominator and score integrity",
+   "Required result separation",
+   "Reproducibility controls",
+   "Independence and conflicts",
+   "Publication approval gates",
+   "Approved language principles",
+   "Publication record template"
+  ]
+ },
+ {
+  "title": "Release process",
+  "heading": "Public Repository Release Process",
+  "description": "How the public VulnGPT showcase repository is reviewed, verified, published and corrected. Applies to this website and documentation only.",
+  "category": "Governance & reference",
+  "url": "/docs/release-process/",
+  "minutes": 2,
+  "headings": [
+   "Scope",
+   "Release principles",
+   "Change classification",
+   "Pre-merge checklist",
+   "Publication and rollback",
+   "Release notes",
+   "Related resources"
+  ]
+ },
+ {
+  "title": "Repository maintenance",
+  "heading": "Repository Maintenance",
+  "description": "Validation, content review and asset hygiene for the public VulnGPT showcase repository. Maintainer guidance for contributors and reviewers.",
+  "category": "Governance & reference",
+  "url": "/docs/repository-maintenance/",
+  "minutes": 4,
+  "headings": [
+   "Purpose",
+   "Local validation",
+   "Documentation build",
+   "Hosting configuration",
+   "Content review",
+   "Asset management",
+   "Releases and change history",
+   "Ownership and escalation"
+  ]
+ },
+ {
+  "title": "Claims and messaging",
+  "heading": "Claims and messaging",
+  "description": "Approved product language and guardrails for performance, security, and assurance statements.",
+  "category": "Governance & reference",
+  "url": "https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/CLAIMS.md",
+  "minutes": 0,
+  "headings": [],
+  "external": true
+ },
+ {
+  "title": "Public evaluation schemas",
+  "heading": "Public evaluation schemas",
+  "description": "Optional JSON formats for externally documenting findings and benchmark reports. Not VulnGPT API contracts.",
+  "category": "Governance & reference",
+  "url": "https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/schemas/README.md",
+  "minutes": 0,
+  "headings": [],
+  "external": true
+ }
+]
