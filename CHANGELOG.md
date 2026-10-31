@@ -8,6 +8,15 @@ The format follows the principles of Keep a Changelog. Dates and version identif
 
 ## [Unreleased]
 
+### Redesign, documentation pages, and search infrastructure
+- New design system for the whole showcase: self-hosted Newsreader, Instrument Sans, and JetBrains Mono (no third-party font requests), shared design tokens with light and dark schemes, a shared header and footer, and a rebuilt home page, product tour, and 404 page.
+- Every document in `docs/` is now a real, indexable page at `/docs/<name>/` with a table of contents, reading time, related documents, previous and next navigation, breadcrumbs, and structured data. The documentation index at `/docs/` is generated from the same sources, with a keyboard-accessible search over `docs/search-index.json`.
+- `scripts/build-docs.mjs` (dependency-free) renders the Markdown, the index, the search index, `sitemap.xml`, and `llms.txt`; `--check` fails when committed output is out of date.
+- Added `vercel.json` (trailing-slash routes, redirect from the production alias to the branded host, noindex for preview hosts, security and cache headers, a strict Content-Security-Policy), a refreshed `robots.txt` that allows AI search and retrieval crawlers and disallows training crawlers, and `llms.txt`.
+- Added `scripts/check-links.mjs` (internal links, fragments, sitemap parity, canonical URLs, metadata, structured data, accessibility basics; optional `--external` check) and `scripts/test-vercel-config.mjs`; `scripts/validate-public-repo.mjs` now runs them and remains the single entry point.
+- Wording: VulnGPT is now described as autonomous instead of AI-assisted, always with its fixed meaning: autonomous within the target, scope, and runtime budget you authorize, and not unsupervised. CLAIMS.md gained an "Autonomy language" section with allowed and banned phrases; the README, product overview, FAQ, and enterprise evaluation guide were aligned, and the FAQ gained "Does autonomous mean unsupervised?".
+- Open Graph images regenerated for the home page, product tour, documentation index, and documents; the GitHub social preview was regenerated at 1280x640.
+
 ### Added
 - Prepared the branded showcase hostname and aligned canonical URLs, structured data, sitemap, robots.txt, and security.txt; external Cloudflare DNS publication remains pending.
 - Responsive full-size product screenshot viewer using the native dialog element, with a direct-image fallback.

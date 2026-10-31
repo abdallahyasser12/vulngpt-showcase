@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enterprise Evaluation Guide | VulnGPT Docs</title>
+<meta name="description" content="A diligence guide for security, IT, procurement and privacy reviewers evaluating VulnGPT by NovaSecLabs during private beta.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://showcase.novaseclabs.com/docs/enterprise-evaluation/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VulnGPT by NovaSecLabs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Enterprise Evaluation Guide | VulnGPT Docs">
+<meta property="og:description" content="A diligence guide for security, IT, procurement and privacy reviewers evaluating VulnGPT by NovaSecLabs during private beta.">
+<meta property="og:url" content="https://showcase.novaseclabs.com/docs/enterprise-evaluation/">
+<meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Enterprise Evaluation Guide | VulnGPT Docs">
+<meta name="twitter:description" content="A diligence guide for security, IT, procurement and privacy reviewers evaluating VulnGPT by NovaSecLabs during private beta.">
+<meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta name="twitter:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/docs/docs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"TechArticle","@id":"https://showcase.novaseclabs.com/docs/enterprise-evaluation/#article","headline":"Enterprise Evaluation Guide","description":"A diligence guide for security, IT, procurement and privacy reviewers evaluating VulnGPT by NovaSecLabs during private beta.","url":"https://showcase.novaseclabs.com/docs/enterprise-evaluation/","mainEntityOfPage":"https://showcase.novaseclabs.com/docs/enterprise-evaluation/","inLanguage":"en","dateModified":"2026-10-31","articleSection":"Enterprise evaluation","wordCount":1325,"timeRequired":"PT7M","image":"https://showcase.novaseclabs.com/assets/social/og-doc.png","author":{"@id":"https://www.novaseclabs.com/#organization"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"isPartOf":[{"@id":"https://showcase.novaseclabs.com/#website"},{"@id":"https://showcase.novaseclabs.com/docs/#webpage"}],"about":{"@id":"https://www.novaseclabs.com/#vulngpt"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/docs/enterprise-evaluation/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://showcase.novaseclabs.com/docs/"},{"@type":"ListItem","position":3,"name":"Enterprise evaluation","item":"https://showcase.novaseclabs.com/docs/enterprise-evaluation/"}]}]}</script>
+<script src="/script.js" defer></script>
+<script src="/docs/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+<span class="nav-toggle__bars" aria-hidden="true">
+</span>
+<span>Menu</span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/#approach">Approach</a>
+</li>
+<li>
+<a href="/#evidence">Evidence</a>
+</li>
+<li>
+<a href="/docs/" aria-current="page">Docs</a>
+</li>
+<li>
+<a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero doc-head">
+<div class="container">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/docs/">Documentation</a></li>
+<li aria-current="page">Enterprise evaluation</li>
+</ol>
+</nav>
+<p class="eyebrow"><b>Enterprise evaluation</b> · VulnGPT by NovaSecLabs</p>
+<h1>Enterprise Evaluation Guide</h1>
+<p class="lede">A diligence guide for security, IT, procurement and privacy reviewers evaluating VulnGPT by NovaSecLabs during private beta.</p>
+<p class="doc-meta"><span>7 min read</span><span>Last updated <time datetime="2026-10-31">31 Oct 2026</time></span><a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/ENTERPRISE_EVALUATION.md" rel="noopener">View source on GitHub</a></p>
+</div>
+</section>
+<div class="container doc-layout">
+<aside class="doc-aside">
+<nav class="doc-toc" aria-label="On this page" data-spy>
+<details open>
+<summary>On this page</summary>
+<ol>
+<li><a href="#1-evaluation-summary">1. Evaluation summary</a></li>
+<li><a href="#2-technical-and-architecture-diligence">2. Technical and architecture diligence</a></li>
+<li><a href="#3-identity-and-access-management">3. Identity and access management</a></li>
+<li><a href="#4-target-authorization-and-testing-safety">4. Target authorization and testing safety</a></li>
+<li><a href="#5-data-protection-and-privacy">5. Data protection and privacy</a></li>
+<li><a href="#6-security-assurance-and-compliance">6. Security assurance and compliance</a></li>
+<li><a href="#7-operations-and-service-management">7. Operations and service management</a></li>
+<li><a href="#8-reporting-and-workflow-integration">8. Reporting and workflow integration</a></li>
+<li><a href="#9-proof-of-value-evaluation">9. Proof-of-value evaluation</a></li>
+<li><a href="#10-customer-evaluation-record">10. Customer evaluation record</a></li>
+<li><a href="#11-evaluation-contact">11. Evaluation contact</a></li>
+</ol>
+</details>
+</nav>
+</aside>
+<div class="doc-main">
+<article class="prose doc-prose">
+
+<p>This guide is intended for application security leaders, product security teams, security architecture, IT, procurement, privacy, and risk stakeholders evaluating VulnGPT.</p>
+<p>It is a diligence framework—not a security certification, contractual commitment, or statement that every listed integration or control is currently available.</p>
+<h2 id="1-evaluation-summary">1. Evaluation summary<a class="anchor" href="#1-evaluation-summary" aria-label="Link to this section: 1. Evaluation summary">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: 1. Evaluation summary" tabindex="0">
+<table>
+<thead><tr><th scope="col">Item</th><th scope="col">Publicly stated position</th></tr></thead>
+<tbody>
+<tr><td>Product</td><td>VulnGPT</td></tr>
+<tr><td>Provider</td><td>NovaSecLabs</td></tr>
+<tr><td>Category</td><td>Autonomous web application security testing, within the scope and runtime budget the customer authorizes</td></tr>
+<tr><td>Availability</td><td>Private beta</td></tr>
+<tr><td>Primary focus</td><td>Contextual testing across identities, authorization boundaries, object ownership, workflow state, and business logic</td></tr>
+<tr><td>Engagement</td><td>Access coordinated through the private-beta application</td></tr>
+<tr><td>Public implementation</td><td>Showcase website and supporting documentation only; scanning engine is not published in this repository</td></tr>
+<tr><td>Independent assurance</td><td>No SOC 2, ISO 27001, or independent product-security certification claim is made in this repository</td></tr>
+</tbody>
+</table>
+</div>
+<p>Confirm the current product scope and engagement model directly with NovaSecLabs before procurement or production use.</p>
+<h2 id="2-technical-and-architecture-diligence">2. Technical and architecture diligence<a class="anchor" href="#2-technical-and-architecture-diligence" aria-label="Link to this section: 2. Technical and architecture diligence">#</a></h2>
+<p>Ask the vendor to describe the actual evaluation environment and provide current architecture material appropriate to the engagement.</p>
+<ul>
+<li>Which deployment model is available for this evaluation?</li>
+<li>Which components process target requests, credentials, test artifacts, and findings?</li>
+<li>Which external services or subprocessors are involved?</li>
+<li>What network destinations must the customer permit?</li>
+<li>How are environments separated?</li>
+<li>Which components are operated by NovaSecLabs and which are customer-managed?</li>
+<li>What happens when a scan is paused, interrupted, or resumed?</li>
+<li>Which logs and audit records are available to the customer?</li>
+</ul>
+<p><strong>Evidence to request:</strong> a current architecture diagram, data-flow diagram, component inventory, deployment prerequisites, and a written description of relevant trust boundaries.</p>
+<p>Do not infer a deployment option from this checklist; availability must be confirmed.</p>
+<h2 id="3-identity-and-access-management">3. Identity and access management<a class="anchor" href="#3-identity-and-access-management" aria-label="Link to this section: 3. Identity and access management">#</a></h2>
+<ul>
+<li>How are customer users authenticated?</li>
+<li>Which identity providers and authentication protocols are supported today?</li>
+<li>Are SSO, SAML, OIDC, MFA, and SCIM available for the proposed plan?</li>
+<li>How are organization, project, and user permissions enforced?</li>
+<li>How are service accounts, API credentials, and test identities managed?</li>
+<li>Can customer administrators review and revoke access?</li>
+<li>Which security-relevant actions are recorded in audit logs?</li>
+</ul>
+<p><strong>Evidence to request:</strong> current access-control documentation, supported integration list, role/permission matrix, and an example audit record with sensitive data removed.</p>
+<h2 id="4-target-authorization-and-testing-safety">4. Target authorization and testing safety<a class="anchor" href="#4-target-authorization-and-testing-safety" aria-label="Link to this section: 4. Target authorization and testing safety">#</a></h2>
+<ul>
+<li>How is ownership or authorization for a target established?</li>
+<li>How are approved hosts, environments, and test windows represented?</li>
+<li>How are out-of-scope targets and prohibited actions handled?</li>
+<li>Can customers constrain testing to approved accounts and environments?</li>
+<li>How are destructive or state-changing tests identified and controlled?</li>
+<li>What operator approval is required before a test begins?</li>
+<li>How are scope changes recorded?</li>
+</ul>
+<p><strong>Evidence to request:</strong> the current authorization workflow, sample scope configuration, and an explanation of runtime enforcement boundaries.</p>
+<h2 id="5-data-protection-and-privacy">5. Data protection and privacy<a class="anchor" href="#5-data-protection-and-privacy" aria-label="Link to this section: 5. Data protection and privacy">#</a></h2>
+<p>Request precise answers for each data category rather than relying on general statements such as &quot;secure by design.&quot;</p>
+<ul>
+<li>Which target URLs, requests, responses, credentials, cookies, files, and findings are collected?</li>
+<li>Which categories of data may be sent to model or infrastructure providers?</li>
+<li>Is customer data used for model training? Under what terms?</li>
+<li>Where is data processed and stored?</li>
+<li>What encryption controls apply in transit and at rest?</li>
+<li>Who can access customer data, and under which support or operational circumstances?</li>
+<li>What retention periods apply to scans, artifacts, logs, and backups?</li>
+<li>How can an authorized customer request deletion?</li>
+<li>What happens to backups after deletion?</li>
+<li>Which subprocessors and data-processing agreements apply?</li>
+</ul>
+<p><strong>Evidence to request:</strong> current privacy notice, data-flow and retention documentation, subprocessor list, contractual data-processing terms, and written answers for any data categories relevant to the customer's use case.</p>
+<p>Do not upload production secrets, personal data, or regulated information into an evaluation until the applicable handling terms have been reviewed and approved.</p>
+<h2 id="6-security-assurance-and-compliance">6. Security assurance and compliance<a class="anchor" href="#6-security-assurance-and-compliance" aria-label="Link to this section: 6. Security assurance and compliance">#</a></h2>
+<p>Ask for the current status and scope of any assurance materials relevant to the deployment.</p>
+<ul>
+<li>Is there an independent security assessment? What systems and dates does it cover?</li>
+<li>Are SOC 2 reports or ISO 27001 certificates available? Which legal entity and scope are covered?</li>
+<li>Is there a vulnerability disclosure and remediation process?</li>
+<li>Are dependencies and build artifacts assessed?</li>
+<li>How are security incidents escalated and communicated?</li>
+<li>Are business continuity and disaster recovery arrangements documented?</li>
+</ul>
+<p>A roadmap, self-assessment, or policy document is not equivalent to an independently issued report or certificate. Ask to review the actual artifact under appropriate confidentiality terms.</p>
+<h2 id="7-operations-and-service-management">7. Operations and service management<a class="anchor" href="#7-operations-and-service-management" aria-label="Link to this section: 7. Operations and service management">#</a></h2>
+<ul>
+<li>What availability and support commitments apply to the proposed beta engagement?</li>
+<li>Is there a documented incident escalation path?</li>
+<li>What maintenance or service-change notifications are provided?</li>
+<li>What happens to running work during service interruption?</li>
+<li>Which usage, scan, and activity records can administrators review?</li>
+<li>What are the current recovery and continuity arrangements?</li>
+</ul>
+<p>Do not assume an SLA, RTO, RPO, or support response time unless it is explicitly provided in the applicable agreement.</p>
+<h2 id="8-reporting-and-workflow-integration">8. Reporting and workflow integration<a class="anchor" href="#8-reporting-and-workflow-integration" aria-label="Link to this section: 8. Reporting and workflow integration">#</a></h2>
+<ul>
+<li>What report formats and evidence artifacts are available?</li>
+<li>Can findings be exported for customer-controlled retention?</li>
+<li>Are ticketing, issue tracking, CI/CD, or security-platform integrations currently supported?</li>
+<li>Can findings be assigned, triaged, retested, and closed?</li>
+<li>How are duplicate or recurring observations handled?</li>
+<li>Which fields can be customized for a customer's severity and remediation process?</li>
+</ul>
+<p>Request a demonstration using synthetic or approved test data before relying on an integration in production.</p>
+<h2 id="9-proof-of-value-evaluation">9. Proof-of-value evaluation<a class="anchor" href="#9-proof-of-value-evaluation" aria-label="Link to this section: 9. Proof-of-value evaluation">#</a></h2>
+<p>A useful evaluation should be bounded and measurable.</p>
+<ol>
+<li>Choose an application or test environment that the organization is authorized to assess.</li>
+<li>Define the approved targets, test identities, roles, and prohibited actions.</li>
+<li>Select representative workflows with known security expectations.</li>
+<li>Establish ground truth using an independent review or a controlled test fixture where possible.</li>
+<li>Agree on success criteria before execution.</li>
+<li>Review evidence quality, reproducibility, coverage limitations, operational impact, and analyst effort.</li>
+<li>Record unsupported workflows and unresolved findings instead of treating them as successes.</li>
+<li>Decide whether the observed value justifies a broader evaluation.</li>
+</ol>
+<p>Suggested evaluation dimensions:</p>
+<div class="table-wrap" role="region" aria-label="Table: 9. Proof-of-value evaluation" tabindex="0">
+<table>
+<thead><tr><th scope="col">Dimension</th><th scope="col">Evaluation question</th></tr></thead>
+<tbody>
+<tr><td>Scope discipline</td><td>Did testing remain within the authorized boundary?</td></tr>
+<tr><td>Context fidelity</td><td>Were the relevant actors, sessions, roles, and object relationships represented correctly?</td></tr>
+<tr><td>Evidence quality</td><td>Can a reviewer reproduce and understand the claimed behavior?</td></tr>
+<tr><td>Precision</td><td>Were unsupported signals clearly distinguished from confirmed issues?</td></tr>
+<tr><td>Coverage transparency</td><td>Are untested or unsupported workflows visible?</td></tr>
+<tr><td>Operational safety</td><td>Were rate, state, and production-impact constraints respected?</td></tr>
+<tr><td>Analyst usefulness</td><td>Did the output help a security professional reach a better decision?</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="10-customer-evaluation-record">10. Customer evaluation record<a class="anchor" href="#10-customer-evaluation-record" aria-label="Link to this section: 10. Customer evaluation record">#</a></h2>
+<p>Use this template to keep diligence findings explicit.</p>
+<div class="table-wrap" role="region" aria-label="Table: 10. Customer evaluation record" tabindex="0">
+<table>
+<thead><tr><th scope="col">Field</th><th scope="col">Customer record</th></tr></thead>
+<tbody>
+<tr><td>Organization and business owner</td><td>To be completed</td></tr>
+<tr><td>Technical owner</td><td>To be completed</td></tr>
+<tr><td>Intended application and environment</td><td>To be completed</td></tr>
+<tr><td>Approved scope and test window</td><td>To be completed</td></tr>
+<tr><td>Test identities and roles</td><td>To be completed</td></tr>
+<tr><td>Data categories in scope</td><td>To be completed</td></tr>
+<tr><td>Required deployment model</td><td>To be confirmed</td></tr>
+<tr><td>Required identity integrations</td><td>To be confirmed</td></tr>
+<tr><td>Required assurance documents</td><td>To be confirmed</td></tr>
+<tr><td>Success criteria</td><td>To be agreed before testing</td></tr>
+<tr><td>Open risks and conditions</td><td>To be tracked</td></tr>
+<tr><td>Approval to proceed</td><td>To be recorded by the customer</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="11-evaluation-contact">11. Evaluation contact<a class="anchor" href="#11-evaluation-contact" aria-label="Link to this section: 11. Evaluation contact">#</a></h2>
+<p>Start with the <a href="https://www.novaseclabs.com" rel="noopener">NovaSecLabs website</a> or <a href="https://www.novaseclabs.com/waitlist" rel="noopener">private-beta application</a>. Share only non-sensitive evaluation details through public channels. Security findings and sensitive architecture material should be exchanged through an agreed private channel.</p>
+</article>
+<section class="doc-related" aria-labelledby="related-h">
+<h2 id="related-h">Related documentation</h2>
+<ul>
+<li><a href="/docs/security-and-privacy/"><h3>Security and privacy</h3><p>Public trust boundaries and the specific questions that require current vendor confirmation.</p></a></li>
+<li><a href="/docs/security-model/"><h3>Security model</h3><p>Conceptual actors, data assets, trust boundaries, and threat scenarios for evaluation.</p></a></li>
+<li><a href="/docs/evaluation-protocol/"><h3>Evaluation protocol</h3><p>Define ground truth and outcomes before a run; separate execution, observability, correctness, and evidence quality.</p></a></li>
+<li><a href="/docs/assessment-plan-template/"><h3>Assessment plan template</h3><p>Define scope, identities, operational constraints, data handling, approvals, and success criteria.</p></a></li>
+</ul>
+</section>
+<nav class="doc-pager" aria-label="More in Enterprise evaluation">
+<span></span>
+<a class="doc-pager__next" rel="next" href="/docs/security-and-privacy/"><span>Next in Enterprise evaluation</span>Security and privacy</a>
+</nav>
+<aside class="doc-cta" aria-labelledby="cta-h">
+<h2 id="cta-h">Evaluate VulnGPT in private beta</h2>
+<p>VulnGPT by NovaSecLabs is in private beta. This page describes product direction and evaluation guidance. It does not guarantee that every capability is currently available.</p>
+<div class="doc-cta__actions">
+<a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_docs&amp;utm_content=enterprise-evaluation">Request private beta</a>
+<a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/ENTERPRISE_EVALUATION.md" rel="noopener">View source on GitHub</a>
+</div>
+<p class="hero__auth">For applications you own or are authorized to test.</p>
+</aside>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid">
+<div class="site-footer__about">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p>
+</div>
+<nav aria-label="Product">
+<h2>Product</h2>
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/docs/">Documentation</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h2>Company</h2>
+<ul>
+<li>
+<a href="https://www.novaseclabs.com">NovaSecLabs</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/about">About</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/pricing">Pricing</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/resources">Resources</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Connect">
+<h2>Connect</h2>
+<ul>
+<li>
+<a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a>
+</li>
+<li>
+<a href="https://x.com/novaseclabs" rel="noopener">X</a>
+</li>
+<li>
+<a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a>
+</li>
+<li>
+<a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__legal">
+<p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p>
+<p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

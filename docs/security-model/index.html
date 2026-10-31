@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public Security Model | VulnGPT Docs</title>
+<meta name="description" content="A conceptual security model for evaluating VulnGPT by NovaSecLabs: actors, assets, trust boundaries, threat scenarios and assurance limits.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://showcase.novaseclabs.com/docs/security-model/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VulnGPT by NovaSecLabs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Public Security Model | VulnGPT Docs">
+<meta property="og:description" content="A conceptual security model for evaluating VulnGPT by NovaSecLabs: actors, assets, trust boundaries, threat scenarios and assurance limits.">
+<meta property="og:url" content="https://showcase.novaseclabs.com/docs/security-model/">
+<meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Public Security Model | VulnGPT Docs">
+<meta name="twitter:description" content="A conceptual security model for evaluating VulnGPT by NovaSecLabs: actors, assets, trust boundaries, threat scenarios and assurance limits.">
+<meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta name="twitter:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/docs/docs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"TechArticle","@id":"https://showcase.novaseclabs.com/docs/security-model/#article","headline":"Public Security Model","description":"A conceptual security model for evaluating VulnGPT by NovaSecLabs: actors, assets, trust boundaries, threat scenarios and assurance limits.","url":"https://showcase.novaseclabs.com/docs/security-model/","mainEntityOfPage":"https://showcase.novaseclabs.com/docs/security-model/","inLanguage":"en","dateModified":"2026-10-31","articleSection":"Enterprise evaluation","wordCount":915,"timeRequired":"PT5M","image":"https://showcase.novaseclabs.com/assets/social/og-doc.png","author":{"@id":"https://www.novaseclabs.com/#organization"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"isPartOf":[{"@id":"https://showcase.novaseclabs.com/#website"},{"@id":"https://showcase.novaseclabs.com/docs/#webpage"}],"about":{"@id":"https://www.novaseclabs.com/#vulngpt"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/docs/security-model/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://showcase.novaseclabs.com/docs/"},{"@type":"ListItem","position":3,"name":"Security model","item":"https://showcase.novaseclabs.com/docs/security-model/"}]}]}</script>
+<script src="/script.js" defer></script>
+<script src="/docs/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+<span class="nav-toggle__bars" aria-hidden="true">
+</span>
+<span>Menu</span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/#approach">Approach</a>
+</li>
+<li>
+<a href="/#evidence">Evidence</a>
+</li>
+<li>
+<a href="/docs/" aria-current="page">Docs</a>
+</li>
+<li>
+<a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero doc-head">
+<div class="container">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/docs/">Documentation</a></li>
+<li aria-current="page">Security model</li>
+</ol>
+</nav>
+<p class="eyebrow"><b>Enterprise evaluation</b> · VulnGPT by NovaSecLabs</p>
+<h1>Public Security Model</h1>
+<p class="lede">A conceptual security model for evaluating VulnGPT by NovaSecLabs: actors, assets, trust boundaries, threat scenarios and assurance limits.</p>
+<p class="doc-meta"><span>5 min read</span><span>Last updated <time datetime="2026-10-31">31 Oct 2026</time></span><a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/SECURITY_MODEL.md" rel="noopener">View source on GitHub</a></p>
+</div>
+</section>
+<div class="container doc-layout">
+<aside class="doc-aside">
+<nav class="doc-toc" aria-label="On this page" data-spy>
+<details open>
+<summary>On this page</summary>
+<ol>
+<li><a href="#scope-and-interpretation">Scope and interpretation</a></li>
+<li><a href="#security-objectives">Security objectives</a></li>
+<li><a href="#information-assets">Information assets</a></li>
+<li><a href="#actors-and-trust-boundaries">Actors and trust boundaries</a></li>
+<li><a href="#threat-scenarios-and-review-questions">Threat scenarios and review questions</a></li>
+<li><a href="#secure-evaluation-assumptions">Secure evaluation assumptions</a></li>
+<li><a href="#controls-requiring-direct-confirmation">Controls requiring direct confirmation</a></li>
+<li><a href="#related-material">Related material</a></li>
+</ol>
+</details>
+</nav>
+</aside>
+<div class="doc-main">
+<article class="prose doc-prose">
+
+<h2 id="scope-and-interpretation">Scope and interpretation<a class="anchor" href="#scope-and-interpretation" aria-label="Link to this section: Scope and interpretation">#</a></h2>
+<p>This document is a public, conceptual security model for evaluating the VulnGPT product direction. It is not a complete internal threat model, implementation architecture, penetration-test report, or assertion that every control described below is already deployed.</p>
+<p>VulnGPT is in private beta. For actual data flows, deployment details, and current controls, request environment-specific answers from NovaSecLabs before placing sensitive systems or information into an evaluation.</p>
+<h2 id="security-objectives">Security objectives<a class="anchor" href="#security-objectives" aria-label="Link to this section: Security objectives">#</a></h2>
+<p>The product's intended security objectives include:</p>
+<ol>
+<li>Keep testing within an explicitly authorized target boundary.</li>
+<li>Preserve separation between customer organizations, projects, users, and test contexts.</li>
+<li>Prevent one test identity from being silently confused with another.</li>
+<li>Protect credentials, sessions, scan artifacts, findings, and customer information.</li>
+<li>Make security-relevant actions reviewable to the extent supported by the evaluation environment.</li>
+<li>Avoid converting ambiguous observations into unsupported security conclusions.</li>
+<li>Minimize the data collected and retained for a useful assessment.</li>
+</ol>
+<p>These are objectives to validate—not a certification or independent verification statement.</p>
+<h2 id="information-assets">Information assets<a class="anchor" href="#information-assets" aria-label="Link to this section: Information assets">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: Information assets" tabindex="0">
+<table>
+<thead><tr><th scope="col">Asset</th><th scope="col">Why it matters</th><th scope="col">Evaluation question</th></tr></thead>
+<tbody>
+<tr><td>Customer identity and organization metadata</td><td>Defines the administrative boundary</td><td>How are tenant and organization boundaries enforced?</td></tr>
+<tr><td>User and test-actor identities</td><td>Determines the security context of a test</td><td>How are credentials isolated, protected, and revoked?</td></tr>
+<tr><td>Target scope and authorization records</td><td>Determines where testing is permitted</td><td>How is scope enforced at execution time?</td></tr>
+<tr><td>Requests and responses</td><td>May contain secrets or personal data</td><td>What is collected, redacted, transmitted, and retained?</td></tr>
+<tr><td>Scan state and execution artifacts</td><td>May expose application behavior and target details</td><td>Who can access artifacts and how are they deleted?</td></tr>
+<tr><td>Findings and evidence</td><td>May contain exploitable details or sensitive records</td><td>How are findings protected and shared?</td></tr>
+<tr><td>Audit and operational records</td><td>Supports accountability and incident investigation</td><td>Which events are recorded and available to customers?</td></tr>
+<tr><td>Integration credentials</td><td>Can grant access to customer systems</td><td>How are tokens scoped, stored, rotated, and revoked?</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="actors-and-trust-boundaries">Actors and trust boundaries<a class="anchor" href="#actors-and-trust-boundaries" aria-label="Link to this section: Actors and trust boundaries">#</a></h2>
+<p>The following are conceptual actors. The actual implementation and deployment model must be confirmed for the proposed evaluation.</p>
+<ul>
+<li><strong>Customer administrator:</strong> manages organization-level access and approved evaluation scope.</li>
+<li><strong>Customer operator:</strong> configures or initiates authorized testing.</li>
+<li><strong>Test identity:</strong> represents an application user or role used in a controlled assessment.</li>
+<li><strong>NovaSecLabs operator:</strong> may have operational responsibilities under the applicable service model.</li>
+<li><strong>External service provider:</strong> may process infrastructure, model, telemetry, or delivery data if used by the selected environment.</li>
+<li><strong>Target application:</strong> the customer-owned or explicitly authorized application under assessment.</li>
+</ul>
+<p>Important boundaries to examine include:</p>
+<ol>
+<li>Customer organization to customer organization.</li>
+<li>Customer user to customer user and role.</li>
+<li>Customer control plane to scan execution environment.</li>
+<li>VulnGPT service to target application.</li>
+<li>VulnGPT service to model, storage, and infrastructure providers.</li>
+<li>Customer-accessible results to internal operational support systems.</li>
+</ol>
+<h2 id="threat-scenarios-and-review-questions">Threat scenarios and review questions<a class="anchor" href="#threat-scenarios-and-review-questions" aria-label="Link to this section: Threat scenarios and review questions">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: Threat scenarios and review questions" tabindex="0">
+<table>
+<thead><tr><th scope="col">Threat scenario</th><th scope="col">Security property at risk</th><th scope="col">Questions for evaluation</th></tr></thead>
+<tbody>
+<tr><td>Cross-tenant access</td><td>Confidentiality and tenant isolation</td><td>Can one organization retrieve another organization's projects, artifacts, or findings?</td></tr>
+<tr><td>Privilege escalation</td><td>Administrative integrity</td><td>Are permissions enforced server-side for every sensitive action?</td></tr>
+<tr><td>Scope manipulation</td><td>Target authorization</td><td>Can a user or execution path test a destination outside approved scope?</td></tr>
+<tr><td>Credential exposure</td><td>Customer account and target security</td><td>Are secrets excluded from logs, public reports, and unnecessary model context?</td></tr>
+<tr><td>Session confusion</td><td>Identity integrity</td><td>Are actor and session contexts kept distinct across multi-step tests?</td></tr>
+<tr><td>Artifact overexposure</td><td>Confidentiality</td><td>Are requests, responses, and findings restricted to authorized users?</td></tr>
+<tr><td>Unsafe test execution</td><td>Availability and data integrity</td><td>Are destructive operations, rate limits, and stop conditions controlled?</td></tr>
+<tr><td>Dependency or provider compromise</td><td>Service integrity and confidentiality</td><td>Which external dependencies and subprocessors are in the data path?</td></tr>
+<tr><td>Unsupported finding promotion</td><td>Decision integrity</td><td>Can an ambiguous signal be distinguished from a validated security conclusion?</td></tr>
+<tr><td>Retention beyond expectation</td><td>Privacy and confidentiality</td><td>What retention and deletion rules apply to each artifact category and backups?</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="secure-evaluation-assumptions">Secure evaluation assumptions<a class="anchor" href="#secure-evaluation-assumptions" aria-label="Link to this section: Secure evaluation assumptions">#</a></h2>
+<p>Before an evaluation begins, customer and vendor stakeholders should agree on:</p>
+<ul>
+<li>written authorization and target scope;</li>
+<li>identities, roles, and environments permitted for testing;</li>
+<li>allowed state-changing actions and prohibited operations;</li>
+<li>data categories that may be processed;</li>
+<li>deployment and subprocessor context;</li>
+<li>access to evidence and test artifacts;</li>
+<li>retention, export, and deletion terms;</li>
+<li>incident escalation and emergency stop procedures.</li>
+</ul>
+<h2 id="controls-requiring-direct-confirmation">Controls requiring direct confirmation<a class="anchor" href="#controls-requiring-direct-confirmation" aria-label="Link to this section: Controls requiring direct confirmation">#</a></h2>
+<p>This public repository does not assert that VulnGPT currently provides any particular implementation of:</p>
+<ul>
+<li>SSO, SAML, OIDC, SCIM, or customer-managed identity;</li>
+<li>customer-managed encryption keys or a specific cryptographic design;</li>
+<li>a particular cloud region or data-residency option;</li>
+<li>a particular isolation, secrets-management, or key-rotation mechanism;</li>
+<li>immutable audit logs or a specified audit retention period;</li>
+<li>SOC 2, ISO 27001, penetration-test, or other independent assurance;</li>
+<li>a contractual SLA, RTO, RPO, or incident-notification window.</li>
+</ul>
+<p>Request current documentation and contractual evidence for the exact product environment and plan being evaluated. A questionnaire or roadmap statement is not proof that a control exists.</p>
+<h2 id="related-material">Related material<a class="anchor" href="#related-material" aria-label="Link to this section: Related material">#</a></h2>
+<ul>
+<li><a href="/docs/security-and-privacy/">Security and Privacy</a></li>
+<li><a href="/docs/enterprise-evaluation/">Enterprise Evaluation</a></li>
+<li><a href="/docs/responsible-testing/">Responsible Testing</a></li>
+<li><a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/SECURITY.md" rel="noopener">Security Policy</a></li>
+</ul>
+</article>
+<section class="doc-related" aria-labelledby="related-h">
+<h2 id="related-h">Related documentation</h2>
+<ul>
+<li><a href="/docs/security-and-privacy/"><h3>Security and privacy</h3><p>Public trust boundaries and the specific questions that require current vendor confirmation.</p></a></li>
+<li><a href="/docs/system-overview/"><h3>System overview</h3><p>Public conceptual architecture, trust boundaries, and the separation between test context and evidence review.</p></a></li>
+<li><a href="/docs/enterprise-evaluation/"><h3>Enterprise evaluation</h3><p>A structured diligence guide for security, architecture, procurement, privacy, and product stakeholders.</p></a></li>
+<li><a href="/docs/responsible-testing/"><h3>Responsible testing</h3><p>Authorization, scope, data minimization, safe execution, and coordinated disclosure guidance.</p></a></li>
+</ul>
+</section>
+<nav class="doc-pager" aria-label="More in Enterprise evaluation">
+<a class="doc-pager__prev" rel="prev" href="/docs/security-and-privacy/"><span>Previous in Enterprise evaluation</span>Security and privacy</a>
+<a class="doc-pager__next" rel="next" href="/docs/assessment-plan-template/"><span>Next in Enterprise evaluation</span>Assessment plan template</a>
+</nav>
+<aside class="doc-cta" aria-labelledby="cta-h">
+<h2 id="cta-h">Evaluate VulnGPT in private beta</h2>
+<p>VulnGPT by NovaSecLabs is in private beta. This page describes product direction and evaluation guidance. It does not guarantee that every capability is currently available.</p>
+<div class="doc-cta__actions">
+<a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_docs&amp;utm_content=security-model">Request private beta</a>
+<a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/SECURITY_MODEL.md" rel="noopener">View source on GitHub</a>
+</div>
+<p class="hero__auth">For applications you own or are authorized to test.</p>
+</aside>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid">
+<div class="site-footer__about">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p>
+</div>
+<nav aria-label="Product">
+<h2>Product</h2>
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/docs/">Documentation</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h2>Company</h2>
+<ul>
+<li>
+<a href="https://www.novaseclabs.com">NovaSecLabs</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/about">About</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/pricing">Pricing</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/resources">Resources</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Connect">
+<h2>Connect</h2>
+<ul>
+<li>
+<a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a>
+</li>
+<li>
+<a href="https://x.com/novaseclabs" rel="noopener">X</a>
+</li>
+<li>
+<a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a>
+</li>
+<li>
+<a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__legal">
+<p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p>
+<p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

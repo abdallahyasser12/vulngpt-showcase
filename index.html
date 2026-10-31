@@ -1,180 +1,87 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090b12">
-  <meta name="color-scheme" content="dark">
-  <title>VulnGPT — Find the flaws scanners miss</title>
-  <meta name="description" content="VulnGPT is AI-assisted web application security testing focused on authenticated state, authorization boundaries, and business logic.">
-  <link rel="canonical" href="https://showcase.novaseclabs.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="VulnGPT — Security testing beyond payloads">
-  <meta property="og:description" content="Investigate application behavior across identities, permissions, state, and workflows. Validate the evidence before drawing conclusions.">
-  <meta property="og:image" content="https://showcase.novaseclabs.com/assets/social-preview.png">
-  <meta property="og:image:alt" content="VulnGPT evidence-first application security testing showcase">
-  <meta property="og:site_name" content="VulnGPT">
-  <meta property="og:url" content="https://showcase.novaseclabs.com/">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="VulnGPT — Security testing beyond payloads">
-  <meta name="twitter:description" content="Investigate application behavior across identities, permissions, state, and workflows. Validate the evidence before drawing conclusions.">
-  <meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social-preview.png">
-  <link rel="icon" href="/assets/mascot-confident.png">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      { "@type": "Organization", "@id": "https://www.novaseclabs.com/#organization", "name": "NovaSecLabs", "url": "https://www.novaseclabs.com" },
-      { "@type": "WebSite", "@id": "https://showcase.novaseclabs.com/#website", "url": "https://showcase.novaseclabs.com/", "name": "VulnGPT", "publisher": { "@id": "https://www.novaseclabs.com/#organization" } },
-      { "@type": "SoftwareApplication", "@id": "https://showcase.novaseclabs.com/#software", "name": "VulnGPT", "applicationCategory": "SecurityApplication", "operatingSystem": "Web", "description": "AI-assisted web application security testing by NovaSecLabs, currently in private beta and focused on contextual investigation of authorization, authenticated workflows, application state, and business logic.", "creator": { "@id": "https://www.novaseclabs.com/#organization" }, "url": "https://showcase.novaseclabs.com/" }
-    ]
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
-  <script defer src="/script.js"></script>
-</head>
-<body>
-  <a class="skip-link" href="#top">Skip to main content</a>
-  <div class="ambient ambient-one" aria-hidden="true"></div>
-  <div class="ambient ambient-two" aria-hidden="true"></div>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="VulnGPT home">
-      <img src="/assets/mascot-confident.png" alt="" width="36" height="36">
-      <span>Vuln<span class="brand-accent">GPT</span><small>BY NOVASECLABS</small></span>
-    </a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
-    <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
-      <a href="#approach">Approach</a>
-      <a href="#capabilities">Capabilities</a>
-      <a href="#workflow">How it works</a>
-      <a href="#evidence">Evidence</a>
-      <a href="/product/">Product tour</a>
-      <a href="/docs/">Documentation</a>
-      <a class="nav-cta" href="https://www.novaseclabs.com/waitlist">Request private beta <span aria-hidden="true">↗</span></a>
-    </nav>
-  </header>
-
-  <main id="top">
-    <section class="hero shell">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="status-dot"></span> APPLICATION SECURITY · PRIVATE BETA</div>
-        <h1>Find the flaws<br>that <span class="gradient-text">hide in behavior.</span></h1>
-        <p class="hero-lede">Modern applications break in the gaps between users, permissions, state, and business rules. VulnGPT is built to investigate those gaps — and demand evidence before raising an alert.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="https://www.novaseclabs.com/waitlist">Request private beta <span aria-hidden="true">↗</span></a>
-          <a class="button button-secondary" href="#approach">Explore the approach <span aria-hidden="true">↓</span></a>
-        </div>
-        <div class="hero-footnote"><span class="tiny-lock" aria-hidden="true">◆</span> For applications you own or are authorized to test.</div>
-      </div>
-      <div class="hero-visual" aria-label="VulnGPT evidence-first testing concept">
-        <div class="visual-grid"></div>
-        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
-        <div class="hero-glow"></div>
-        <img class="hero-mascot" src="/assets/mascot-confident.png" alt="VulnGPT's pixel bug mascot">
-        <div class="floating-card card-top"><span class="card-icon">01</span><span><b>Observe behavior</b><small>State · identity · response</small></span><i class="check-mark">✓</i></div>
-        <div class="floating-card card-bottom"><span class="card-icon">02</span><span><b>Validate the hypothesis</b><small>Controlled · reproducible</small></span><i class="pulse-mark"></i></div>
-        <div class="visual-label"><span class="live-line"></span> EVIDENCE-FIRST ENGINEERING</div>
-        <div class="visual-corner corner-tl"></div><div class="visual-corner corner-br"></div>
-      </div>
-      <div class="hero-proof"><span>BUILT FOR THE HARDER QUESTIONS</span><div><b>Who can access this?</b><i></i><b>What changes across roles?</b><i></i><b>Can the behavior be reproduced?</b></div></div>
-    </section>
-
-    <section class="section showcase-section" id="evidence">
-      <div class="shell">
-        <div class="section-heading section-heading-wide">
-          <div><div class="eyebrow">01 / THE EXPERIENCE</div><h2>Designed for clarity.<br><span class="muted-heading">Built for scrutiny.</span></h2></div>
-          <p>VulnGPT is being developed for both hands-on security practitioners and builders who need a clearer path to application security.</p>
-        </div>
-        <div class="screenshot-grid product-screenshot-grid">
-          <figure class="screenshot-card screenshot-card-wide"><a class="screenshot-frame" href="/assets/dashboard.png" target="_blank" rel="noopener"><img src="/assets/dashboard.png" alt="VulnGPT dashboard with workspace overview, a completed Payments API scan, finding summary, and severity distribution" loading="lazy" decoding="async"></a><figcaption><span><b>Workspace dashboard</b><small>Scan overview and finding triage</small></span><span class="caption-index">01 / 05</span></figcaption></figure>
-          <figure class="screenshot-card"><a class="screenshot-frame" href="/assets/findings.png" target="_blank" rel="noopener"><img src="/assets/findings.png" alt="VulnGPT findings list with verdict filters, severity labels, and finding summaries" loading="lazy" decoding="async"></a><figcaption><span><b>Findings</b><small>Review by verdict and severity</small></span><span class="caption-index">02 / 05</span></figcaption></figure>
-          <figure class="screenshot-card"><a class="screenshot-frame" href="/assets/bola%20finding.png" target="_blank" rel="noopener"><img src="/assets/bola%20finding.png" alt="BOLA invoice lookup finding detail with description, status, operator feedback, targeted retest, and evidence sections" loading="lazy" decoding="async"></a><figcaption><span><b>Finding detail</b><small>BOLA investigation and review context</small></span><span class="caption-index">03 / 05</span></figcaption></figure>
-          <figure class="screenshot-card screenshot-card-wide"><a class="screenshot-frame" href="/assets/live%20vision.png" target="_blank" rel="noopener"><img src="/assets/live%20vision.png" alt="VulnGPT Live Vision recorded-scan view with activity map, selectable layers, recorded item details, and investigation timeline" loading="lazy" decoding="async"></a><figcaption><span><b>Live Vision</b><small>Recorded activity and investigation timeline</small></span><span class="caption-index">04 / 05</span></figcaption></figure>
-          <figure class="screenshot-card"><a class="screenshot-frame" href="/assets/elte%20red%20team%20report.png" target="_blank" rel="noopener"><img src="/assets/elte%20red%20team%20report.png" alt="Elite Red Team Reports interface; generation and download are disabled by export policy in this capture" loading="lazy" decoding="async"></a><figcaption><span><b>Elite Red Team Reports</b><small>Report library and intelligence categories</small></span><span class="caption-index">05 / 05</span></figcaption></figure>
-        </div>
-        <p class="screenshot-note">Genuine product-interface captures supplied for this showcase. Open any image for the full-size view. Workspace names, counts, statuses, and report controls reflect the captured state only; they are not live telemetry, customer outcomes, or a guarantee of current availability. The report capture explicitly shows generation and download disabled by export policy.</p>
-        <p class="screenshot-tour-link"><a class="text-link" href="/product/">Explore the product walkthrough <span aria-hidden="true">↗</span></a></p>
-      </div>
-    </section>
-
-    <section class="section shell" id="approach">
-      <div class="section-heading">
-        <div class="eyebrow">02 / THE APPROACH</div>
-        <h2>A response is a clue.<br><span class="muted-heading">Not proof.</span></h2>
-        <p>Finding a suspicious response is easy. Establishing what it means — under the right identity, state, and permissions — is the hard part.</p>
-      </div>
-      <div class="principle-grid">
-        <article class="principle-card">
-          <div class="principle-number">A / 01</div><div class="line-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5M8 10.5h5M10.5 8v5"/></svg></div>
-          <h3>Investigate context</h3><p>Keep actors, sessions, object ownership, and application state in view instead of treating every request as an isolated payload.</p>
-        </article>
-        <article class="principle-card">
-          <div class="principle-number">A / 02</div><div class="line-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 7.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></div>
-          <h3>Challenge the hypothesis</h3><p>Separate discovery from confirmation. Look for controlled evidence that supports — or falsifies — a suspected issue.</p>
-        </article>
-        <article class="principle-card">
-          <div class="principle-number">A / 03</div><div class="line-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H4zM8 20h8M12 16v4"/><path d="m8 10 2.5 2.5L16 7"/></svg></div>
-          <h3>Make results actionable</h3><p>Prioritize reproducible evidence and clear reasoning, so security teams spend less time triaging unsupported signals.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section-dark" id="capabilities">
-      <div class="shell">
-        <div class="section-heading section-heading-wide">
-          <div><div class="eyebrow">03 / WHAT WE INVESTIGATE</div><h2>Beyond the payload.</h2></div>
-          <p>Complex application vulnerabilities emerge from relationships and transitions — not just strings that match a known pattern.</p>
-        </div>
-        <div class="capability-grid">
-          <article class="capability"><span class="cap-index">01</span><div><h3>Authorization boundaries</h3><p>Investigate object-level access, ownership checks, and BOLA/IDOR-style failures across actors.</p><div class="tag-row"><span>Object access</span><span>Role boundaries</span></div></div><span class="cap-arrow">↗</span></article>
-          <article class="capability"><span class="cap-index">02</span><div><h3>Authenticated workflows</h3><p>Reason across sessions, identity, and multi-step flows where one request depends on what happened before.</p><div class="tag-row"><span>Session continuity</span><span>State transitions</span></div></div><span class="cap-arrow">↗</span></article>
-          <article class="capability"><span class="cap-index">03</span><div><h3>Business logic</h3><p>Probe the assumptions connecting actions, records, roles, and workflow rules — where generic scans often stop short.</p><div class="tag-row"><span>Workflow integrity</span><span>Invariant testing</span></div></div><span class="cap-arrow">↗</span></article>
-          <article class="capability"><span class="cap-index">04</span><div><h3>Interference-aware validation</h3><p>Account for WAF behavior, throttling, session expiry, and changing state before interpreting a result.</p><div class="tag-row"><span>Signal quality</span><span>Retesting</span></div></div><span class="cap-arrow">↗</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section shell" id="workflow">
-      <div class="section-heading">
-        <div class="eyebrow">04 / THE WORKFLOW</div>
-        <h2>From uncertainty<br>to evidence.</h2>
-        <p>A disciplined path from a behavioral signal to a finding a human can inspect and reproduce.</p>
-      </div>
-      <div class="workflow">
-        <div class="workflow-line" aria-hidden="true"></div>
-        <article class="workflow-step"><span class="step-node">01</span><div><span class="step-label">OBSERVE</span><h3>Build context</h3><p>Understand the reachable application behavior, identity, and relevant state.</p></div></article>
-        <article class="workflow-step"><span class="step-node">02</span><div><span class="step-label">HYPOTHESIZE</span><h3>Identify an invariant</h3><p>Form a testable hypothesis about what the application should enforce.</p></div></article>
-        <article class="workflow-step"><span class="step-node">03</span><div><span class="step-label">FALSIFY</span><h3>Test the boundary</h3><p>Use controlled interventions to distinguish a real flaw from a misleading signal.</p></div></article>
-        <article class="workflow-step"><span class="step-node">04</span><div><span class="step-label">PROVE & RETEST</span><h3>Preserve the evidence</h3><p>Keep findings tied to observable behavior and a path that can be checked again.</p></div></article>
-      </div>
-    </section>
-
-    <section class="section shell benchmark-section">
-      <div class="benchmark-panel">
-        <div class="benchmark-mark"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4 41 14v20L24 44 7 34V14L24 4Z"/><path d="m15 24 6 6 12-13"/></svg></div>
-        <div class="benchmark-copy"><div class="eyebrow">05 / VALIDATION PRINCIPLE</div><h2>Evidence before conclusions.</h2><p>A security result should explain the expected boundary, the controlled test, the observed behavior, and the limitations. A suspicious signal is a reason to investigate—not a performance claim.</p></div>
-        <a class="text-link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/EVIDENCE_AND_VALIDATION.md">Read the evidence standard <span aria-hidden="true">↗</span></a>
-      </div>
-      <p class="benchmark-disclaimer">VulnGPT is in private beta. No public detection-rate, universal zero-false-positive, or independent-certification claim is made here.</p>
-    </section>
-
-    <section class="final-cta">
-      <div class="cta-orb" aria-hidden="true"></div><div class="shell final-cta-inner">
-        <div class="eyebrow">VULNGPT / PRIVATE BETA</div><h2>Test what matters.<br><span class="gradient-text">Know why it matters.</span></h2><p>Help shape an evidence-first approach to application security testing.</p>
-        <a class="button button-primary" href="https://www.novaseclabs.com/waitlist">Request private beta <span aria-hidden="true">↗</span></a>
-        <div class="cta-foot">Built by <a href="https://www.novaseclabs.com">NovaSecLabs</a> · Authorized testing only</div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer shell">
-    <a class="brand footer-brand" href="#top"><img src="/assets/mascot-confident.png" alt="" width="30" height="30"><span>Vuln<span class="brand-accent">GPT</span><small>BY NOVASECLABS</small></span></a>
-    <p>Security testing should produce evidence, not noise.</p>
-    <div class="footer-links"><a href="https://www.novaseclabs.com">Website</a><a href="https://www.novaseclabs.com/waitlist">Private beta</a><a href="/docs/">Documentation</a><a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/SECURITY.md">Security</a><a href="https://github.com/abdallahyasser12/vulngpt-showcase">GitHub</a></div>
-    <small class="copyright">© <span id="year">2026</span> NovaSecLabs. All rights reserved.</small>
-  </footer>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>VulnGPT by NovaSecLabs | Autonomous Web App Pentesting</title><meta name="description" content="VulnGPT by NovaSecLabs is designed to run autonomous penetration tests on web apps, comparing what identities can do and keeping evidence. Private beta."><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="https://showcase.novaseclabs.com/"><meta property="og:type" content="website"><meta property="og:site_name" content="VulnGPT by NovaSecLabs"><meta property="og:locale" content="en_US"><meta property="og:title" content="VulnGPT by NovaSecLabs | Autonomous Web App Pentesting"><meta property="og:description" content="VulnGPT by NovaSecLabs is designed to run autonomous penetration tests on web apps, comparing what identities can do and keeping evidence. Private beta."><meta property="og:url" content="https://showcase.novaseclabs.com/"><meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-home.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="VulnGPT by NovaSecLabs: a real dashboard capture showing a severity distribution and a confirmed critical finding"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="VulnGPT by NovaSecLabs | Autonomous Web App Pentesting"><meta name="twitter:description" content="VulnGPT by NovaSecLabs is designed to run autonomous penetration tests on web apps, comparing what identities can do and keeping evidence. Private beta."><meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-home.png"><meta name="twitter:image:alt" content="VulnGPT by NovaSecLabs: a real dashboard capture showing a severity distribution and a confirmed critical finding"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)"><link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48"><link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="preload" as="image" href="/assets/img/dashboard-1600.webp" imagesrcset="/assets/img/dashboard-640.webp 640w, /assets/img/dashboard-1000.webp 1000w, /assets/img/dashboard-1600.webp 1600w" imagesizes="(min-width: 1248px) 1200px, calc(100vw - 48px)" fetchpriority="high"><link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/css/tokens.css"><link rel="stylesheet" href="/css/fonts.css"><link rel="stylesheet" href="/css/site.css"><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"WebPage","@id":"https://showcase.novaseclabs.com/#webpage","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs | Autonomous Web App Pentesting","description":"VulnGPT by NovaSecLabs is designed to run autonomous penetration tests on web apps, comparing what identities can do and keeping evidence. Private beta.","inLanguage":"en","isPartOf":{"@id":"https://showcase.novaseclabs.com/#website"},"about":{"@id":"https://www.novaseclabs.com/#vulngpt"},"mainEntity":{"@id":"https://www.novaseclabs.com/#vulngpt"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"breadcrumb":{"@id":"https://showcase.novaseclabs.com/#breadcrumb"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://showcase.novaseclabs.com/assets/img/dashboard-1600.webp"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"}]}]}</script><script src="/script.js" defer></script></head><body><a class="skip-link" href="#main">Skip to main content</a><header class="site-header"><div class="container site-header__inner"><a class="lockup" href="/"><img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt=""><span><span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span></span></a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="nav-toggle__bars" aria-hidden="true"></span><span>Menu</span></button><nav class="site-nav" id="site-nav" aria-label="Primary"><ul><li><a href="/product/">Product tour</a></li><li><a href="/#approach">Approach</a></li><li><a href="/#evidence">Evidence</a></li><li><a href="/docs/">Docs</a></li><li><a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a></li></ul></nav></div></header><main id="main"><section class="hero" aria-labelledby="h1"><div class="container">
+<p class="eyebrow"><b>VulnGPT by NovaSecLabs</b> · Private beta</p>
+<div class="hero__head"><h1 id="h1">Find the flaws that hide in <em>behavior.</em></h1>
+<div class="hero__sub"><p>VulnGPT is designed to run autonomous penetration tests on web applications you are authorized to test. It compares what different identities can do inside the scope you set, then keeps the evidence for you to review.</p>
+<div class="hero__actions"><a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=hero">Request private beta</a><a class="link" href="#tour">Take the product tour</a></div>
+<p class="hero__auth">For applications you own or are authorized to test.</p></div></div>
+<figure class="hero__figure figure-frame"><div class="figure-frame__window"><div class="figure-frame__bar" aria-hidden="true"><i></i><i></i><i></i><span class="figure-frame__label">VulnGPT · Dashboard</span><span class="figure-frame__hint">Enlarge</span></div><div class="figure-frame__body"><a class="figure-frame__open" href="/assets/dashboard.png" data-lightbox data-title="Dashboard" data-caption="Dashboard of a completed scan in the VulnGPT private beta. Static capture, not a live session. Counts, names and statuses show the captured state only, not live telemetry or customer outcomes."><img src="/assets/img/dashboard-1600.webp" srcset="/assets/img/dashboard-640.webp 640w, /assets/img/dashboard-1000.webp 1000w, /assets/img/dashboard-1600.webp 1600w" sizes="(min-width: 1248px) 1200px, calc(100vw - 48px)" width="1600" height="761" alt="VulnGPT dashboard with a completed Payments API scan, a findings summary, a severity distribution chart and a confirmed critical finding for broken object-level authorization in invoice lookup" fetchpriority="high" decoding="async"><span class="visually-hidden">Open the full-size dashboard capture</span></a><a class="pin pin--1" href="#note-1" aria-label="Annotation 1: severity distribution">1</a><a class="pin pin--2" href="#note-2" aria-label="Annotation 2: a confirmed critical finding">2</a><a class="pin pin--3" href="#note-3" aria-label="Annotation 3: scan name and status">3</a></div></div>
+<figcaption><ol class="legend">
+<li id="note-1"><span><b>Severity distribution</b>Findings grouped by severity, with a count and share for each level.</span></li>
+<li id="note-2"><span><b>A confirmed finding</b>Broken object-level authorization in invoice lookup, rated critical and marked confirmed.</span></li>
+<li id="note-3"><span><b>Scan name and status</b>The Payments API scan is marked completed and shows how many findings it has produced.</span></li></ol>
+<p class="caption">Dashboard of a completed scan in the VulnGPT private beta. Static capture, not a live session. Counts, names and statuses show the captured state only, not live telemetry or customer outcomes. Unedited capture; the numbered pins are added on top.</p></figcaption></figure>
+</div></section><section class="section" id="approach" aria-labelledby="gap-h"><div class="container">
+<div class="section__head section__head--split"><h2 id="gap-h">A response is a clue, not proof.</h2>
+<p class="lede">A request can return 200 and still be a vulnerability. Another can return 403 and hide one. What matters is who asked, what they own, and what changed.</p></div>
+<div class="gap-panel" data-reveal><svg class="dg dg--wide" viewBox="0 0 1080 354" role="img" aria-labelledby="dgw-t dgw-d" focusable="false">
+<title id="dgw-t">Two identities request the same invoice and both get it</title>
+<desc id="dgw-d">Identity A owns invoice 1042 and Identity B is a different account. Both send GET /invoices/1042 to the invoice API. Both receive 200 OK with the invoice. A payload scanner sees two normal responses. Comparing the two identities shows that B received an invoice it is not entitled to.</desc>
+<defs><marker id="dgw-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1l8 4-8 4z" fill="currentColor" class="dg-head"/></marker></defs>
+<text class="dg-sub" x="0" y="14">WHO ASKS</text><text class="dg-sub" x="400" y="14">WHAT THE APP DOES</text><text class="dg-sub" x="810" y="14">WHAT COMES BACK</text>
+<rect class="dg-node" x="0" y="34" width="270" height="92" rx="8"/>
+<text class="dg-h" x="20" y="66">Identity A</text><text class="dg-sub" x="20" y="90">Owner of invoice 1042</text><text class="dg-mono dg-sub" x="20" y="110">control request</text>
+<rect class="dg-node" x="0" y="246" width="270" height="92" rx="8"/>
+<text class="dg-h" x="20" y="278">Identity B</text><text class="dg-sub" x="20" y="302">Different account</text><text class="dg-mono dg-sub" x="20" y="322">test request</text>
+<path class="dg-line" d="M272 80 C340 80 340 160 396 160" marker-end="url(#dgw-a)"/>
+<path class="dg-line" d="M272 292 C340 292 340 212 396 212" marker-end="url(#dgw-a)"/>
+<rect class="dg-api" x="400" y="118" width="290" height="112" rx="8"/>
+<text class="dg-h dg-api-t" x="420" y="152">Invoice API</text><text class="dg-mono dg-api-t" x="420" y="178">GET /invoices/1042</text><text class="dg-sub dg-api-s" x="420" y="204">Same request, same object</text>
+<path class="dg-line" d="M692 160 C750 160 750 80 806 80" marker-end="url(#dgw-a)"/>
+<path class="dg-line" d="M692 212 C750 212 750 292 806 292" marker-end="url(#dgw-a)"/>
+<rect class="dg-node" x="810" y="34" width="270" height="92" rx="8"/>
+<text class="dg-mono" x="830" y="62" font-weight="600">200 OK · invoice 1042</text><text class="dg-sub" x="830" y="86">Expected: the owner reads it</text><text class="dg-sub" x="830" y="108">Scanner view: nothing to flag</text>
+<rect class="dg-node dg-flag" x="810" y="246" width="270" height="92" rx="8"/>
+<text class="dg-mono" x="830" y="274" font-weight="600">200 OK · invoice 1042</text><text class="dg-bad" x="830" y="298">Unexpected: B is not entitled</text><text class="dg-sub" x="830" y="320">Scanner view: nothing to flag</text>
+<path class="dg-acc" d="M838 130 V242" marker-end="url(#dgw-a)"/><path class="dg-acc" d="M838 242 V130" marker-end="url(#dgw-a)"/>
+<text class="dg-acc-t" x="858" y="176">Compared: same object,</text><text class="dg-acc-t" x="858" y="196">two identities, one</text><text class="dg-acc-t" x="858" y="216">not entitled</text>
+</svg><svg class="dg dg--tall" viewBox="0 0 360 520" role="img" aria-labelledby="dgt-t dgt-d" focusable="false">
+<title id="dgt-t">Two identities request the same invoice and both get it</title>
+<desc id="dgt-d">Identity A owns invoice 1042 and Identity B is a different account. Both send GET /invoices/1042 to the invoice API. Both receive 200 OK with the invoice. A payload scanner sees two normal responses. Comparing the two identities shows that B received an invoice it is not entitled to.</desc>
+<defs><marker id="dgt-a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M1 1l8 4-8 4z" class="dg-head"/></marker></defs>
+<rect class="dg-node" x="0" y="0" width="172" height="76" rx="8"/><text class="dg-h" x="14" y="30">Identity A</text><text class="dg-sub" x="14" y="52">Owner of invoice 1042</text>
+<rect class="dg-node" x="188" y="0" width="172" height="76" rx="8"/><text class="dg-h" x="202" y="30">Identity B</text><text class="dg-sub" x="202" y="52">Different account</text>
+<path class="dg-line" d="M86 78 V136" marker-end="url(#dgt-a)"/><path class="dg-line" d="M274 78 V136" marker-end="url(#dgt-a)"/>
+<rect class="dg-api" x="0" y="140" width="360" height="82" rx="8"/><text class="dg-h dg-api-t" x="16" y="172">Invoice API</text><text class="dg-mono dg-api-t" x="16" y="198">GET /invoices/1042</text>
+<path class="dg-line" d="M86 224 V282" marker-end="url(#dgt-a)"/><path class="dg-line" d="M274 224 V282" marker-end="url(#dgt-a)"/>
+<rect class="dg-node" x="0" y="286" width="172" height="124" rx="8"/><text class="dg-mono" x="14" y="314" font-weight="600">200 OK</text><text class="dg-mono" x="14" y="334">invoice 1042</text><text class="dg-sub" x="14" y="360">Expected</text><text class="dg-sub" x="14" y="382">Scanner: no flag</text>
+<rect class="dg-node dg-flag" x="188" y="286" width="172" height="124" rx="8"/><text class="dg-mono" x="202" y="314" font-weight="600">200 OK</text><text class="dg-mono" x="202" y="334">invoice 1042</text><text class="dg-bad" x="202" y="360">Unexpected</text><text class="dg-sub" x="202" y="382">Scanner: no flag</text>
+<path class="dg-acc" d="M86 414 V436 H274 V414" marker-end="url(#dgt-a)"/>
+<text class="dg-acc-t" x="180" y="468" text-anchor="middle">Compared: same object,</text><text class="dg-acc-t" x="180" y="488" text-anchor="middle">two identities, one not entitled</text>
+</svg></div>
+<div class="reading"><div><h3>What a payload scanner sees</h3><p>Each request on its own. Both return 200 with valid JSON and no error text. Nothing looks malformed, so nothing is flagged.</p></div>
+<div><h3>What behavior-aware testing compares</h3><p>The same invoice, requested by its owner and by a different account. If both get the body, the access rule is the question. VulnGPT is designed to turn that into a testable hypothesis, then check it against a control.</p></div></div>
+</div></section><section class="section section--tint" id="tour" aria-labelledby="tour-h"><div class="container">
+<div class="section__head section__head--split"><h2 id="tour-h">Five views of one investigation.</h2>
+<p class="lede">Real captures from the private beta, left unedited. Select any image to open the full-size original.</p></div>
+<div class="tour"><nav class="tour__rail" aria-label="Tour index" data-spy><ol><li><a href="#tour-1"><span>01</span>Dashboard</a></li><li><a href="#tour-2"><span>02</span>Findings queue</a></li><li><a href="#tour-3"><span>03</span>A BOLA finding in detail</a></li><li><a href="#tour-4"><span>04</span>Live Vision</a></li><li><a href="#tour-5"><span>05</span>Elite Red Team Reports</a></li></ol></nav><div class="tour__items"><article class="tour-item" data-reveal id="tour-1" aria-labelledby="tour-1-h"><figure class="figure-frame"><div class="figure-frame__window"><div class="figure-frame__bar" aria-hidden="true"><i></i><i></i><i></i><span class="figure-frame__label">VulnGPT · Dashboard</span><span class="figure-frame__hint">Enlarge</span></div><div class="figure-frame__body"><a class="figure-frame__open" href="/assets/dashboard.png" data-lightbox data-title="Dashboard" data-caption="Dashboard capture. Scan, findings summary and severity distribution. Static capture, not a live session. Counts, names and statuses show the captured state only, not live telemetry or customer outcomes."><img src="/assets/img/dashboard-1600.webp" srcset="/assets/img/dashboard-640.webp 640w, /assets/img/dashboard-1000.webp 1000w, /assets/img/dashboard-1600.webp 1600w" sizes="(min-width: 1248px) 908px, (min-width: 1040px) calc(100vw - 340px), calc(100vw - 48px)" width="1600" height="761" alt="VulnGPT dashboard with a completed Payments API scan, a findings summary, a severity distribution chart and a confirmed critical finding for broken object-level authorization in invoice lookup" loading="lazy" decoding="async"><span class="visually-hidden">Open the full-size dashboard capture</span></a></div></div><figcaption class="tour-item__cap"><div><p class="tour-item__num">01 of 05</p><h3 id="tour-1-h">Dashboard</h3><p>A completed Payments API scan with its findings and severity distribution on one screen.</p></div><div class="tour-item__why"><b>Why it matters</b><p>You see what needs a decision before you read a single log line.</p></div></figcaption></figure></article><article class="tour-item" data-reveal id="tour-2" aria-labelledby="tour-2-h"><figure class="figure-frame"><div class="figure-frame__window"><div class="figure-frame__bar" aria-hidden="true"><i></i><i></i><i></i><span class="figure-frame__label">VulnGPT · Findings</span><span class="figure-frame__hint">Enlarge</span></div><div class="figure-frame__body"><a class="figure-frame__open" href="/assets/findings.png" data-lightbox data-title="Findings" data-caption="Findings capture, confirmed filter selected. Static capture, not a live session. Counts, names and statuses show the captured state only, not live telemetry or customer outcomes."><img src="/assets/img/findings-1475.webp" srcset="/assets/img/findings-640.webp 640w, /assets/img/findings-1000.webp 1000w, /assets/img/findings-1475.webp 1475w" sizes="(min-width: 1248px) 908px, (min-width: 1040px) calc(100vw - 340px), calc(100vw - 48px)" width="1475" height="857" alt="VulnGPT findings list filtered to confirmed, with severity labels, categories such as Authorization and Business logic, and relative times" loading="lazy" decoding="async"><span class="visually-hidden">Open the full-size findings capture</span></a></div></div><figcaption class="tour-item__cap"><div><p class="tour-item__num">02 of 05</p><h3 id="tour-2-h">Findings queue</h3><p>Confirmed, provisional and rejected findings in one list, filterable by severity.</p></div><div class="tour-item__why"><b>Why it matters</b><p>Review state is explicit, so a suspicion never reads like a confirmed issue.</p></div></figcaption></figure></article><article class="tour-item" data-reveal id="tour-3" aria-labelledby="tour-3-h"><figure class="figure-frame"><div class="figure-frame__window"><div class="figure-frame__bar" aria-hidden="true"><i></i><i></i><i></i><span class="figure-frame__label">VulnGPT · Finding detail</span><span class="figure-frame__hint">Enlarge</span></div><div class="figure-frame__body"><a class="figure-frame__open" href="/assets/bola%20finding.png" data-lightbox data-title="Finding detail" data-caption="Finding detail capture. The evidence body is below the captured area. Static capture, not a live session. Counts, names and statuses show the captured state only, not live telemetry or customer outcomes."><img src="/assets/img/bola-finding-1600.webp" srcset="/assets/img/bola-finding-640.webp 640w, /assets/img/bola-finding-1000.webp 1000w, /assets/img/bola-finding-1600.webp 1600w" sizes="(min-width: 1248px) 908px, (min-width: 1040px) calc(100vw - 340px), calc(100vw - 48px)" width="1600" height="791" alt="Finding detail for a critical, confirmed broken object-level authorization issue in invoice lookup, with description, operator feedback, targeted retest and evidence sections" loading="lazy" decoding="async"><span class="visually-hidden">Open the full-size finding detail capture</span></a></div></div><figcaption class="tour-item__cap"><div><p class="tour-item__num">03 of 05</p><h3 id="tour-3-h">A BOLA finding in detail</h3><p>A critical broken object-level authorization finding with status, operator feedback and a targeted retest.</p></div><div class="tour-item__why"><b>Why it matters</b><p>The finding names the ownership rule that broke, and you can replay just that path to check a fix.</p></div></figcaption></figure></article><article class="tour-item" data-reveal id="tour-4" aria-labelledby="tour-4-h"><figure class="figure-frame"><div class="figure-frame__window"><div class="figure-frame__bar" aria-hidden="true"><i></i><i></i><i></i><span class="figure-frame__label">VulnGPT · Live Vision</span><span class="figure-frame__hint">Enlarge</span></div><div class="figure-frame__body"><a class="figure-frame__open" href="/assets/live%20vision.png" data-lightbox data-title="Live Vision" data-caption="Live Vision capture of a recorded scan. Static capture, not a live session. Counts, names and statuses show the captured state only, not live telemetry or customer outcomes."><img src="/assets/img/live-vision-1600.webp" srcset="/assets/img/live-vision-640.webp 640w, /assets/img/live-vision-1000.webp 1000w, /assets/img/live-vision-1600.webp 1600w" sizes="(min-width: 1248px) 908px, (min-width: 1040px) calc(100vw - 340px), calc(100vw - 48px)" width="1600" height="900" alt="Live Vision recorded-scan view with summary tiles, an application activity map with selectable layers, a recorded item details panel and an investigation timeline" loading="lazy" decoding="async"><span class="visually-hidden">Open the full-size live vision capture</span></a></div></div><figcaption class="tour-item__cap"><div><p class="tour-item__num">04 of 05</p><h3 id="tour-4-h">Live Vision</h3><p>A recorded-scan map of the application with identity and testing layers, plus an investigation timeline.</p></div><div class="tour-item__why"><b>Why it matters</b><p>You can follow what the run did, not only what it concluded.</p></div></figcaption></figure></article><article class="tour-item" data-reveal id="tour-5" aria-labelledby="tour-5-h"><figure class="figure-frame"><div class="figure-frame__window"><div class="figure-frame__bar" aria-hidden="true"><i></i><i></i><i></i><span class="figure-frame__label">VulnGPT · Elite Red Team Reports</span><span class="figure-frame__hint">Enlarge</span></div><div class="figure-frame__body"><a class="figure-frame__open" href="/assets/elte%20red%20team%20report.png" data-lightbox data-title="Elite Red Team Reports" data-caption="Elite Red Team Reports capture. Report generation and download are disabled by export policy. Static capture, not a live session. Counts, names and statuses show the captured state only, not live telemetry or customer outcomes."><img src="/assets/img/red-team-report-1577.webp" srcset="/assets/img/red-team-report-640.webp 640w, /assets/img/red-team-report-1000.webp 1000w, /assets/img/red-team-report-1577.webp 1577w" sizes="(min-width: 1248px) 908px, (min-width: 1040px) calc(100vw - 340px), calc(100vw - 48px)" width="1577" height="773" alt="Elite Red Team Reports page with a banner stating report generation and download are disabled by export policy, and a list of two existing reports" loading="lazy" decoding="async"><span class="visually-hidden">Open the full-size elite red team reports capture</span></a></div></div><figcaption class="tour-item__cap"><div><p class="tour-item__num">05 of 05</p><h3 id="tour-5-h">Elite Red Team Reports</h3><p>A report library with narrative, predictive and cross-domain tabs. Generation and download are disabled by export policy in this capture.</p></div><div class="tour-item__why"><b>Why it matters</b><p>Export is governed by policy, and the interface says so plainly.</p></div></figcaption></figure></article></div></div>
+<div class="tour__foot"><a class="btn btn--ghost" href="/product/">Read the full walkthrough</a><p class="caption">Static capture, not a live session. Counts, names and statuses show the captured state only, not live telemetry or customer outcomes. The report capture shows generation and download disabled by export policy.</p></div>
+</div></section><section class="section" id="evidence" aria-labelledby="ev-h"><div class="container"><div class="casefile">
+<div class="casefile__intro"><p class="eyebrow">The evidence standard</p><h2 id="ev-h">A finding is a claim with its proof attached.</h2>
+<p>A result should say what was expected, what was tried, what was seen and what is still unknown. The standard behind VulnGPT is public, including the cases where a response proves nothing.</p>
+<p><a class="link" href="/docs/evidence-and-validation/">Read the evidence standard</a></p></div>
+<div class="sheet" data-reveal><div class="sheet__bar"><span>CASE FILE · INVOICE ACCESS</span><span>Illustrative example</span></div>
+<dl><div><dt>Hypothesis</dt><dd>Invoice 1042 belongs to Identity A. Identity B, on a different account, should be denied.</dd></div>
+<div><dt>Controlled test</dt><dd>Request the invoice as A to set the control. Request the same invoice as B. Change nothing else, then repeat to check the result is stable.</dd></div>
+<div><dt>Observed</dt><dd>In this example B receives the full invoice body, matching the control, on both attempts.</dd></div>
+<div><dt>Limitations</dt><dd>One object, two test identities, one environment. It shows this path is open, not that every path is. Caching, WAF responses and expired sessions are listed as alternative explanations to rule out.</dd></div></dl></div>
+</div></div></section><section class="section section--tint" id="audience" aria-labelledby="aud-h"><div class="container">
+<div class="section__head"><h2 id="aud-h">Made for the people who sign off on findings.</h2></div>
+<ul class="rows"><li><a href="https://www.novaseclabs.com/for/vibe-coders?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=audience_vibe_coders"><h3>Vibe coders and AI app builders</h3><p>You shipped fast with an assistant. Check that one user cannot read another user's data before you launch.</p><span class="go">See how it applies</span></a></li>
+<li><a href="https://www.novaseclabs.com/for/pentesters?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=audience_pentesters"><h3>Pentesters and firms</h3><p>Hand the repetitive access-control comparisons to a run you scope, and keep your time for judgment and impact.</p><span class="go">See how it applies</span></a></li>
+<li><a href="https://www.novaseclabs.com/for/appsec-teams?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=audience_appsec_teams"><h3>AppSec teams</h3><p>Add behavior-level checks to your program, with evidence your engineers can reproduce.</p><span class="go">See how it applies</span></a></li>
+<li><a href="https://www.novaseclabs.com/for/startup-founders?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=audience_startup_founders"><h3>Startup founders</h3><p>Test your app's authorization and business logic before the customer security questionnaire arrives.</p><span class="go">See how it applies</span></a></li>
+<li><a href="https://www.novaseclabs.com/for/security-leaders?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=audience_security_leaders"><h3>CTOs and security leaders</h3><p>See what was tested, under which identities, and what is still uncertain before you decide.</p><span class="go">See how it applies</span></a></li></ul>
+</div></section><section class="section" id="autonomy" aria-labelledby="auto-h"><div class="container"><div class="autonomy">
+<div class="autonomy__def-wrap"><p class="eyebrow">Autonomy, defined</p><h2 id="auto-h" class="visually-hidden">What autonomous means for VulnGPT</h2>
+<p class="autonomy__def">Autonomous means VulnGPT plans and runs the test steps itself inside the target, scope, and runtime budget you authorize; it does not mean unsupervised: you verify the target, set scope, confirm authorization, and review the evidence.</p></div>
+<div class="limits"><h3>What VulnGPT does not do</h3><ul>
+<li><b>It does not test what you have not authorized.</b>You verify the target, set the scope and confirm authorization before a run.</li>
+<li><b>It does not promise full coverage.</b>It reports what a run reached with the identities and budget you gave it. No finding is not proof of no flaw.</li>
+<li><b>It does not replace expert judgment.</b>A person decides impact, priority and the fix.</li>
+<li><b>It publishes no detection or false-positive rates.</b>VulnGPT is in private beta, and internal testing is not independent certification.</li></ul></div>
+</div></div></section><section class="section section--tint" aria-labelledby="scene-h"><div class="container"><figure class="scene" data-reveal>
+<div class="scene__img"><picture><source media="(min-width: 720px)" srcset="/assets/img/lab-scene-wide.webp" width="784" height="523"><img src="/assets/img/lab-scene-784.webp" srcset="/assets/img/lab-scene-640.webp 640w, /assets/img/lab-scene-784.webp 784w" sizes="(min-width: 720px) 784px, calc(100vw - 48px)" width="784" height="1168" alt="A white voxel bug-bot with purple antennae sits on a workbench in a dim lab, holding four small colored bugs under a lamp" loading="lazy" decoding="async"></picture></div>
+<figcaption><p id="scene-h">The bug-hunter's bench.</p><p>Our mascot is a pixel bug-bot who collects the bugs. This is an illustration, not a product screenshot.</p></figcaption></figure></div></section><section class="cta-band" aria-labelledby="cta-h"><div class="container"><div class="cta-band__copy"><h2 id="cta-h">Bring one application you are authorized to test.</h2>
+<p>Access is coordinated through the private-beta application. Tell NovaSecLabs what you are building and which workflows worry you.</p></div>
+<div class="cta-band__act"><div class="hero__actions"><a class="btn btn--primary btn--on-dark" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=closing">Request private beta</a><a class="link" href="/docs/">Read the documentation</a></div>
+<p class="hero__auth">For applications you own or are authorized to test.</p></div></div></section></main><footer class="site-footer"><div class="container"><div class="site-footer__grid"><div class="site-footer__about"><a class="lockup" href="/"><img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy"><span><span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span></span></a><p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p></div><nav aria-label="Product"><h2>Product</h2><ul><li><a href="/product/">Product tour</a></li><li><a href="/docs/">Documentation</a></li><li><a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a></li></ul></nav><nav aria-label="Company"><h2>Company</h2><ul><li><a href="https://www.novaseclabs.com">NovaSecLabs</a></li><li><a href="https://www.novaseclabs.com/about">About</a></li><li><a href="https://www.novaseclabs.com/pricing">Pricing</a></li><li><a href="https://www.novaseclabs.com/resources">Resources</a></li></ul></nav><nav aria-label="Connect"><h2>Connect</h2><ul><li><a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a></li><li><a href="https://x.com/novaseclabs" rel="noopener">X</a></li><li><a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a></li><li><a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a></li></ul></nav></div><div class="site-footer__legal"><p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p><p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a></p></div></div></footer></body></html>

@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benchmark Governance and Publication Standard | VulnGPT Docs</title>
+<meta name="description" content="The governance gates for publishing any VulnGPT benchmark: reproducibility, denominator integrity, independent review and approved wording.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://showcase.novaseclabs.com/docs/benchmark-governance/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VulnGPT by NovaSecLabs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Benchmark Governance and Publication Standard | VulnGPT Docs">
+<meta property="og:description" content="The governance gates for publishing any VulnGPT benchmark: reproducibility, denominator integrity, independent review and approved wording.">
+<meta property="og:url" content="https://showcase.novaseclabs.com/docs/benchmark-governance/">
+<meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Benchmark Governance and Publication Standard | VulnGPT Docs">
+<meta name="twitter:description" content="The governance gates for publishing any VulnGPT benchmark: reproducibility, denominator integrity, independent review and approved wording.">
+<meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta name="twitter:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/docs/docs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"TechArticle","@id":"https://showcase.novaseclabs.com/docs/benchmark-governance/#article","headline":"Benchmark Governance and Publication Standard","description":"The governance gates for publishing any VulnGPT benchmark: reproducibility, denominator integrity, independent review and approved wording.","url":"https://showcase.novaseclabs.com/docs/benchmark-governance/","mainEntityOfPage":"https://showcase.novaseclabs.com/docs/benchmark-governance/","inLanguage":"en","dateModified":"2026-10-31","articleSection":"Governance & reference","wordCount":727,"timeRequired":"PT4M","image":"https://showcase.novaseclabs.com/assets/social/og-doc.png","author":{"@id":"https://www.novaseclabs.com/#organization"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"isPartOf":[{"@id":"https://showcase.novaseclabs.com/#website"},{"@id":"https://showcase.novaseclabs.com/docs/#webpage"}],"about":{"@id":"https://www.novaseclabs.com/#vulngpt"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/docs/benchmark-governance/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://showcase.novaseclabs.com/docs/"},{"@type":"ListItem","position":3,"name":"Benchmark governance","item":"https://showcase.novaseclabs.com/docs/benchmark-governance/"}]}]}</script>
+<script src="/script.js" defer></script>
+<script src="/docs/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+<span class="nav-toggle__bars" aria-hidden="true">
+</span>
+<span>Menu</span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/#approach">Approach</a>
+</li>
+<li>
+<a href="/#evidence">Evidence</a>
+</li>
+<li>
+<a href="/docs/" aria-current="page">Docs</a>
+</li>
+<li>
+<a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero doc-head">
+<div class="container">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/docs/">Documentation</a></li>
+<li aria-current="page">Benchmark governance</li>
+</ol>
+</nav>
+<p class="eyebrow"><b>Governance &amp; reference</b> · VulnGPT by NovaSecLabs</p>
+<h1>Benchmark Governance and Publication Standard</h1>
+<p class="lede">The governance gates for publishing any VulnGPT benchmark: reproducibility, denominator integrity, independent review and approved wording.</p>
+<p class="doc-meta"><span>4 min read</span><span>Last updated <time datetime="2026-10-31">31 Oct 2026</time></span><a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/BENCHMARK_GOVERNANCE.md" rel="noopener">View source on GitHub</a></p>
+</div>
+</section>
+<div class="container doc-layout">
+<aside class="doc-aside">
+<nav class="doc-toc" aria-label="On this page" data-spy>
+<details open>
+<summary>On this page</summary>
+<ol>
+<li><a href="#purpose">Purpose</a></li>
+<li><a href="#current-publication-status">Current publication status</a></li>
+<li><a href="#required-benchmark-record">Required benchmark record</a></li>
+<li><a href="#denominator-and-score-integrity">Denominator and score integrity</a></li>
+<li><a href="#required-result-separation">Required result separation</a></li>
+<li><a href="#reproducibility-controls">Reproducibility controls</a></li>
+<li><a href="#independence-and-conflicts">Independence and conflicts</a></li>
+<li><a href="#publication-approval-gates">Publication approval gates</a></li>
+<li><a href="#approved-language-principles">Approved language principles</a></li>
+<li><a href="#publication-record-template">Publication record template</a></li>
+</ol>
+</details>
+</nav>
+</aside>
+<div class="doc-main">
+<article class="prose doc-prose">
+
+<h2 id="purpose">Purpose<a class="anchor" href="#purpose" aria-label="Link to this section: Purpose">#</a></h2>
+<p>This document defines the minimum governance expected before publishing a performance or detection benchmark for VulnGPT.</p>
+<p>It exists to prevent unsupported comparisons, denominator ambiguity, selective reporting, and broad claims that exceed the tested conditions.</p>
+<h2 id="current-publication-status">Current publication status<a class="anchor" href="#current-publication-status" aria-label="Link to this section: Current publication status">#</a></h2>
+<p>The G1 public score explanation remains under review. Historic G1 figures are not approved for current marketing use until the frozen source evidence, row-level scoring, and written explanation reconcile. See <a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/BENCHMARK_G1.md" rel="noopener">BENCHMARK_G1.md</a>.</p>
+<p>This policy does not reinstate, validate, or reinterpret any withdrawn historical result.</p>
+<h2 id="required-benchmark-record">Required benchmark record<a class="anchor" href="#required-benchmark-record" aria-label="Link to this section: Required benchmark record">#</a></h2>
+<p>A publishable benchmark record must identify:</p>
+<ul>
+<li>benchmark name, version, and ownership;</li>
+<li>exact target and scenario inventory;</li>
+<li>frozen ground-truth source and version;</li>
+<li>inclusion and exclusion rules;</li>
+<li>positive, negative, ambiguous, and unobservable scenario counts;</li>
+<li>exact run configuration and environment;</li>
+<li>engine and supporting component versions where appropriate;</li>
+<li>timeouts, retries, and resource constraints;</li>
+<li>scoring implementation and version;</li>
+<li>finding-to-ground-truth matching rules;</li>
+<li>adjudication rules and taxonomy treatment;</li>
+<li>raw outputs and row-level evidence;</li>
+<li>repeated-run variance and reproducibility;</li>
+<li>false-positive and false-negative definitions;</li>
+<li>limitations, conflicts of interest, and independence status.</li>
+</ul>
+<h2 id="denominator-and-score-integrity">Denominator and score integrity<a class="anchor" href="#denominator-and-score-integrity" aria-label="Link to this section: Denominator and score integrity">#</a></h2>
+<p>Every published numerator and denominator must be derivable from the row-level result set.</p>
+<p>If an adjusted or adjudicated score is published, disclose:</p>
+<ol>
+<li>the raw denominator;</li>
+<li>every excluded row and exclusion reason;</li>
+<li>every credited row and credit rule;</li>
+<li>the adjusted denominator;</li>
+<li>the resulting numerator;</li>
+<li>the exact mapping from source rows to published totals.</li>
+</ol>
+<p>A prose explanation that does not reconcile with the underlying export is a publication blocker.</p>
+<h2 id="required-result-separation">Required result separation<a class="anchor" href="#required-result-separation" aria-label="Link to this section: Required result separation">#</a></h2>
+<p>Keep these outcomes distinct:</p>
+<ul>
+<li>not executed;</li>
+<li>execution incomplete;</li>
+<li>executed but unobservable;</li>
+<li>ambiguous;</li>
+<li>invalid ground truth;</li>
+<li>out of scope;</li>
+<li>correctly detected;</li>
+<li>missed;</li>
+<li>false positive;</li>
+<li>taxonomy mismatch or alternative classification;</li>
+<li>independently adjudicated result.</li>
+</ul>
+<p>Do not convert missing evidence, a timeout, or an unexecuted scenario into a pass or a negative finding.</p>
+<h2 id="reproducibility-controls">Reproducibility controls<a class="anchor" href="#reproducibility-controls" aria-label="Link to this section: Reproducibility controls">#</a></h2>
+<p>Before publication:</p>
+<ul>
+<li>reproduce the result from a clean environment;</li>
+<li>preserve exact input inventory and output artifacts;</li>
+<li>verify the scoring code against known test vectors;</li>
+<li>independently inspect row-to-summary aggregation;</li>
+<li>compare repeated runs and explain variance;</li>
+<li>confirm that benchmark-specific answers or labels do not influence the system under evaluation;</li>
+<li>retain a versioned publication bundle.</li>
+</ul>
+<h2 id="independence-and-conflicts">Independence and conflicts<a class="anchor" href="#independence-and-conflicts" aria-label="Link to this section: Independence and conflicts">#</a></h2>
+<p>Clearly identify who designed the benchmark, who implemented the system, who ran the tests, and who adjudicated results. If the same team controls those stages, state that explicitly.</p>
+<p>&quot;Internal&quot;, &quot;reproduced&quot;, &quot;frozen&quot;, &quot;independently evaluated&quot;, and &quot;certified&quot; are not interchangeable terms.</p>
+<h2 id="publication-approval-gates">Publication approval gates<a class="anchor" href="#publication-approval-gates" aria-label="Link to this section: Publication approval gates">#</a></h2>
+<p>A benchmark may be published only when all gates are satisfied:</p>
+<div class="table-wrap" role="region" aria-label="Table: Publication approval gates" tabindex="0">
+<table>
+<thead><tr><th scope="col">Gate</th><th scope="col">Required evidence</th><th scope="col">Blocking condition</th></tr></thead>
+<tbody>
+<tr><td>Inventory</td><td>Versioned scenario list</td><td>Unknown or changing denominator</td></tr>
+<tr><td>Ground truth</td><td>Reviewable source and rules</td><td>Invalid or unverified labels</td></tr>
+<tr><td>Execution</td><td>Complete run records</td><td>Incomplete runs presented as complete</td></tr>
+<tr><td>Scoring</td><td>Deterministic row-level output</td><td>Summary arithmetic does not reconcile</td></tr>
+<tr><td>Adjudication</td><td>Written, repeatable rules</td><td>Informal or selective credit</td></tr>
+<tr><td>Reproduction</td><td>Clean repeat runs</td><td>Unexplained variance</td></tr>
+<tr><td>Disclosure</td><td>Limitations and conflicts</td><td>Unsupported independence or certification language</td></tr>
+<tr><td>Approval</td><td>Named publication owner and reviewers</td><td>No accountable sign-off</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="approved-language-principles">Approved language principles<a class="anchor" href="#approved-language-principles" aria-label="Link to this section: Approved language principles">#</a></h2>
+<ul>
+<li>State the benchmark scope and version next to the result.</li>
+<li>Describe internal benchmarks as internal.</li>
+<li>Report raw results and adjusted views together where both are relevant.</li>
+<li>Avoid universal &quot;zero false positives&quot; statements.</li>
+<li>Do not translate a benchmark score into a real-world detection rate.</li>
+<li>Do not compare products unless the methodology and test conditions are meaningfully comparable.</li>
+<li>Publish a correction when a material error is found; do not silently overwrite historical context.</li>
+</ul>
+<h2 id="publication-record-template">Publication record template<a class="anchor" href="#publication-record-template" aria-label="Link to this section: Publication record template">#</a></h2>
+<p>For a future benchmark, create a versioned report containing:</p>
+<ul>
+<li>executive summary;</li>
+<li>benchmark ownership and independence disclosure;</li>
+<li>dataset and ground-truth description;</li>
+<li>environment and run configuration;</li>
+<li>scoring definitions;</li>
+<li>raw and adjudicated result tables;</li>
+<li>row-level downloadable evidence where safe;</li>
+<li>reproducibility record;</li>
+<li>limitations and exclusions;</li>
+<li>reviewer and approval record;</li>
+<li>correction history.</li>
+</ul>
+<p>The benchmark publication page should link to this governance standard and the exact versioned evidence bundle.</p>
+</article>
+<section class="doc-related" aria-labelledby="related-h">
+<h2 id="related-h">Related documentation</h2>
+<ul>
+<li><a href="/docs/evaluation-protocol/"><h3>Evaluation protocol</h3><p>Define ground truth and outcomes before a run; separate execution, observability, correctness, and evidence quality.</p></a></li>
+<li><a href="/docs/capability-evaluation-matrix/"><h3>Capability evaluation matrix</h3><p>Scenario dimensions, required context, evidence expectations, and common false conclusions.</p></a></li>
+<li><a href="/docs/evidence-and-validation/"><h3>Evidence and validation</h3><p>How to distinguish a suspicious signal from a supported, reviewable security conclusion.</p></a></li>
+<li><a href="/docs/faq/"><h3>FAQ</h3><p>Product status, access, intended use, supported claims, and common evaluation questions.</p></a></li>
+</ul>
+</section>
+<nav class="doc-pager" aria-label="More in Governance &amp; reference">
+<a class="doc-pager__prev" rel="prev" href="/docs/responsible-testing/"><span>Previous in Governance &amp; reference</span>Responsible testing</a>
+<a class="doc-pager__next" rel="next" href="/docs/release-process/"><span>Next in Governance &amp; reference</span>Release process</a>
+</nav>
+<aside class="doc-cta" aria-labelledby="cta-h">
+<h2 id="cta-h">Evaluate VulnGPT in private beta</h2>
+<p>VulnGPT by NovaSecLabs is in private beta. This page describes product direction and evaluation guidance. It does not guarantee that every capability is currently available.</p>
+<div class="doc-cta__actions">
+<a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_docs&amp;utm_content=benchmark-governance">Request private beta</a>
+<a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/BENCHMARK_GOVERNANCE.md" rel="noopener">View source on GitHub</a>
+</div>
+<p class="hero__auth">For applications you own or are authorized to test.</p>
+</aside>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid">
+<div class="site-footer__about">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p>
+</div>
+<nav aria-label="Product">
+<h2>Product</h2>
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/docs/">Documentation</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h2>Company</h2>
+<ul>
+<li>
+<a href="https://www.novaseclabs.com">NovaSecLabs</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/about">About</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/pricing">Pricing</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/resources">Resources</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Connect">
+<h2>Connect</h2>
+<ul>
+<li>
+<a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a>
+</li>
+<li>
+<a href="https://x.com/novaseclabs" rel="noopener">X</a>
+</li>
+<li>
+<a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a>
+</li>
+<li>
+<a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__legal">
+<p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p>
+<p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

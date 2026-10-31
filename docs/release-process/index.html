@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public Repository Release Process | VulnGPT Docs</title>
+<meta name="description" content="How the public VulnGPT showcase repository is reviewed, verified, published and corrected. Applies to this website and documentation only.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://showcase.novaseclabs.com/docs/release-process/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VulnGPT by NovaSecLabs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Public Repository Release Process | VulnGPT Docs">
+<meta property="og:description" content="How the public VulnGPT showcase repository is reviewed, verified, published and corrected. Applies to this website and documentation only.">
+<meta property="og:url" content="https://showcase.novaseclabs.com/docs/release-process/">
+<meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Public Repository Release Process | VulnGPT Docs">
+<meta name="twitter:description" content="How the public VulnGPT showcase repository is reviewed, verified, published and corrected. Applies to this website and documentation only.">
+<meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta name="twitter:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/docs/docs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"TechArticle","@id":"https://showcase.novaseclabs.com/docs/release-process/#article","headline":"Public Repository Release Process","description":"How the public VulnGPT showcase repository is reviewed, verified, published and corrected. Applies to this website and documentation only.","url":"https://showcase.novaseclabs.com/docs/release-process/","mainEntityOfPage":"https://showcase.novaseclabs.com/docs/release-process/","inLanguage":"en","dateModified":"2026-10-31","articleSection":"Governance & reference","wordCount":428,"timeRequired":"PT2M","image":"https://showcase.novaseclabs.com/assets/social/og-doc.png","author":{"@id":"https://www.novaseclabs.com/#organization"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"isPartOf":[{"@id":"https://showcase.novaseclabs.com/#website"},{"@id":"https://showcase.novaseclabs.com/docs/#webpage"}],"about":{"@id":"https://www.novaseclabs.com/#vulngpt"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/docs/release-process/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://showcase.novaseclabs.com/docs/"},{"@type":"ListItem","position":3,"name":"Release process","item":"https://showcase.novaseclabs.com/docs/release-process/"}]}]}</script>
+<script src="/script.js" defer></script>
+<script src="/docs/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+<span class="nav-toggle__bars" aria-hidden="true">
+</span>
+<span>Menu</span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/#approach">Approach</a>
+</li>
+<li>
+<a href="/#evidence">Evidence</a>
+</li>
+<li>
+<a href="/docs/" aria-current="page">Docs</a>
+</li>
+<li>
+<a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero doc-head">
+<div class="container">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/docs/">Documentation</a></li>
+<li aria-current="page">Release process</li>
+</ol>
+</nav>
+<p class="eyebrow"><b>Governance &amp; reference</b> · VulnGPT by NovaSecLabs</p>
+<h1>Public Repository Release Process</h1>
+<p class="lede">How the public VulnGPT showcase repository is reviewed, verified, published and corrected. Applies to this website and documentation only.</p>
+<p class="doc-meta"><span>2 min read</span><span>Last updated <time datetime="2026-10-31">31 Oct 2026</time></span><a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/RELEASE_PROCESS.md" rel="noopener">View source on GitHub</a></p>
+</div>
+</section>
+<div class="container doc-layout">
+<aside class="doc-aside">
+<nav class="doc-toc" aria-label="On this page" data-spy>
+<details open>
+<summary>On this page</summary>
+<ol>
+<li><a href="#scope">Scope</a></li>
+<li><a href="#release-principles">Release principles</a></li>
+<li><a href="#change-classification">Change classification</a></li>
+<li><a href="#pre-merge-checklist">Pre-merge checklist</a></li>
+<li><a href="#publication-and-rollback">Publication and rollback</a></li>
+<li><a href="#release-notes">Release notes</a></li>
+<li><a href="#related-resources">Related resources</a></li>
+</ol>
+</details>
+</nav>
+</aside>
+<div class="doc-main">
+<article class="prose doc-prose">
+
+<h2 id="scope">Scope<a class="anchor" href="#scope" aria-label="Link to this section: Scope">#</a></h2>
+<p>This process applies only to the public VulnGPT showcase website and documentation repository. It does not define scanner-engine releases, backend deployments, customer rollouts, or private product release controls.</p>
+<h2 id="release-principles">Release principles<a class="anchor" href="#release-principles" aria-label="Link to this section: Release principles">#</a></h2>
+<ul>
+<li>Publish only content reviewed against approved product claims.</li>
+<li>Prefer small, reviewable pull requests.</li>
+<li>Validate local links, references, metadata, and public-content guardrails before merge.</li>
+<li>Review the Vercel preview when the platform can build it.</li>
+<li>Do not treat a preview deployment as evidence of scanner-engine correctness.</li>
+<li>Keep historical release records and corrections visible.</li>
+</ul>
+<h2 id="change-classification">Change classification<a class="anchor" href="#change-classification" aria-label="Link to this section: Change classification">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: Change classification" tabindex="0">
+<table>
+<thead><tr><th scope="col">Change type</th><th scope="col">Examples</th><th scope="col">Expected handling</th></tr></thead>
+<tbody>
+<tr><td>Documentation</td><td>Copy corrections, glossary, technical explanation</td><td>Review factual claims and local references</td></tr>
+<tr><td>Website</td><td>Layout, metadata, accessible navigation</td><td>Review desktop/mobile and keyboard behavior</td></tr>
+<tr><td>Trust and policy</td><td>Security, privacy, benchmark, compliance wording</td><td>Require explicit evidence and owner review</td></tr>
+<tr><td>Brand assets</td><td>Logo, mascot, social card, screenshots</td><td>Verify provenance, continuity, and permissions</td></tr>
+<tr><td>Release metadata</td><td>Tags, changelog, publication note</td><td>Publish only for an actual reviewed release</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="pre-merge-checklist">Pre-merge checklist<a class="anchor" href="#pre-merge-checklist" aria-label="Link to this section: Pre-merge checklist">#</a></h2>
+<ol>
+<li>Confirm that changes affect only the public showcase repository.</li>
+<li>Inspect the exact diff and check for private implementation detail or customer information.</li>
+<li>Review all new capability, security, privacy, metric, customer, and compliance language.</li>
+<li>Run <code>node scripts/validate-public-repo.mjs</code>.</li>
+<li>Confirm local links and images resolve.</li>
+<li>Check semantic HTML, keyboard navigation, reduced motion, and responsive layout for web changes.</li>
+<li>Review the available Vercel preview and record any platform limitation.</li>
+<li>Update the changelog for material public changes.</li>
+<li>Confirm the PR title and description accurately describe the change.</li>
+<li>Merge using the repository's approved review and merge policy.</li>
+</ol>
+<h2 id="publication-and-rollback">Publication and rollback<a class="anchor" href="#publication-and-rollback" aria-label="Link to this section: Publication and rollback">#</a></h2>
+<p>A merge to the default branch may trigger the connected static-site deployment. Confirm the resulting deployment and public URL before announcing a website change.</p>
+<p>If a public change is materially incorrect:</p>
+<ul>
+<li>revert the offending commit or merge through a reviewed change;</li>
+<li>preserve the correction history;</li>
+<li>verify the replacement deployment;</li>
+<li>update benchmark or claims notices if the correction affects public statements.</li>
+</ul>
+<p>Do not rewrite published history to conceal a material correction.</p>
+<h2 id="release-notes">Release notes<a class="anchor" href="#release-notes" aria-label="Link to this section: Release notes">#</a></h2>
+<p>Use the repository's release template for actual public releases. Do not create a version or release solely to make the repository appear active. A documentation merge does not necessarily warrant a product release.</p>
+<h2 id="related-resources">Related resources<a class="anchor" href="#related-resources" aria-label="Link to this section: Related resources">#</a></h2>
+<ul>
+<li><a href="/docs/repository-maintenance/">Repository Maintenance</a></li>
+<li><a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/CLAIMS.md" rel="noopener">Claims and Messaging</a></li>
+<li><a href="/docs/benchmark-governance/">Benchmark Governance</a></li>
+<li><a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/CHANGELOG.md" rel="noopener">Changelog</a></li>
+</ul>
+</article>
+<section class="doc-related" aria-labelledby="related-h">
+<h2 id="related-h">Related documentation</h2>
+<ul>
+<li><a href="/docs/repository-maintenance/"><h3>Repository maintenance</h3><p>Local validation, asset hygiene, public-content review, and repository ownership.</p></a></li>
+<li><a href="/docs/benchmark-governance/"><h3>Benchmark governance</h3><p>Reproducibility, denominator integrity, independent review, and benchmark publication gates.</p></a></li>
+<li><a href="/docs/responsible-testing/"><h3>Responsible testing</h3><p>Authorization, scope, data minimization, safe execution, and coordinated disclosure guidance.</p></a></li>
+</ul>
+</section>
+<nav class="doc-pager" aria-label="More in Governance &amp; reference">
+<a class="doc-pager__prev" rel="prev" href="/docs/benchmark-governance/"><span>Previous in Governance &amp; reference</span>Benchmark governance</a>
+<a class="doc-pager__next" rel="next" href="/docs/repository-maintenance/"><span>Next in Governance &amp; reference</span>Repository maintenance</a>
+</nav>
+<aside class="doc-cta" aria-labelledby="cta-h">
+<h2 id="cta-h">Evaluate VulnGPT in private beta</h2>
+<p>VulnGPT by NovaSecLabs is in private beta. This page describes product direction and evaluation guidance. It does not guarantee that every capability is currently available.</p>
+<div class="doc-cta__actions">
+<a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_docs&amp;utm_content=release-process">Request private beta</a>
+<a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/RELEASE_PROCESS.md" rel="noopener">View source on GitHub</a>
+</div>
+<p class="hero__auth">For applications you own or are authorized to test.</p>
+</aside>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid">
+<div class="site-footer__about">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p>
+</div>
+<nav aria-label="Product">
+<h2>Product</h2>
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/docs/">Documentation</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h2>Company</h2>
+<ul>
+<li>
+<a href="https://www.novaseclabs.com">NovaSecLabs</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/about">About</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/pricing">Pricing</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/resources">Resources</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Connect">
+<h2>Connect</h2>
+<ul>
+<li>
+<a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a>
+</li>
+<li>
+<a href="https://x.com/novaseclabs" rel="noopener">X</a>
+</li>
+<li>
+<a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a>
+</li>
+<li>
+<a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__legal">
+<p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p>
+<p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

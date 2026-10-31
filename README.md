@@ -2,11 +2,13 @@
 
 ![VulnGPT — evidence-first application security testing](assets/social-preview.png)
 
-**AI-assisted web application security testing focused on behavior, authorization, and evidence.**
+**Autonomous web application security testing focused on behavior, authorization, and evidence.**
 
-VulnGPT is a NovaSecLabs product in private beta. It is being developed to help security practitioners and application builders investigate weaknesses that emerge from the relationships between identities, permissions, objects, sessions, and multi-step business workflows.
+VulnGPT by NovaSecLabs is a product in private beta. It is being developed to help security practitioners and application builders investigate weaknesses that emerge from the relationships between identities, permissions, objects, sessions, and multi-step business workflows.
 
 A suspicious response is a lead to investigate—not proof of a vulnerability.
+
+> Autonomous means VulnGPT plans and runs the test steps itself inside the target, scope, and runtime budget you authorize; it does not mean unsupervised: you verify the target, set scope, confirm authorization, and review the evidence.
 
 <p align="left">
   <a href="https://www.novaseclabs.com/waitlist"><strong>Request private beta access ↗</strong></a>
@@ -65,7 +67,7 @@ Read the full [Evidence and Validation Standard](docs/EVIDENCE_AND_VALIDATION.md
 - **Context matters.** Identity, permissions, ownership, session continuity, and workflow state can change the meaning of a request.
 - **Falsification matters.** A credible validation process should test alternative explanations, not only seek confirmation.
 - **Reproducibility matters.** Results should describe the conditions and behavior needed for a reviewer to check them.
-- **Human judgment remains essential.** Automated analysis supports security work; it does not remove the need for authorization, review, or professional judgment.
+- **Human judgment remains essential.** Autonomous testing supports security work; it does not remove the need for authorization, review, or professional judgment.
 
 ## Who it is for
 
@@ -95,7 +97,7 @@ See the [visual product walkthrough](https://showcase.novaseclabs.com/product/) 
 
 ## Documentation
 
-Browse the [searchable VulnGPT documentation library](https://showcase.novaseclabs.com/docs/), organized by product, technical, practitioner, enterprise, and governance topics.
+Browse the [searchable VulnGPT documentation library](https://showcase.novaseclabs.com/docs/), organized by product and technical, practitioner, enterprise, and governance topics. Every document below is also published as a page on the showcase site at `/docs/<name>/`.
 
 | Document | What it covers |
 | --- | --- |

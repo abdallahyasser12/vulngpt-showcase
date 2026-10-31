@@ -10,7 +10,7 @@ It is a diligence framework—not a security certification, contractual commitme
 | --- | --- |
 | Product | VulnGPT |
 | Provider | NovaSecLabs |
-| Category | AI-assisted web application security testing |
+| Category | Autonomous web application security testing, within the scope and runtime budget the customer authorizes |
 | Availability | Private beta |
 | Primary focus | Contextual testing across identities, authorization boundaries, object ownership, workflow state, and business logic |
 | Engagement | Access coordinated through the private-beta application |

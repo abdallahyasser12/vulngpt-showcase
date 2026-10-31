@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repository Maintenance | VulnGPT Docs</title>
+<meta name="description" content="Validation, content review and asset hygiene for the public VulnGPT showcase repository. Maintainer guidance for contributors and reviewers.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://showcase.novaseclabs.com/docs/repository-maintenance/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VulnGPT by NovaSecLabs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Repository Maintenance | VulnGPT Docs">
+<meta property="og:description" content="Validation, content review and asset hygiene for the public VulnGPT showcase repository. Maintainer guidance for contributors and reviewers.">
+<meta property="og:url" content="https://showcase.novaseclabs.com/docs/repository-maintenance/">
+<meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Repository Maintenance | VulnGPT Docs">
+<meta name="twitter:description" content="Validation, content review and asset hygiene for the public VulnGPT showcase repository. Maintainer guidance for contributors and reviewers.">
+<meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta name="twitter:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/docs/docs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"TechArticle","@id":"https://showcase.novaseclabs.com/docs/repository-maintenance/#article","headline":"Repository Maintenance","description":"Validation, content review and asset hygiene for the public VulnGPT showcase repository. Maintainer guidance for contributors and reviewers.","url":"https://showcase.novaseclabs.com/docs/repository-maintenance/","mainEntityOfPage":"https://showcase.novaseclabs.com/docs/repository-maintenance/","inLanguage":"en","dateModified":"2026-10-31","articleSection":"Governance & reference","wordCount":730,"timeRequired":"PT4M","image":"https://showcase.novaseclabs.com/assets/social/og-doc.png","author":{"@id":"https://www.novaseclabs.com/#organization"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"isPartOf":[{"@id":"https://showcase.novaseclabs.com/#website"},{"@id":"https://showcase.novaseclabs.com/docs/#webpage"}],"about":{"@id":"https://www.novaseclabs.com/#vulngpt"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/docs/repository-maintenance/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://showcase.novaseclabs.com/docs/"},{"@type":"ListItem","position":3,"name":"Repository maintenance","item":"https://showcase.novaseclabs.com/docs/repository-maintenance/"}]}]}</script>
+<script src="/script.js" defer></script>
+<script src="/docs/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+<span class="nav-toggle__bars" aria-hidden="true">
+</span>
+<span>Menu</span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/#approach">Approach</a>
+</li>
+<li>
+<a href="/#evidence">Evidence</a>
+</li>
+<li>
+<a href="/docs/" aria-current="page">Docs</a>
+</li>
+<li>
+<a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero doc-head">
+<div class="container">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/docs/">Documentation</a></li>
+<li aria-current="page">Repository maintenance</li>
+</ol>
+</nav>
+<p class="eyebrow"><b>Governance &amp; reference</b> · VulnGPT by NovaSecLabs</p>
+<h1>Repository Maintenance</h1>
+<p class="lede">Validation, content review and asset hygiene for the public VulnGPT showcase repository. Maintainer guidance for contributors and reviewers.</p>
+<p class="doc-meta"><span>4 min read</span><span>Last updated <time datetime="2026-10-31">31 Oct 2026</time></span><a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/REPOSITORY_MAINTENANCE.md" rel="noopener">View source on GitHub</a></p>
+</div>
+</section>
+<div class="container doc-layout">
+<aside class="doc-aside">
+<nav class="doc-toc" aria-label="On this page" data-spy>
+<details open>
+<summary>On this page</summary>
+<ol>
+<li><a href="#purpose">Purpose</a></li>
+<li><a href="#local-validation">Local validation</a></li>
+<li><a href="#documentation-build">Documentation build</a></li>
+<li><a href="#hosting-configuration">Hosting configuration</a></li>
+<li><a href="#content-review">Content review</a></li>
+<li><a href="#asset-management">Asset management</a></li>
+<li><a href="#releases-and-change-history">Releases and change history</a></li>
+<li><a href="#ownership-and-escalation">Ownership and escalation</a></li>
+</ol>
+</details>
+</nav>
+</aside>
+<div class="doc-main">
+<article class="prose doc-prose">
+
+<h2 id="purpose">Purpose<a class="anchor" href="#purpose" aria-label="Link to this section: Purpose">#</a></h2>
+<p>This repository contains the static public showcase and public product documentation for VulnGPT. It is not the private product implementation repository.</p>
+<p>The production-facing showcase hostname is <a href="https://showcase.novaseclabs.com/" rel="noopener">showcase.novaseclabs.com</a>. The Vercel project is a hosting detail, not the product's public identity.</p>
+<p>The maintenance goal is to keep public information accurate, navigable, accessible, searchable, and safe to publish. The searchable documentation library is generated from the Markdown files in this directory (see &quot;Documentation build&quot;) and is served from <a href="/docs/">docs/index.html</a> at <a href="https://showcase.novaseclabs.com/docs/" rel="noopener">showcase.novaseclabs.com/docs/</a>.</p>
+<h2 id="local-validation">Local validation<a class="anchor" href="#local-validation" aria-label="Link to this section: Local validation">#</a></h2>
+<p>The repository uses only Node.js built-ins (Node 22 or later). No dependency installation is required. <code>node scripts/validate-public-repo.mjs</code> is the single entry point: it runs the content checks below and also calls the documentation build check and the link checker.</p>
+<p>From the repository root:</p>
+<pre tabindex="0"><code class="language-bash">node --version
+node scripts/validate-public-repo.mjs</code></pre>
+<p>The validator checks relative Markdown links and image references, required metadata on every public page, structured data, wording guardrails (approved autonomous wording, no withdrawn benchmark scores, no unqualified claims), the Vercel configuration, and the sitemap, robots, and llms.txt files. It then runs:</p>
+<ul>
+<li><code>node scripts/build-docs.mjs --check</code>, which fails if any generated documentation page, the search index, <code>sitemap.xml</code>, or <code>llms.txt</code> differs from what the Markdown sources produce;</li>
+<li><code>node scripts/check-links.mjs</code>, which resolves every internal link, image, canonical URL, and fragment, checks sitemap parity, one H1 per page, image dimensions and alt text, the absence of inline scripts and styles, JSON-LD identifiers, title and description lengths, and duplicates.</li>
+</ul>
+<p><code>node scripts/check-links.mjs --external</code> additionally sends HEAD requests to external links (it needs network access and is not part of the default run). Main-site pages that ship separately are reported as PENDING rather than failing.</p>
+<p><code>node scripts/test-vercel-config.mjs</code> simulates the redirect and header rules in <code>vercel.json</code> against sample hosts and paths.</p>
+<p>The validator does not test browser rendering, formal accessibility conformance, SEO ranking, or the private VulnGPT service. It is a repository hygiene check, not a full static-analysis or security-scanning product.</p>
+<h2 id="documentation-build">Documentation build<a class="anchor" href="#documentation-build" aria-label="Link to this section: Documentation build">#</a></h2>
+<p>Each Markdown file in this directory (except <code>README.md</code>, which supplies the reading paths on the documentation index) is published as a page at <code>/docs/&lt;file-name-in-kebab-case&gt;/</code>. After editing any document, or the header and footer of <code>index.html</code>, regenerate the pages and commit the result:</p>
+<pre tabindex="0"><code class="language-bash">node scripts/build-docs.mjs</code></pre>
+<p>A new document also needs an entry (category, short title, description, related pages) in the configuration at the top of <code>scripts/build-docs.mjs</code>; the build fails if a Markdown file has no entry.</p>
+<h2 id="hosting-configuration">Hosting configuration<a class="anchor" href="#hosting-configuration" aria-label="Link to this section: Hosting configuration">#</a></h2>
+<p><code>vercel.json</code> configures the static host. It enforces one canonical URL per page (trailing-slash routes, no <code>.html</code> duplicates), permanently redirects the production alias <code>vulngpt-showcase.vercel.app</code> to <code>showcase.novaseclabs.com</code>, marks every other <code>*.vercel.app</code> preview host <code>noindex</code>, and sets security headers including a strict Content-Security-Policy (<code>'self'</code> only, no inline scripts or styles, so pages must never contain inline <code>&lt;script&gt;</code>, <code>&lt;style&gt;</code> or <code>style=&quot;&quot;</code>).</p>
+<p>Cache lifetimes: HTML revalidates on every request; <code>/css/**</code> and the JavaScript files revalidate on every request, so a deploy never pairs new HTML with old styles; images and other <code>/assets/**</code> files are cached for seven days (file names are not content-hashed); <code>/assets/fonts/**</code> is cached for a year as <code>immutable</code>, so a changed font file must be given a new file name and <code>css/fonts.css</code> updated to match.</p>
+<h2 id="content-review">Content review<a class="anchor" href="#content-review" aria-label="Link to this section: Content review">#</a></h2>
+<p>Before publishing changes:</p>
+<ol>
+<li>Confirm product capabilities against a current, approved product artifact.</li>
+<li>Separate product direction from currently available private-beta functionality.</li>
+<li>Obtain review for customer, metric, benchmark, security, privacy, and compliance claims.</li>
+<li>Keep security findings, secrets, customer data, and internal infrastructure out of public files.</li>
+<li>Identify screenshots accurately and verify that they contain no confidential information.</li>
+<li>Update the changelog for material public changes.</li>
+</ol>
+<h2 id="asset-management">Asset management<a class="anchor" href="#asset-management" aria-label="Link to this section: Asset management">#</a></h2>
+<p>Use authentic, approved brand assets. Preserve the VulnGPT mascot's established design and do not introduce unofficial variants. Keep alt text descriptive and distinguish public website screenshots from authenticated product UI captures.</p>
+<p>See <a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/assets/README.md" rel="noopener">Asset Notes</a>.</p>
+<h2 id="releases-and-change-history">Releases and change history<a class="anchor" href="#releases-and-change-history" aria-label="Link to this section: Releases and change history">#</a></h2>
+<p>This repository's static showcase is deployed independently from the private VulnGPT application. Website changes should be reviewed against the connected preview before they are merged. A successful static-site build is not validation of the scanner engine or backend.</p>
+<p>Use <a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/CHANGELOG.md" rel="noopener">CHANGELOG.md</a> to record material public changes. Follow the <a href="/docs/release-process/">Release Process</a> and use the <a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/.github/RELEASE_TEMPLATE.md" rel="noopener">release template</a> when publishing an actual public release. Avoid publishing version numbers or release dates that do not correspond to an actual release.</p>
+<h2 id="ownership-and-escalation">Ownership and escalation<a class="anchor" href="#ownership-and-escalation" aria-label="Link to this section: Ownership and escalation">#</a></h2>
+<p>The repository's GitHub ownership and access settings define who can merge changes. For product questions, use <a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/SUPPORT.md" rel="noopener">Support</a>. For security concerns, use <a href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/SECURITY.md" rel="noopener">SECURITY.md</a>.</p>
+</article>
+<section class="doc-related" aria-labelledby="related-h">
+<h2 id="related-h">Related documentation</h2>
+<ul>
+<li><a href="/docs/release-process/"><h3>Release process</h3><p>Review, verification, publication, and correction procedures for the public showcase.</p></a></li>
+<li><a href="/docs/benchmark-governance/"><h3>Benchmark governance</h3><p>Reproducibility, denominator integrity, independent review, and benchmark publication gates.</p></a></li>
+<li><a href="/docs/faq/"><h3>FAQ</h3><p>Product status, access, intended use, supported claims, and common evaluation questions.</p></a></li>
+</ul>
+</section>
+<nav class="doc-pager" aria-label="More in Governance &amp; reference">
+<a class="doc-pager__prev" rel="prev" href="/docs/release-process/"><span>Previous in Governance &amp; reference</span>Release process</a>
+<span></span>
+</nav>
+<aside class="doc-cta" aria-labelledby="cta-h">
+<h2 id="cta-h">Evaluate VulnGPT in private beta</h2>
+<p>VulnGPT by NovaSecLabs is in private beta. This page describes product direction and evaluation guidance. It does not guarantee that every capability is currently available.</p>
+<div class="doc-cta__actions">
+<a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_docs&amp;utm_content=repository-maintenance">Request private beta</a>
+<a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/REPOSITORY_MAINTENANCE.md" rel="noopener">View source on GitHub</a>
+</div>
+<p class="hero__auth">For applications you own or are authorized to test.</p>
+</aside>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid">
+<div class="site-footer__about">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p>
+</div>
+<nav aria-label="Product">
+<h2>Product</h2>
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/docs/">Documentation</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h2>Company</h2>
+<ul>
+<li>
+<a href="https://www.novaseclabs.com">NovaSecLabs</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/about">About</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/pricing">Pricing</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/resources">Resources</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Connect">
+<h2>Connect</h2>
+<ul>
+<li>
+<a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a>
+</li>
+<li>
+<a href="https://x.com/novaseclabs" rel="noopener">X</a>
+</li>
+<li>
+<a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a>
+</li>
+<li>
+<a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__legal">
+<p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p>
+<p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -15,7 +15,7 @@
 
 ## Verification
 
-- [ ] Repository validator passed.
+- [ ] Repository validator passed (`node scripts/validate-public-repo.mjs`, which includes the documentation build check and the link checker).
 - [ ] Local links and assets were checked.
 - [ ] Website preview was reviewed, or any deployment limitation is disclosed.
 - [ ] Accessibility and responsive behavior were checked for relevant changes.

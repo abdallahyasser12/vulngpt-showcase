@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public System Overview | VulnGPT Docs</title>
+<meta name="description" content="A conceptual view of the VulnGPT by NovaSecLabs investigation flow and trust boundaries. Not a deployed architecture or a component inventory.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://showcase.novaseclabs.com/docs/system-overview/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VulnGPT by NovaSecLabs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Public System Overview | VulnGPT Docs">
+<meta property="og:description" content="A conceptual view of the VulnGPT by NovaSecLabs investigation flow and trust boundaries. Not a deployed architecture or a component inventory.">
+<meta property="og:url" content="https://showcase.novaseclabs.com/docs/system-overview/">
+<meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Public System Overview | VulnGPT Docs">
+<meta name="twitter:description" content="A conceptual view of the VulnGPT by NovaSecLabs investigation flow and trust boundaries. Not a deployed architecture or a component inventory.">
+<meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta name="twitter:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/docs/docs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"TechArticle","@id":"https://showcase.novaseclabs.com/docs/system-overview/#article","headline":"Public System Overview","description":"A conceptual view of the VulnGPT by NovaSecLabs investigation flow and trust boundaries. Not a deployed architecture or a component inventory.","url":"https://showcase.novaseclabs.com/docs/system-overview/","mainEntityOfPage":"https://showcase.novaseclabs.com/docs/system-overview/","inLanguage":"en","dateModified":"2026-10-31","articleSection":"Product & technical","wordCount":463,"timeRequired":"PT3M","image":"https://showcase.novaseclabs.com/assets/social/og-doc.png","author":{"@id":"https://www.novaseclabs.com/#organization"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"isPartOf":[{"@id":"https://showcase.novaseclabs.com/#website"},{"@id":"https://showcase.novaseclabs.com/docs/#webpage"}],"about":{"@id":"https://www.novaseclabs.com/#vulngpt"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/docs/system-overview/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://showcase.novaseclabs.com/docs/"},{"@type":"ListItem","position":3,"name":"System overview","item":"https://showcase.novaseclabs.com/docs/system-overview/"}]}]}</script>
+<script src="/script.js" defer></script>
+<script src="/docs/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+<span class="nav-toggle__bars" aria-hidden="true">
+</span>
+<span>Menu</span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/#approach">Approach</a>
+</li>
+<li>
+<a href="/#evidence">Evidence</a>
+</li>
+<li>
+<a href="/docs/" aria-current="page">Docs</a>
+</li>
+<li>
+<a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero doc-head">
+<div class="container">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/docs/">Documentation</a></li>
+<li aria-current="page">System overview</li>
+</ol>
+</nav>
+<p class="eyebrow"><b>Product &amp; technical</b> · VulnGPT by NovaSecLabs</p>
+<h1>Public System Overview</h1>
+<p class="lede">A conceptual view of the VulnGPT by NovaSecLabs investigation flow and trust boundaries. Not a deployed architecture or a component inventory.</p>
+<p class="doc-meta"><span>3 min read</span><span>Last updated <time datetime="2026-10-31">31 Oct 2026</time></span><a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/SYSTEM_OVERVIEW.md" rel="noopener">View source on GitHub</a></p>
+</div>
+</section>
+<div class="container doc-layout">
+<aside class="doc-aside">
+<nav class="doc-toc" aria-label="On this page" data-spy>
+<details open>
+<summary>On this page</summary>
+<ol>
+<li><a href="#status-and-scope">Status and scope</a></li>
+<li><a href="#the-problem-model">The problem model</a></li>
+<li><a href="#conceptual-investigation-flow">Conceptual investigation flow</a></li>
+<li><a href="#conceptual-trust-boundaries">Conceptual trust boundaries</a></li>
+<li><a href="#security-invariants">Security invariants</a></li>
+<li><a href="#what-this-document-does-not-establish">What this document does not establish</a></li>
+<li><a href="#related-resources">Related resources</a></li>
+</ol>
+</details>
+</nav>
+</aside>
+<div class="doc-main">
+<article class="prose doc-prose">
+
+<h2 id="status-and-scope">Status and scope<a class="anchor" href="#status-and-scope" aria-label="Link to this section: Status and scope">#</a></h2>
+<p>This is a <strong>conceptual product model</strong> intended to explain the security problem and evaluation boundaries. It is not a production architecture diagram, source-code description, component inventory, or guarantee that each conceptual stage is implemented or available in the current private beta.</p>
+<p>VulnGPT is in private beta. Confirm the current evaluation environment, supported workflow, data flow, deployment model, and controls directly with NovaSecLabs before using sensitive applications or data.</p>
+<h2 id="the-problem-model">The problem model<a class="anchor" href="#the-problem-model" aria-label="Link to this section: The problem model">#</a></h2>
+<p>Application-security behavior is contextual. An operation can depend on the actor, role, tenant, session, resource owner, workflow state, and sequence of prior actions. A request/response pair may not carry enough information to establish whether a security rule was violated.</p>
+<p>The public product direction is organized around six conceptual responsibilities:</p>
+<ol>
+<li><strong>Scope and authorization:</strong> define the approved target and permitted actions.</li>
+<li><strong>Context:</strong> identify relevant actors, sessions, objects, and state.</li>
+<li><strong>Hypothesis:</strong> express the expected security invariant and a falsifiable violation.</li>
+<li><strong>Controlled testing:</strong> compare behavior under bounded, authorized conditions.</li>
+<li><strong>Evidence evaluation:</strong> examine direct observations, control cases, and alternative explanations.</li>
+<li><strong>Review and retest:</strong> preserve a bounded conclusion and a repeatable verification path.</li>
+</ol>
+<h2 id="conceptual-investigation-flow">Conceptual investigation flow<a class="anchor" href="#conceptual-investigation-flow" aria-label="Link to this section: Conceptual investigation flow">#</a></h2>
+<figure class="code-figure">
+<figcaption>Diagram source (Mermaid). This flowchart branches, so it is shown as text rather than as an ordered list.</figcaption>
+<pre tabindex="0"><code class="language-mermaid">flowchart TD
+    A[&quot;Approved target and test scope&quot;] --&gt; B[&quot;Application context&quot;]
+    B --&gt; C[&quot;Actors · Roles · Sessions · Objects · State&quot;]
+    C --&gt; D[&quot;Security invariant and hypothesis&quot;]
+    D --&gt; E[&quot;Controlled, authorized test&quot;]
+    E --&gt; F[&quot;Observable behavior and control comparison&quot;]
+    F --&gt; G{&quot;Evidence supports the hypothesis?&quot;}
+    G -- &quot;Not yet&quot; --&gt; H[&quot;Record uncertainty and missing evidence&quot;]
+    H --&gt; D
+    G -- &quot;Yes, within tested scope&quot; --&gt; I[&quot;Bounded finding for human review&quot;]
+    G -- &quot;No under these conditions&quot; --&gt; J[&quot;Record not reproduced; do not infer universal absence&quot;]
+    I --&gt; K[&quot;Remediation and retest&quot;]
+    J --&gt; K</code></pre>
+</figure>
+<p>The flow intentionally separates testing from adjudication. A completed request is not automatically a confirmed issue, and a scenario that could not be observed is not a clean negative.</p>
+<h2 id="conceptual-trust-boundaries">Conceptual trust boundaries<a class="anchor" href="#conceptual-trust-boundaries" aria-label="Link to this section: Conceptual trust boundaries">#</a></h2>
+<p>The following diagram is a review aid, not a representation of deployed services or network topology.</p>
+<figure class="code-figure">
+<figcaption>Diagram source (Mermaid). This flowchart branches, so it is shown as text rather than as an ordered list.</figcaption>
+<pre tabindex="0"><code class="language-mermaid">flowchart LR
+    subgraph Customer[&quot;Customer-controlled environment&quot;]
+      Owner[&quot;System owner and authorizer&quot;]
+      Identities[&quot;Approved test identities&quot;]
+      Target[&quot;Target application and test data&quot;]
+    end
+    subgraph Product[&quot;Product evaluation boundary&quot;]
+      Scope[&quot;Scope and test context&quot;]
+      Test[&quot;Controlled investigation&quot;]
+      Evidence[&quot;Evidence and result review&quot;]
+    end
+    Owner --&gt;|&quot;Written authorization&quot;| Scope
+    Identities --&gt;|&quot;Approved accounts&quot;| Test
+    Scope --&gt; Test
+    Test &lt;--&gt;|&quot;In-scope requests&quot;| Target
+    Test --&gt; Evidence
+    Owner &lt;--&gt;|&quot;Review and remediation&quot;| Evidence
+    classDef note fill:#151827,stroke:#8070c4,color:#f2efff
+    class Scope,Test,Evidence note</code></pre>
+</figure>
+<p>This conceptual diagram does not assert a particular hosting provider, service topology, isolation mechanism, storage design, model-provider path, or customer-managed deployment option.</p>
+<h2 id="security-invariants">Security invariants<a class="anchor" href="#security-invariants" aria-label="Link to this section: Security invariants">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: Security invariants" tabindex="0">
+<table>
+<thead><tr><th scope="col">Boundary</th><th scope="col">Example invariant</th></tr></thead>
+<tbody>
+<tr><td>Identity</td><td>An action is attributed to the correct authenticated actor</td></tr>
+<tr><td>Role</td><td>A role cannot perform an operation outside its effective permissions</td></tr>
+<tr><td>Tenant</td><td>One organization cannot access another organization's private data</td></tr>
+<tr><td>Ownership</td><td>An actor cannot read or mutate an object outside the actor's permitted ownership boundary</td></tr>
+<tr><td>Workflow</td><td>A protected transition requires its stated preconditions</td></tr>
+<tr><td>Session</td><td>Logout, expiry, or revocation invalidates the expected access path</td></tr>
+<tr><td>Evidence</td><td>A reported conclusion does not exceed what the test actually observed</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="what-this-document-does-not-establish">What this document does not establish<a class="anchor" href="#what-this-document-does-not-establish" aria-label="Link to this section: What this document does not establish">#</a></h2>
+<p>It does not establish actual service or network architecture, data residency, encryption design, retention settings, exact model providers or subprocessors, support for enterprise identity protocols, an SLA, recovery objectives, independent security certification, or that all conceptual responsibilities are automated or available for every beta account.</p>
+<p>Use the <a href="/docs/security-and-privacy/">Security and Privacy</a> and <a href="/docs/enterprise-evaluation/">Enterprise Evaluation</a> documents to structure current, environment-specific questions.</p>
+<h2 id="related-resources">Related resources<a class="anchor" href="#related-resources" aria-label="Link to this section: Related resources">#</a></h2>
+<ul>
+<li><a href="/docs/technical-approach/">Technical Approach</a></li>
+<li><a href="/docs/security-model/">Security Model</a></li>
+<li><a href="/docs/security-testing-playbook/">Security Testing Playbook</a></li>
+<li><a href="/docs/evidence-and-validation/">Evidence and Validation</a></li>
+</ul>
+</article>
+<section class="doc-related" aria-labelledby="related-h">
+<h2 id="related-h">Related documentation</h2>
+<ul>
+<li><a href="/docs/technical-approach/"><h3>Technical approach</h3><p>A conceptual model for investigating behavior across identity, authorization, and application state.</p></a></li>
+<li><a href="/docs/security-model/"><h3>Security model</h3><p>Conceptual actors, data assets, trust boundaries, and threat scenarios for evaluation.</p></a></li>
+<li><a href="/docs/evidence-and-validation/"><h3>Evidence and validation</h3><p>How to distinguish a suspicious signal from a supported, reviewable security conclusion.</p></a></li>
+<li><a href="/docs/security-and-privacy/"><h3>Security and privacy</h3><p>Public trust boundaries and the specific questions that require current vendor confirmation.</p></a></li>
+</ul>
+</section>
+<nav class="doc-pager" aria-label="More in Product &amp; technical">
+<a class="doc-pager__prev" rel="prev" href="/docs/technical-approach/"><span>Previous in Product &amp; technical</span>Technical approach</a>
+<a class="doc-pager__next" rel="next" href="/docs/evidence-and-validation/"><span>Next in Product &amp; technical</span>Evidence and validation</a>
+</nav>
+<aside class="doc-cta" aria-labelledby="cta-h">
+<h2 id="cta-h">Evaluate VulnGPT in private beta</h2>
+<p>VulnGPT by NovaSecLabs is in private beta. This page describes product direction and evaluation guidance. It does not guarantee that every capability is currently available.</p>
+<div class="doc-cta__actions">
+<a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_docs&amp;utm_content=system-overview">Request private beta</a>
+<a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/SYSTEM_OVERVIEW.md" rel="noopener">View source on GitHub</a>
+</div>
+<p class="hero__auth">For applications you own or are authorized to test.</p>
+</aside>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid">
+<div class="site-footer__about">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p>
+</div>
+<nav aria-label="Product">
+<h2>Product</h2>
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/docs/">Documentation</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h2>Company</h2>
+<ul>
+<li>
+<a href="https://www.novaseclabs.com">NovaSecLabs</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/about">About</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/pricing">Pricing</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/resources">Resources</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Connect">
+<h2>Connect</h2>
+<ul>
+<li>
+<a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a>
+</li>
+<li>
+<a href="https://x.com/novaseclabs" rel="noopener">X</a>
+</li>
+<li>
+<a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a>
+</li>
+<li>
+<a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__legal">
+<p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p>
+<p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

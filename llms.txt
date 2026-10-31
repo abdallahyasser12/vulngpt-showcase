@@ -1,0 +1,44 @@
+# VulnGPT by NovaSecLabs: product showcase
+
+> VulnGPT is an autonomous web application security testing product by NovaSecLabs, currently in private beta and being developed to investigate application behavior across authenticated identities, authorization boundaries, object ownership, state transitions, and business logic, with an emphasis on evidence-oriented validation.
+
+Autonomous means VulnGPT plans and runs the test steps itself inside the target, scope, and runtime budget you authorize; it does not mean unsupervised: you verify the target, set scope, confirm authorization, and review the evidence.
+
+VulnGPT by NovaSecLabs is a commercial product of NovaSecLabs. It is distinct from other projects that share the name VulnGPT. It is intended only for applications you own or are authorized to test.
+
+## Product
+
+- [Home](https://showcase.novaseclabs.com/): what VulnGPT is designed to do, the evidence standard behind it, and the limits of the product
+- [Product tour](https://showcase.novaseclabs.com/product/): five unedited interface captures (dashboard, findings, a BOLA finding, Live Vision, reports) with the limits of each
+- [Request private beta](https://www.novaseclabs.com/waitlist): apply for private-beta access
+
+## Documentation
+
+- [Documentation index](https://showcase.novaseclabs.com/docs/): searchable library of all public documents
+- [Product Overview](https://showcase.novaseclabs.com/docs/product-overview/): What VulnGPT by NovaSecLabs is designed to investigate, who it is for, the principles behind it, and what it is not. Private beta.
+- [Technical Approach](https://showcase.novaseclabs.com/docs/technical-approach/): A conceptual model for testing application behavior in context: scope, baseline, invariant, hypothesis, controlled test and a reviewable result.
+- [Public System Overview](https://showcase.novaseclabs.com/docs/system-overview/): A conceptual view of the VulnGPT by NovaSecLabs investigation flow and trust boundaries. Not a deployed architecture or a component inventory.
+- [Evidence and Validation Standard](https://showcase.novaseclabs.com/docs/evidence-and-validation/): How VulnGPT by NovaSecLabs treats a suspicious signal: hypothesis, control comparison, alternative explanations, confirmation and retest.
+- [Application Security Glossary](https://showcase.novaseclabs.com/docs/glossary/): Plain definitions of BOLA, IDOR, actor, invariant, tenant isolation, WAF and other terms used across the VulnGPT documentation.
+- [Frequently Asked Questions](https://showcase.novaseclabs.com/docs/faq/): Answers about VulnGPT by NovaSecLabs: what it is, what autonomous means, private-beta access, benchmark status, certification and authorized testing.
+- [Contextual Application Security Testing Playbook](https://showcase.novaseclabs.com/docs/security-testing-playbook/): A practitioner playbook for controlled, authorized tests of identity, ownership, role, workflow and session behavior in web applications.
+- [Application Security Use Cases](https://showcase.novaseclabs.com/docs/use-cases/): Representative application behaviors that motivate contextual testing: ownership, roles, tenants, workflows and session state. Illustrative only.
+- [Capability Evaluation Matrix](https://showcase.novaseclabs.com/docs/capability-evaluation-matrix/): Scenario dimensions, required context and evidence criteria for evaluating VulnGPT by NovaSecLabs. Not a support or coverage guarantee.
+- [Controlled Product Evaluation Protocol](https://showcase.novaseclabs.com/docs/evaluation-protocol/): A protocol for a fair, reproducible evaluation of an application-security testing product: pre-registered scenarios, ground truth and outcome classes.
+- [Finding Report Standard](https://showcase.novaseclabs.com/docs/finding-report-standard/): An evidence-led structure for security findings: expected boundary, test context, observation, impact, limits, remediation and retest.
+- [Enterprise Evaluation Guide](https://showcase.novaseclabs.com/docs/enterprise-evaluation/): A diligence guide for security, IT, procurement and privacy reviewers evaluating VulnGPT by NovaSecLabs during private beta.
+- [Security and Privacy — Public Evaluation Notes](https://showcase.novaseclabs.com/docs/security-and-privacy/): Public security and privacy notes for VulnGPT by NovaSecLabs, and the questions to confirm directly before using sensitive systems or data.
+- [Public Security Model](https://showcase.novaseclabs.com/docs/security-model/): A conceptual security model for evaluating VulnGPT by NovaSecLabs: actors, assets, trust boundaries, threat scenarios and assurance limits.
+- [Application Security Assessment Plan — Template](https://showcase.novaseclabs.com/docs/assessment-plan-template/): A reusable worksheet for scoping an authorized assessment: targets, identities, constraints, data handling, approvals and stop conditions.
+- [Responsible Testing](https://showcase.novaseclabs.com/docs/responsible-testing/): Authorization, scope, test data and operational safeguards for using VulnGPT by NovaSecLabs only on applications you own or may test.
+- [Benchmark Governance and Publication Standard](https://showcase.novaseclabs.com/docs/benchmark-governance/): The governance gates for publishing any VulnGPT benchmark: reproducibility, denominator integrity, independent review and approved wording.
+- [Public Repository Release Process](https://showcase.novaseclabs.com/docs/release-process/): How the public VulnGPT showcase repository is reviewed, verified, published and corrected. Applies to this website and documentation only.
+- [Repository Maintenance](https://showcase.novaseclabs.com/docs/repository-maintenance/): Validation, content review and asset hygiene for the public VulnGPT showcase repository. Maintainer guidance for contributors and reviewers.
+
+## Company
+
+- [NovaSecLabs](https://www.novaseclabs.com/): the company behind VulnGPT
+- [VulnGPT on novaseclabs.com](https://www.novaseclabs.com/vulngpt): the main product page
+- [About](https://www.novaseclabs.com/about)
+- [Pricing](https://www.novaseclabs.com/pricing)
+- [Resources](https://www.novaseclabs.com/resources)

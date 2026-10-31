@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+<title>VulnGPT</title>
+<defs><linearGradient id="vg" gradientUnits="userSpaceOnUse" x1="40" y1="40" x2="472" y2="472"><stop offset="0" stop-color="#aab4ff"/><stop offset="0.5" stop-color="#e1a6f4"/><stop offset="1" stop-color="#7fd3ff"/></linearGradient></defs>
+<rect width="512" height="512" rx="112" fill="#0A0B10"/>
+<g fill="url(#vg)">
+<circle cx="274.53" cy="237.47" r="176" fill="none" stroke="url(#vg)" stroke-width="42"/>
+<path d="M140.6 330.38L48.96 422.02A29 29 0 0 0 89.98 463.04L181.62 371.4Z"/>
+<path d="M198 138h22v22h-22ZM330 138h22v22h-22ZM220 160h22v22h-22ZM308 160h22v22h-22ZM242 182h66v22h-66ZM176 204h22v22h-22ZM220 204h110v22h-110ZM352 204h22v22h-22ZM198 226h154v22h-154ZM176 248h198v22h-198ZM198 270h154v22h-154ZM176 292h22v22h-22ZM220 292h110v22h-110ZM352 292h22v22h-22ZM220 314h110v22h-110Z" fill-rule="evenodd" shape-rendering="crispEdges"/>
+</g></svg>

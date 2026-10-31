@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capability Evaluation Matrix | VulnGPT Docs</title>
+<meta name="description" content="Scenario dimensions, required context and evidence criteria for evaluating VulnGPT by NovaSecLabs. Not a support or coverage guarantee.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://showcase.novaseclabs.com/docs/capability-evaluation-matrix/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="VulnGPT by NovaSecLabs">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Capability Evaluation Matrix | VulnGPT Docs">
+<meta property="og:description" content="Scenario dimensions, required context and evidence criteria for evaluating VulnGPT by NovaSecLabs. Not a support or coverage guarantee.">
+<meta property="og:url" content="https://showcase.novaseclabs.com/docs/capability-evaluation-matrix/">
+<meta property="og:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Capability Evaluation Matrix | VulnGPT Docs">
+<meta name="twitter:description" content="Scenario dimensions, required context and evidence criteria for evaluating VulnGPT by NovaSecLabs. Not a support or coverage guarantee.">
+<meta name="twitter:image" content="https://showcase.novaseclabs.com/assets/social/og-doc.png">
+<meta name="twitter:image:alt" content="VulnGPT documentation: evidence, scope and responsible-use notes for the private beta">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d0e13" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/brand/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/brand/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/assets/fonts/newsreader-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/instrument-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/fonts.css">
+<link rel="stylesheet" href="/css/site.css">
+<link rel="stylesheet" href="/docs/docs.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://showcase.novaseclabs.com/#website","url":"https://showcase.novaseclabs.com/","name":"VulnGPT by NovaSecLabs","inLanguage":"en","publisher":{"@id":"https://www.novaseclabs.com/#organization"}},{"@type":"TechArticle","@id":"https://showcase.novaseclabs.com/docs/capability-evaluation-matrix/#article","headline":"Capability Evaluation Matrix","description":"Scenario dimensions, required context and evidence criteria for evaluating VulnGPT by NovaSecLabs. Not a support or coverage guarantee.","url":"https://showcase.novaseclabs.com/docs/capability-evaluation-matrix/","mainEntityOfPage":"https://showcase.novaseclabs.com/docs/capability-evaluation-matrix/","inLanguage":"en","dateModified":"2026-10-31","articleSection":"Practitioner resources","wordCount":697,"timeRequired":"PT4M","image":"https://showcase.novaseclabs.com/assets/social/og-doc.png","author":{"@id":"https://www.novaseclabs.com/#organization"},"publisher":{"@id":"https://www.novaseclabs.com/#organization"},"isPartOf":[{"@id":"https://showcase.novaseclabs.com/#website"},{"@id":"https://showcase.novaseclabs.com/docs/#webpage"}],"about":{"@id":"https://www.novaseclabs.com/#vulngpt"}},{"@type":"BreadcrumbList","@id":"https://showcase.novaseclabs.com/docs/capability-evaluation-matrix/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://showcase.novaseclabs.com/"},{"@type":"ListItem","position":2,"name":"Documentation","item":"https://showcase.novaseclabs.com/docs/"},{"@type":"ListItem","position":3,"name":"Capability evaluation matrix","item":"https://showcase.novaseclabs.com/docs/capability-evaluation-matrix/"}]}]}</script>
+<script src="/script.js" defer></script>
+<script src="/docs/docs.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-header__inner">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+<span class="nav-toggle__bars" aria-hidden="true">
+</span>
+<span>Menu</span>
+</button>
+<nav class="site-nav" id="site-nav" aria-label="Primary">
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/#approach">Approach</a>
+</li>
+<li>
+<a href="/#evidence">Evidence</a>
+</li>
+<li>
+<a href="/docs/" aria-current="page">Docs</a>
+</li>
+<li>
+<a class="btn btn--primary btn--sm" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=header">Request private beta</a>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero doc-head">
+<div class="container">
+<nav class="crumbs" aria-label="Breadcrumb">
+<ol>
+<li><a href="/">Home</a></li>
+<li><a href="/docs/">Documentation</a></li>
+<li aria-current="page">Capability evaluation matrix</li>
+</ol>
+</nav>
+<p class="eyebrow"><b>Practitioner resources</b> · VulnGPT by NovaSecLabs</p>
+<h1>Capability Evaluation Matrix</h1>
+<p class="lede">Scenario dimensions, required context and evidence criteria for evaluating VulnGPT by NovaSecLabs. Not a support or coverage guarantee.</p>
+<p class="doc-meta"><span>4 min read</span><span>Last updated <time datetime="2026-10-31">31 Oct 2026</time></span><a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/CAPABILITY_EVALUATION_MATRIX.md" rel="noopener">View source on GitHub</a></p>
+</div>
+</section>
+<div class="container doc-layout">
+<aside class="doc-aside">
+<nav class="doc-toc" aria-label="On this page" data-spy>
+<details open>
+<summary>On this page</summary>
+<ol>
+<li><a href="#how-to-read-this-matrix">How to read this matrix</a></li>
+<li><a href="#evaluation-dimensions">Evaluation dimensions</a></li>
+<li><a href="#selecting-a-representative-test-set">Selecting a representative test set</a></li>
+<li><a href="#suggested-evaluation-worksheet">Suggested evaluation worksheet</a></li>
+<li><a href="#interpreting-results">Interpreting results</a></li>
+<li><a href="#related-resources">Related resources</a></li>
+</ol>
+</details>
+</nav>
+</aside>
+<div class="doc-main">
+<article class="prose doc-prose">
+
+<h2 id="how-to-read-this-matrix">How to read this matrix<a class="anchor" href="#how-to-read-this-matrix" aria-label="Link to this section: How to read this matrix">#</a></h2>
+<p>This document helps evaluators select representative application-security scenarios for a VulnGPT assessment.</p>
+<p><strong>It is not a product support matrix, feature-completion report, detection guarantee, or statement that every row is currently available in the private beta.</strong> The rows describe areas of investigation and the evidence an evaluator should look for. Confirm the exact scope and supported workflows with NovaSecLabs before an evaluation.</p>
+<h2 id="evaluation-dimensions">Evaluation dimensions<a class="anchor" href="#evaluation-dimensions" aria-label="Link to this section: Evaluation dimensions">#</a></h2>
+<div class="table-wrap" role="region" aria-label="Table: Evaluation dimensions" tabindex="0">
+<table>
+<thead><tr><th scope="col">Area</th><th scope="col">Representative test question</th><th scope="col">Context required</th><th scope="col">Evidence expected</th><th scope="col">Common false conclusion</th></tr></thead>
+<tbody>
+<tr><td>Object-level authorization</td><td>Can an actor access another actor's protected object?</td><td>Actor, owner, tenant, object</td><td>Protected data or unauthorized persisted effect</td><td>HTTP 200 means access succeeded</td></tr>
+<tr><td>Role enforcement</td><td>Can a lower-privileged role perform a restricted action?</td><td>Effective role, permissions, action</td><td>Demonstrated unauthorized operation or state change</td><td>UI visibility proves authorization</td></tr>
+<tr><td>Tenant isolation</td><td>Can one tenant cross a data or operation boundary?</td><td>Distinct test tenants and objects</td><td>Direct cross-tenant disclosure or mutation</td><td>Similar response shapes imply leakage</td></tr>
+<tr><td>Authenticated workflow</td><td>Does access depend on session history or prior actions?</td><td>Session, actor, sequence</td><td>Reproducible difference tied to session state</td><td>Redirect or timeout proves enforcement</td></tr>
+<tr><td>State transition</td><td>Can an invalid transition be completed?</td><td>Initial state, allowed transitions</td><td>Authoritative state or side effect</td><td>Endpoint accepted request, so transition occurred</td></tr>
+<tr><td>Business invariant</td><td>Can valid actions be combined to bypass a domain rule?</td><td>Rule, records, sequence, expected result</td><td>Demonstrated rule violation and impact</td><td>Display-only inconsistency proves business impact</td></tr>
+<tr><td>Replay and duplication</td><td>Can repeating an operation violate intended semantics?</td><td>Idempotency expectation, transaction identity</td><td>Duplicate protected effect or entitlement</td><td>Duplicate HTTP responses imply duplicate processing</td></tr>
+<tr><td>Session lifecycle</td><td>Does logout, expiry, or revocation remove access?</td><td>Session and revocation state</td><td>Protected operation remains blocked after invalidation</td><td>Client-side logout alone proves server invalidation</td></tr>
+<tr><td>Interference</td><td>Is an apparent result caused by WAF, throttling, or transient behavior?</td><td>Proxy path, timing, rate and control requests</td><td>Evidence separating intermediary from application behavior</td><td>Block page proves application is secure</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="selecting-a-representative-test-set">Selecting a representative test set<a class="anchor" href="#selecting-a-representative-test-set" aria-label="Link to this section: Selecting a representative test set">#</a></h2>
+<p>An evaluation should balance:</p>
+<ul>
+<li><strong>Positive cases:</strong> controlled scenarios where a known policy violation is deliberately present.</li>
+<li><strong>Negative cases:</strong> similar-looking scenarios where access or behavior is expected and legitimate.</li>
+<li><strong>Boundary cases:</strong> cases that differ by one actor, role, tenant, ownership, or state variable.</li>
+<li><strong>Ambiguous cases:</strong> scenarios with known environmental interference or incomplete observability.</li>
+<li><strong>Retest cases:</strong> scenarios where a documented remediation should restore the invariant.</li>
+</ul>
+<p>Where practical, use a deliberately vulnerable test fixture or independently reviewed ground truth. Do not use customer production data to create a benchmark.</p>
+<h2 id="suggested-evaluation-worksheet">Suggested evaluation worksheet<a class="anchor" href="#suggested-evaluation-worksheet" aria-label="Link to this section: Suggested evaluation worksheet">#</a></h2>
+<p>For each row selected, record:</p>
+<div class="table-wrap" role="region" aria-label="Table: Suggested evaluation worksheet" tabindex="0">
+<table>
+<thead><tr><th scope="col">Field</th><th scope="col">Value</th></tr></thead>
+<tbody>
+<tr><td>Scenario ID</td><td>Customer-defined identifier</td></tr>
+<tr><td>Application and environment</td><td>Authorized target</td></tr>
+<tr><td>Security invariant</td><td>Expected rule</td></tr>
+<tr><td>Test identities</td><td>Approved actors and roles</td></tr>
+<tr><td>Test objects</td><td>Synthetic or approved records</td></tr>
+<tr><td>Ground truth</td><td>Expected vulnerable or secure behavior</td></tr>
+<tr><td>Preconditions</td><td>Required application state</td></tr>
+<tr><td>Allowed actions</td><td>Approved test operations</td></tr>
+<tr><td>Evidence required</td><td>Observable criteria</td></tr>
+<tr><td>Result</td><td>Confirmed / not reproduced / ambiguous / not evaluated</td></tr>
+<tr><td>Limitations</td><td>Unobserved behavior and environmental constraints</td></tr>
+<tr><td>Reviewer</td><td>Responsible human adjudicator</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="interpreting-results">Interpreting results<a class="anchor" href="#interpreting-results" aria-label="Link to this section: Interpreting results">#</a></h2>
+<p>Do not collapse different outcomes into one aggregate score without an explicit scoring policy.</p>
+<p>Keep separate:</p>
+<ul>
+<li>scenario execution completion;</li>
+<li>scenario observability;</li>
+<li>correct identification of known positive cases;</li>
+<li>correct handling of known negative cases;</li>
+<li>evidence sufficiency;</li>
+<li>adjudication outcome;</li>
+<li>operational safety.</li>
+</ul>
+<p>A scenario that was not reached or could not be observed is not equivalent to a scenario that was tested and correctly rejected. An inconclusive test is not a clean negative.</p>
+<h2 id="related-resources">Related resources<a class="anchor" href="#related-resources" aria-label="Link to this section: Related resources">#</a></h2>
+<ul>
+<li><a href="/docs/security-testing-playbook/">Security Testing Playbook</a></li>
+<li><a href="/docs/benchmark-governance/">Benchmark Governance</a></li>
+<li><a href="/docs/enterprise-evaluation/">Enterprise Evaluation</a></li>
+</ul>
+</article>
+<section class="doc-related" aria-labelledby="related-h">
+<h2 id="related-h">Related documentation</h2>
+<ul>
+<li><a href="/docs/evaluation-protocol/"><h3>Evaluation protocol</h3><p>Define ground truth and outcomes before a run; separate execution, observability, correctness, and evidence quality.</p></a></li>
+<li><a href="/docs/security-testing-playbook/"><h3>Security testing playbook</h3><p>Controlled patterns for object ownership, roles, multi-step workflows, sessions, and ambiguous results.</p></a></li>
+<li><a href="/docs/enterprise-evaluation/"><h3>Enterprise evaluation</h3><p>A structured diligence guide for security, architecture, procurement, privacy, and product stakeholders.</p></a></li>
+<li><a href="/docs/benchmark-governance/"><h3>Benchmark governance</h3><p>Reproducibility, denominator integrity, independent review, and benchmark publication gates.</p></a></li>
+</ul>
+</section>
+<nav class="doc-pager" aria-label="More in Practitioner resources">
+<a class="doc-pager__prev" rel="prev" href="/docs/use-cases/"><span>Previous in Practitioner resources</span>Use cases</a>
+<a class="doc-pager__next" rel="next" href="/docs/evaluation-protocol/"><span>Next in Practitioner resources</span>Evaluation protocol</a>
+</nav>
+<aside class="doc-cta" aria-labelledby="cta-h">
+<h2 id="cta-h">Evaluate VulnGPT in private beta</h2>
+<p>VulnGPT by NovaSecLabs is in private beta. This page describes product direction and evaluation guidance. It does not guarantee that every capability is currently available.</p>
+<div class="doc-cta__actions">
+<a class="btn btn--primary" href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_docs&amp;utm_content=capability-evaluation-matrix">Request private beta</a>
+<a class="link" href="https://github.com/abdallahyasser12/vulngpt-showcase/blob/main/docs/CAPABILITY_EVALUATION_MATRIX.md" rel="noopener">View source on GitHub</a>
+</div>
+<p class="hero__auth">For applications you own or are authorized to test.</p>
+</aside>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="container">
+<div class="site-footer__grid">
+<div class="site-footer__about">
+<a class="lockup" href="/">
+<img class="lockup__mark" src="/assets/brand/vulngpt-mark-gradient.svg" width="32" height="32" alt="" loading="lazy">
+<span>
+<span class="lockup__name">VulnGPT</span> <span class="lockup__by">by NovaSecLabs</span>
+</span>
+</a>
+<p>Autonomous web application pentesting that keeps its evidence. For applications you own or are authorized to test.</p>
+</div>
+<nav aria-label="Product">
+<h2>Product</h2>
+<ul>
+<li>
+<a href="/product/">Product tour</a>
+</li>
+<li>
+<a href="/docs/">Documentation</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/waitlist?utm_source=showcase&amp;utm_medium=referral&amp;utm_campaign=showcase_site&amp;utm_content=footer">Request private beta</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<h2>Company</h2>
+<ul>
+<li>
+<a href="https://www.novaseclabs.com">NovaSecLabs</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/about">About</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/pricing">Pricing</a>
+</li>
+<li>
+<a href="https://www.novaseclabs.com/resources">Resources</a>
+</li>
+</ul>
+</nav>
+<nav aria-label="Connect">
+<h2>Connect</h2>
+<ul>
+<li>
+<a href="https://www.linkedin.com/company/146598227" rel="noopener">LinkedIn</a>
+</li>
+<li>
+<a href="https://x.com/novaseclabs" rel="noopener">X</a>
+</li>
+<li>
+<a href="https://www.producthunt.com/products/vulngpt" rel="noopener">Product Hunt</a>
+</li>
+<li>
+<a href="https://github.com/abdallahyasser12/vulngpt-showcase" rel="noopener">GitHub</a>
+</li>
+</ul>
+</nav>
+</div>
+<div class="site-footer__legal">
+<p>VulnGPT is in private beta. No public detection-rate, false-positive or certification claim is made on this site.</p>
+<p>&copy; <span id="year">2026</span> NovaSecLabs. <a class="link" href="https://www.novaseclabs.com/terms">Terms</a> &middot; <a class="link" href="https://www.novaseclabs.com/privacy">Privacy</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
