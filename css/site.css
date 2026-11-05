@@ -372,3 +372,6 @@ em { font-family: var(--f-serif); font-style: italic; }
   *, *::before, *::after { transition: none !important; animation: none !important; }
   .btn:hover, .pin:hover { transform: none; }
 }
+
+/* Pointer from the approach section to the guide and the free tool on the main site. */
+.approach-more { margin-top: var(--s-6); max-width: 62ch; color: var(--ink-2); font-size: var(--fs-base); line-height: 1.6; }
